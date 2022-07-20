@@ -46,95 +46,77 @@
 ; "do adaptive supersampling" and "supersampling threshold"
 ; weren't set
 ; corrections made by Michael Hoelzen end
-;
-;
-;
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Layer Effect common function ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(define (layer-effects-common1
-            img ;
-            layer ;
-            color ;
-            angle ;
-            offset-radius ;
-            effect-radius ;
-            blur-radius ;
-            opacity ;
-            layer-mode ;
-            layer-name ;
-            color-side ; (Outer(0) Inner(1) Inner-Inverse(2))
-         )
-
-    (let* (
-        (width (car (gimp-drawable-width layer)))
-        (height (car (gimp-drawable-height layer)))
-        (radians (/ (* 2 *pi* angle) 360))
-        (x-offset (* offset-radius (sin radians)))
-        (y-offset (* offset-radius (cos radians)))
-        (target-layer (car (gimp-layer-copy layer TRUE)))
-        (effect-layer (car (gimp-layer-new img width height RGBA-IMAGE
-        layer-name opacity layer-mode)))
-        (effect-mask (car (gimp-layer-create-mask effect-layer WHITE-MASK)))
-        (effect-mask2 0)
-      )
-
-        ;;
-        (gimp-image-add-layer img effect-layer -1)
-
-        (gimp-layer-add-mask effect-layer effect-mask)
-        (if (= color-side 0)
+(define (layer-effects-common1 img layer color angle offset-radius
+			       effect-radius blur-radius opacity layer-mode
+			       layer-name color-side) ; Outer(0)
+						      ; Inner(1)
+						      ; Inner-Inverse(2)
+  (let* ((width (car (gimp-drawable-width layer)))
+         (height (car (gimp-drawable-height layer)))
+         (radians (/ (* 2 *pi* angle) 360))
+         (x-offset (* offset-radius (sin radians)))
+         (y-offset (* offset-radius (cos radians)))
+         (target-layer (car (gimp-layer-copy layer TRUE)))
+         (effect-layer (car (gimp-layer-new img width height RGBA-IMAGE
+					    layer-name opacity layer-mode)))
+         (effect-mask (car (gimp-layer-create-mask effect-layer WHITE-MASK)))
+         (effect-mask2 0))
+    (gimp-image-insert-layer img effect-layer 0 -1)
+    (gimp-layer-add-mask effect-layer effect-mask)
+    (if (= color-side 0)
         (gimp-invert effect-mask))
-        (if (< 0 (car (gimp-layer-get-mask target-layer)))
-        ;replaced 2005-11-13
-        ; (gimp-image-remove-layer-mask img target-layer APPLY))
+    (if (< 0 (car (gimp-layer-get-mask target-layer)))
+	;; replaced 2005-11-13
+	;; (gimp-image-remove-layer-mask img target-layer APPLY))
         (gimp-layer-remove-mask target-layer APPLY))
-
-        ;;
-        (gimp-context-set-background color)
-        (gimp-drawable-fill effect-layer BG-IMAGE-FILL)
-        (gimp-selection-layer-alpha target-layer)
-        (if (= color-side 0)
-            (gimp-selection-grow img effect-radius)
-            (begin
-                (gimp-selection-invert img)
-                (gimp-selection-grow img effect-radius)
-                (gimp-selection-invert img) ))
-        (if (= color-side 0)
-            (gimp-context-set-background '(255 255 255))
-            (gimp-context-set-background '(0 0 0)))
-            (gimp-edit-fill effect-mask BG-IMAGE-FILL)
-            (gimp-selection-none img)
-            ;;
-            (gimp-context-set-background '(0 0 0))
-        (if (< 0 offset-radius)
-            (gimp-drawable-offset effect-mask FALSE OFFSET-BACKGROUND x-offset y-offset))
-        (if (< 0 blur-radius)
-            (plug-in-gauss-iir2 1 img effect-mask blur-radius blur-radius))
-        (if (= color-side 2)
-            (gimp-invert effect-mask))
-
-        (gimp-layer-remove-mask effect-layer APPLY)
-        (set! effect-mask2 (car (gimp-layer-create-mask effect-layer BLACK-MASK)))
-
-        (gimp-layer-add-mask effect-layer effect-mask2)
-        (if (= color-side 0)
-            (gimp-invert effect-mask2))
-        (gimp-selection-layer-alpha target-layer)
-        (if (= color-side 0)
-            (gimp-context-set-background '(0 0 0))
-            (gimp-context-set-background '(255 255 255)))
-        (gimp-edit-fill effect-mask2 BG-IMAGE-FILL)
-        (gimp-selection-none img)
-
-        ;;
-        (if (= color-side 0)
-            (gimp-image-lower-layer img effect-layer))
-        (gimp-image-set-active-layer img layer)
-        (list effect-layer)
-    )
-)
+    (gimp-context-set-background color)
+    (gimp-drawable-fill effect-layer BG-IMAGE-FILL)
+    ;; CHANNEL_OP_ADD
+    ;; CHANNEL_OP_SUBTRACT
+    ;; CHANNEL_OP_REPLACE
+    ;; CHANNEL_OP_INTERSECT
+    (gimp-image-insert-layer img target-layer 0 0)
+    (gimp-image-select-item img CHANNEL-OP-ADD target-layer)
+    (if (= color-side 0)
+        (gimp-selection-grow img effect-radius)
+        (begin
+          (gimp-selection-invert img)
+          (gimp-selection-grow img effect-radius)
+          (gimp-selection-invert img) ))
+    (if (= color-side 0)
+        (gimp-context-set-background '(255 255 255))
+        (gimp-context-set-background '(0 0 0)))
+    (gimp-edit-fill effect-mask BG-IMAGE-FILL)
+    (gimp-selection-none img)
+    ;;
+    (gimp-context-set-background '(0 0 0))
+    (if (< 0 offset-radius)
+        (gimp-drawable-offset effect-mask FALSE OFFSET-BACKGROUND x-offset y-offset))
+    (if (< 0 blur-radius)
+        (plug-in-gauss-iir2 1 img effect-mask blur-radius blur-radius))
+    (if (= color-side 2)
+        (gimp-invert effect-mask))
+    (gimp-layer-remove-mask effect-layer APPLY)
+    (set! effect-mask2 (car (gimp-layer-create-mask effect-layer BLACK-MASK)))
+    (gimp-layer-add-mask effect-layer effect-mask2)
+    (if (= color-side 0)
+        (gimp-invert effect-mask2))
+    (gimp-image-select-item img CHANNEL-OP-ADD target-layer)
+    ;;(gimp-selection-layer-alpha target-layer)
+    (if (= color-side 0)
+        (gimp-context-set-background '(0 0 0))
+        (gimp-context-set-background '(255 255 255)))
+    (gimp-edit-fill effect-mask2 BG-IMAGE-FILL)
+    (gimp-selection-none img)
+    (if (= color-side 0)
+        (gimp-image-lower-item img effect-layer))
+    (gimp-image-set-active-layer img layer)
+    (list effect-layer)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -352,70 +334,58 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (define (script-fu-layer-effects-bevel-and-emboss
-            img ;
-            layer ;
-            effect-style ; Outer Bevel(0) Inner Bevel(1)
-            ; Emboss(2) Pillow Emboss(3)
-            angle ;
-            depth ;
-            blur-radius ;
-            light-color ;
-            light-opacity ;
-            light-mode ;
-            shadow-color ;
-            shadow-opacity;
-            shadow-mode ;
-        )
-
-(let* (
-        (old-bg (car (gimp-context-get-background)))
-        (light-mode (cond ((= light-mode 0) 4)
-        ((= light-mode 2) 0)
-        (light-mode)))
-        (shadow-mode (cond ((= shadow-mode 0) 3)
-        ((= shadow-mode 2) 0)
-        (shadow-mode)))
-      )
-
-        (gimp-image-undo-group-start img)
-        (cond
-        ((= effect-style 0) ; Inner Bevel
-            (layer-effects-common1 img layer shadow-color angle depth 0 blur-radius
-            shadow-opacity shadow-mode "Bevel Shadow" 0)
-            (layer-effects-common1 img layer light-color (+ angle 180) depth 0 blur-radius
-            light-opacity light-mode "Bevel Light" 0)
-        )
-            ((= effect-style 1) ; Outer Bevel
-            (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
-            shadow-opacity shadow-mode "Bevel Shadow" 1)
-            (layer-effects-common1 img layer light-color angle depth 0 blur-radius
-            light-opacity light-mode "Bevel Light" 1)
-        )
-        ((= effect-style 2) ; Emboss
-            (layer-effects-common1 img layer shadow-color angle depth 0 blur-radius
-            shadow-opacity shadow-mode "Enboss Outer Shadow" 0)
-            (layer-effects-common1 img layer light-color (+ angle 180) depth 0 blur-radius
-            light-opacity light-mode "Emboss Outer Light" 0)
-            (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
-            shadow-opacity shadow-mode "Emboss Inner Shadow" 1)
-            (layer-effects-common1 img layer light-color angle depth 0 blur-radius
-            light-opacity light-mode "Emboss Inner Light" 1)
-        )
-        ((= effect-style 3) ; Pillow Emboss
-            (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
-            shadow-opacity shadow-mode "Enboss Outer Shadow" 0)
-            (layer-effects-common1 img layer light-color angle depth 0 blur-radius
-            light-opacity light-mode "Emboss Outer Light" 0)
-            (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
-            shadow-opacity shadow-mode "Emboss Inner Shadow" 1)
-            (layer-effects-common1 img layer light-color angle depth 0 blur-radius
-            light-opacity light-mode "Emboss Inner Light" 1)
-        )
-        ) ; end of cond
-        (gimp-image-undo-group-end img)
-        (gimp-displays-flush)
-    )
-)
+         img ;
+         layer ;
+         effect-style ; Outer Bevel(0) Inner Bevel(1) Emboss(2) Pillow
+                      ; Emboss(3)
+         angle
+         depth
+         blur-radius
+         light-color
+         light-opacity
+         light-mode
+         shadow-color
+         shadow-opacity
+         shadow-mode)
+  (let* ((old-bg (car (gimp-context-get-background)))
+         (light-mode (cond ((= light-mode 0) 4)
+			   ((= light-mode 2) 0)
+			   (light-mode)))
+         (shadow-mode (cond ((= shadow-mode 0) 3)
+			    ((= shadow-mode 2) 0)
+			    (shadow-mode))))
+    (gimp-image-undo-group-start img)
+    (cond
+     ((= effect-style 0) ; Inner Bevel
+      (layer-effects-common1 img layer shadow-color angle depth 0 blur-radius
+			     shadow-opacity shadow-mode "Bevel Shadow" 0)
+      (layer-effects-common1 img layer light-color (+ angle 180) depth 0 blur-radius
+			     light-opacity light-mode "Bevel Light" 0))
+     ((= effect-style 1) ; Outer Bevel
+      (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
+			     shadow-opacity shadow-mode "Bevel Shadow" 1)
+      (layer-effects-common1 img layer light-color angle depth 0 blur-radius
+			     light-opacity light-mode "Bevel Light" 1))
+     ((= effect-style 2) ; Emboss
+      (layer-effects-common1 img layer shadow-color angle depth 0 blur-radius
+			     shadow-opacity shadow-mode "Enboss Outer Shadow" 0)
+      (layer-effects-common1 img layer light-color (+ angle 180) depth 0 blur-radius
+			     light-opacity light-mode "Emboss Outer Light" 0)
+      (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
+			     shadow-opacity shadow-mode "Emboss Inner Shadow" 1)
+      (layer-effects-common1 img layer light-color angle depth 0 blur-radius
+			     light-opacity light-mode "Emboss Inner Light" 1))
+     ((= effect-style 3) ; Pillow Emboss
+      (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
+			     shadow-opacity shadow-mode "Enboss Outer Shadow" 0)
+      (layer-effects-common1 img layer light-color angle depth 0 blur-radius
+			     light-opacity light-mode "Emboss Outer Light" 0)
+      (layer-effects-common1 img layer shadow-color (+ angle 180) depth 0 blur-radius
+			     shadow-opacity shadow-mode "Emboss Inner Shadow" 1)
+      (layer-effects-common1 img layer light-color angle depth 0 blur-radius
+			     light-opacity light-mode "Emboss Inner Light" 1))) 
+    (gimp-image-undo-group-end img)
+    (gimp-displays-flush)))
 
 (script-fu-register
     "script-fu-layer-effects-bevel-and-emboss"
@@ -483,11 +453,12 @@
       )
 
         (gimp-image-undo-group-start img)
-        (gimp-image-add-layer img satin-layer1 -1)
-        (gimp-image-add-layer img satin-layer2 -1)
+        (gimp-image-insert-layer img satin-layer1 0 -1)
+        (gimp-image-insert-layer img satin-layer2 0 -1)
         (gimp-drawable-fill satin-layer1 WHITE-IMAGE-FILL)
         (gimp-drawable-fill satin-layer2 WHITE-IMAGE-FILL)
-        (gimp-selection-layer-alpha layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD layer)
+        ;; (gimp-selection-layer-alpha layer)
         (gimp-context-set-background '(0 0 0))
         (gimp-edit-fill satin-layer1 BG-IMAGE-FILL)
         (gimp-edit-fill satin-layer2 BG-IMAGE-FILL)
@@ -512,10 +483,11 @@
         (set! satin-mask3 (car (gimp-layer-create-mask satin-layer BLACK-MASK)))
 
         (gimp-layer-add-mask satin-layer satin-mask3)
-        (gimp-selection-layer-alpha layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD layer)
+        ;; (gimp-selection-layer-alpha layer)
         (gimp-edit-fill satin-mask3 WHITE-IMAGE-FILL)
-
-        (gimp-selection-layer-alpha satin-layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD satin-layer)
+        ;; (gimp-selection-layer-alpha satin-layer)
         (gimp-context-set-background color)
         (gimp-edit-fill satin-layer BG-IMAGE-FILL)
         (gimp-selection-none img)
@@ -578,7 +550,7 @@
         )
 
         (gimp-image-undo-group-start img)
-        (gimp-image-add-layer img color-layer -1)
+        (gimp-image-insert-layer img color-layer 0 -1)
         (gimp-drawable-fill color-layer TRANS-IMAGE-FILL)
         (gimp-selection-layer-alpha layer)
         (gimp-context-set-background color)
@@ -653,7 +625,7 @@
       )
 
         (gimp-image-undo-group-start img)
-        (gimp-image-add-layer img gradient-layer -1)
+        (gimp-image-insert-layer img gradient-layer 0 -1)
         (gimp-drawable-fill gradient-layer TRANS-IMAGE-FILL)
         (gimp-selection-layer-alpha layer)
         (gimp-context-set-foreground fg-color)
@@ -737,7 +709,7 @@
           )
 
         (gimp-image-undo-group-start img)
-        (gimp-image-add-layer img pattern-layer -1)
+        (gimp-image-insert-layer img pattern-layer 0 -1)
         (gimp-drawable-fill pattern-layer TRANS-IMAGE-FILL)
         (gimp-selection-layer-alpha layer)
         (gimp-context-set-pattern pattern)
@@ -805,7 +777,7 @@
           )
 
         (gimp-image-undo-group-start img)
-        (gimp-image-add-layer img border-layer -1)
+        (gimp-image-insert-layer img border-layer 0 -1)
         (gimp-drawable-fill border-layer TRANS-IMAGE-FILL)
         (gimp-selection-layer-alpha layer)
         (cond
