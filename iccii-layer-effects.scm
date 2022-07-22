@@ -51,6 +51,45 @@
 ;; Layer Effect common function ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+
+;; from libgimp/gimpenums.h
+
+
+(define APPLY 0)   ; GIMP_MASK_APPLY,
+(define DISCARD 1) ; GIMP_MASK_DISCARD
+
+
+;; from libgimpbase/gimpbaseenums.h
+
+
+
+
+
+(define WHITE-MASK 0)
+(define BLACK-MASK 1)
+(define ALPHA-MASK 2)
+(define ALPHA-TRANSFER-MASK 3)
+(define SELECTION-MASK 4)
+(define COPY-MASK 5)
+(define CHANNEL-MASK 6)
+
+;; note, these are obsolete, instead we should be using the following,
+;; which are unfortunately also not exported to script fu.
+;;
+;; GIMP_FOREGROUND_FILL,   /*< desc="Foreground color" >*/
+;; GIMP_BACKGROUND_FILL,   /*< desc="Background color" >*/
+;; GIMP_WHITE_FILL,        /*< desc="White"            >*/
+;; GIMP_TRANSPARENT_FILL,  /*< desc="Transparency"     >*/
+;; GIMP_PATTERN_FILL,      /*< desc="Pattern"          >*/
+;; GIMP_NO_FILL            /*< desc="None",   pdb-skip >*/
+
+(define FG-IMAGE-FILL 0)
+(define BG-IMAGE-FILL 1)
+(define WHITE-IMAGE-FILL 2)
+(define TRANS-IMAGE-FILL 3)
+
+
+
 (define (layer-effects-common1 img layer color angle offset-radius
 			       effect-radius blur-radius opacity layer-mode
 			       layer-name color-side) ; Outer(0)
@@ -552,7 +591,8 @@
         (gimp-image-undo-group-start img)
         (gimp-image-insert-layer img color-layer 0 -1)
         (gimp-drawable-fill color-layer TRANS-IMAGE-FILL)
-        (gimp-selection-layer-alpha layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD layer)
+        ;; (gimp-selection-layer-alpha layer)
         (gimp-context-set-background color)
         (gimp-edit-fill color-layer BG-IMAGE-FILL)
         (gimp-selection-none img)
@@ -627,7 +667,8 @@
         (gimp-image-undo-group-start img)
         (gimp-image-insert-layer img gradient-layer 0 -1)
         (gimp-drawable-fill gradient-layer TRANS-IMAGE-FILL)
-        (gimp-selection-layer-alpha layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD layer)
+        ;; (gimp-selection-layer-alpha layer)
         (gimp-context-set-foreground fg-color)
         (gimp-context-set-background bg-color)
         (gimp-context-set-gradient gradient)
@@ -711,7 +752,8 @@
         (gimp-image-undo-group-start img)
         (gimp-image-insert-layer img pattern-layer 0 -1)
         (gimp-drawable-fill pattern-layer TRANS-IMAGE-FILL)
-        (gimp-selection-layer-alpha layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD layer)
+        ;; (gimp-selection-layer-alpha layer)
         (gimp-context-set-pattern pattern)
         (gimp-edit-bucket-fill pattern-layer PATTERN-BUCKET-FILL NORMAL-MODE 100 0 FALSE 0 0)
         (gimp-selection-none img)
@@ -779,7 +821,8 @@
         (gimp-image-undo-group-start img)
         (gimp-image-insert-layer img border-layer 0 -1)
         (gimp-drawable-fill border-layer TRANS-IMAGE-FILL)
-        (gimp-selection-layer-alpha layer)
+	(gimp-image-select-item img CHANNEL-OP-ADD layer)
+        ;; (gimp-selection-layer-alpha layer)
         (cond
             ((= position 0)
             (gimp-selection-shrink img (- size 3)))
