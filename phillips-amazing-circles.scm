@@ -116,18 +116,22 @@
 )
 
 
-(script-fu-register "script-fu-amazing-circles"
-            _"<Image>/FX-Foundry/Distorts/Amazing circles..."
-            "Does the amazing circles on a square image"
-            "Harry Phillips"
-            "Harry Phillips"
-            "Mar. 23 2007"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE        "Drawable"  0
-        SF-ADJUSTMENT    _"Circle depth"      '(100 0 100 1 10 1 0)
-        SF-OPTION        "Crop image?"        '("Crop after" "Crop before" "Don't crop")
-)
+(script-fu-register
+  "script-fu-amazing-circles"
+  _"Amazing circles..."
+  "Does the amazing circles on a square image"
+  "Harry Phillips"
+  "Harry Phillips"
+  "Mar. 23 2007"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE        "Drawable"  0
+  SF-ADJUSTMENT    _"Circle depth"      '(100 0 100 1 10 1 0)
+  SF-OPTION        "Crop image?"        '("Crop after" "Crop before" "Don't crop"))
+
+(script-fu-menu-register "script-fu-amazing-circles"
+                         "<Image>/FX-Foundry/Distorts")
+
 
 
 

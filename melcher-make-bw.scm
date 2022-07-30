@@ -153,18 +153,21 @@
 ; Register script-fu-bw-photo
 
 (script-fu-register
-    "script-fu-xmedia-bw-photo"
-    "<Image>/FX-Foundry/Photo/Effects/Black & White Photo..."
-    "Creates a black & white photograph style image."
-    "Alexander Melchers"
-    "2002, Alexander Melchers, xMedia"
-    "17th November 2002"
-    "RGB*"
-    SF-IMAGE      "The Image"           0
-    SF-DRAWABLE   "The Layer"           0
-    SF-ADJUSTMENT "Darken"              '(50 0 127 1 0 0 0)
-    SF-ADJUSTMENT "Contrast"            '(50 0 127 1 0 0 0)
-    SF-ADJUSTMENT "Mottle"              '(0.5 0 1 0.01 0 1 0)
-    SF-TOGGLE     "Defocus"             FALSE
-    SF-OPTION     "Apply on"            '("Copy" "Image" "Selection")
-)
+  "script-fu-xmedia-bw-photo"
+  "Black & White Photo..."
+  "Creates a black & white photograph style image."
+  "Alexander Melchers"
+  "2002, Alexander Melchers, xMedia"
+  "17th November 2002"
+  "RGB*"
+  SF-IMAGE      "The Image"           0
+  SF-DRAWABLE   "The Layer"           0
+  SF-ADJUSTMENT "Darken"              '(50 0 127 1 0 0 0)
+  SF-ADJUSTMENT "Contrast"            '(50 0 127 1 0 0 0)
+  SF-ADJUSTMENT "Mottle"              '(0.5 0 1 0.01 0 1 0)
+  SF-TOGGLE     "Defocus"             FALSE
+  SF-OPTION     "Apply on"            '("Copy" "Image" "Selection"))
+
+(script-fu-menu-register "script-fu-xmedia-bw-photo"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

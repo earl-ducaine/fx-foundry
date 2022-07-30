@@ -76,18 +76,22 @@
 (gimp-displays-flush)
     )
 
-(script-fu-register "script-fu-radial-fade-blur"
-"<Image>/FX-Foundry/Artistic/Radial Blur..."
-"Add a radially fading blur at a specified location."
-"Gunther"
-"gunther_oz@hotmail.com"
-"2003"
-"RGB*, GRAY*"
-SF-IMAGE "Image" 0
-SF-DRAWABLE "drawable" 0
-SF-ADJUSTMENT _"Blur Amount" '(20 0 40 1 2 0 0)
-SF-ADJUSTMENT _"Feather" '(20 0 100 1 2 0 0)
-SF-ADJUSTMENT _"Exclusion Radius" '(20 0 8000 1 2 0 1)
-SF-ADJUSTMENT _"Centre X" '(60 1 8000 1 10 0 1)
-SF-ADJUSTMENT _"Centre Y" '(60 1 8000 1 10 0 1)
-)
+(script-fu-register
+  "script-fu-radial-fade-blur"
+  "Radial Blur..."
+  "Add a radially fading blur at a specified location."
+  "Gunther"
+  "gunther_oz@hotmail.com"
+  "2003"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "drawable" 0
+  SF-ADJUSTMENT _"Blur Amount" '(20 0 40 1 2 0 0)
+  SF-ADJUSTMENT _"Feather" '(20 0 100 1 2 0 0)
+  SF-ADJUSTMENT _"Exclusion Radius" '(20 0 8000 1 2 0 1)
+  SF-ADJUSTMENT _"Centre X" '(60 1 8000 1 10 0 1)
+  SF-ADJUSTMENT _"Centre Y" '(60 1 8000 1 10 0 1))
+
+(script-fu-menu-register "script-fu-radial-fade-blur"
+                         "<Image>/FX-Foundry/Artistic")
+

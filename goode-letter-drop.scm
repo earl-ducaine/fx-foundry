@@ -332,38 +332,40 @@
 
 (script-fu-register
   "script-fu-letter-drop"
-  "<Image>/File/New/FX-Foundry/Animation/Letter Drop"
+  "Letter Drop"
   "Given a text string, generates an animated sequence where letters drop onto the background individually."
   "Saul Goode"
   "Saul Goode"
   "February 2006"
   ""
-    SF-STRING _"Text"
-        "The GIMP"
-    SF-COLOR _"Foreground"  ;;     "color to use for letter"
-        '( 0 0 0 )
-    SF-COLOR _"Background"  ;;     "color to use for background"
-        '( 255 255 255 )
-    SF-TOGGLE _"Transparent background";; "Wether to use transparency in stead of bg color"
-        FALSE
-    SF-FONT  _"Font"        ;;      "font"
-        "-*-utopia-bold-r-normal-*-50-*-*-*-p-*-*-*"
-    SF-ADJUSTMENT _"Letter delay";; "time delay between letter in a word"
-        '( 100 0 5000 1 100 0 0)
-    SF-ADJUSTMENT _"Word delay"  ;;  "additional time delay for the space between words"
-        '( 300 0 5000 1 100 0 0 )
-    SF-ADJUSTMENT _"Starting size" ;;"animated letter initial size"
-        '( 48 6 240 1 12 0 0 )
-    SF-ADJUSTMENT _"Ending size";;   "animated letter final size"
-        '( 12 6 240 1 12 0 0 )
-    SF-ADJUSTMENT _"Frames per letter";; "number of frames for each animated letter"
-        '( 5 2 200 1 5 0 0 )
-    SF-ADJUSTMENT _"Opacity" ;; Opacity of "moving" letters
-        '( 100 0 100 1 5 0 0 )
-    SF-TOGGLE _"Geometric Progression";; "Letter size doubles each step"
-        FALSE  ;; Otherwise letter size increases linearly
-    SF-TOGGLE _"Use Color from Gradient";; "Sweep colors from gradient during animation"
-        FALSE
-    SF-GRADIENT _"Color Gradient" ;; "Gradient to use"
-        "Full saturation spectrum CW"
-  )
+  SF-STRING _"Text"
+  "The GIMP"
+  SF-COLOR _"Foreground"  ;;     "color to use for letter"
+  '( 0 0 0 )
+  SF-COLOR _"Background"  ;;     "color to use for background"
+  '( 255 255 255 )
+  SF-TOGGLE _"Transparent background";; "Wether to use transparency in stead of bg color"
+  FALSE
+  SF-FONT  _"Font"        ;;      "font"
+  "-*-utopia-bold-r-normal-*-50-*-*-*-p-*-*-*"
+  SF-ADJUSTMENT _"Letter delay";; "time delay between letter in a word"
+  '( 100 0 5000 1 100 0 0)
+  SF-ADJUSTMENT _"Word delay"  ;;  "additional time delay for the space between words"
+  '( 300 0 5000 1 100 0 0 )
+  SF-ADJUSTMENT _"Starting size" ;;"animated letter initial size"
+  '( 48 6 240 1 12 0 0 )
+  SF-ADJUSTMENT _"Ending size";;   "animated letter final size"
+  '( 12 6 240 1 12 0 0 )
+  SF-ADJUSTMENT _"Frames per letter";; "number of frames for each animated letter"
+  '( 5 2 200 1 5 0 0 )
+  SF-ADJUSTMENT _"Opacity" ;; Opacity of "moving" letters
+  '( 100 0 100 1 5 0 0 )
+  SF-TOGGLE _"Geometric Progression";; "Letter size doubles each step"
+  FALSE  ;; Otherwise letter size increases linearly
+  SF-TOGGLE _"Use Color from Gradient";; "Sweep colors from gradient during animation"
+  FALSE
+  SF-GRADIENT _"Color Gradient" ;; "Gradient to use"
+  "Full saturation spectrum CW")
+
+(script-fu-menu-register "script-fu-letter-drop"
+			 _"<Image>/File/New/FX-Foundry/Animation")

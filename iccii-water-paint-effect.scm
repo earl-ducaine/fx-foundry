@@ -62,14 +62,17 @@
 )
 
 (script-fu-register
-    "script-fu-water-paint-effect"
-    "<Image>/FX-Foundry/Artistic/Water Paint Effect..."
-    "draw with water paint effect"
-    "Iccii <iccii@hotmail.com>"
-    "Iccii"
-    "Jul, 2001"
-    "RGB*, GRAY*"
-    SF-IMAGE    "Image"        0
-    SF-DRAWABLE    "Drawable"    0
-    SF-ADJUSTMENT    "Effect Size (pixels)"    '(5 0 32 1 10 0 0)
-)
+  "script-fu-water-paint-effect"
+  "Water Paint Effect..."
+  "draw with water paint effect"
+  "Iccii <iccii@hotmail.com>"
+  "Iccii"
+  "Jul, 2001"
+  "RGB*, GRAY*"
+  SF-IMAGE    "Image"        0
+  SF-DRAWABLE    "Drawable"    0
+  SF-ADJUSTMENT    "Effect Size (pixels)"    '(5 0 32 1 10 0 0))
+
+(script-fu-menu-register "script-fu-water-paint-effect"
+                         "<Image>/FX-Foundry/Artistic")
+

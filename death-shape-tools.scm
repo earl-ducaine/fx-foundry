@@ -108,23 +108,27 @@
     )
 )
 
-(script-fu-register "script-fu-make-a-polygon"
-            "<Image>/FX-Foundry/Shapes/Make a Polygon..."
-            "Makes any regular polygon inside the current selection using current fg color and brush. Use Ctrl-F to repeat the script while making new selections. It's FUN :)"
-            "Alexia Death"
-            "Alexia Death"
-            "18.11.2007"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-            SF-ADJUSTMENT  "Segments" '(3 0 9999 1 10 0 1)
-            SF-ADJUSTMENT "Rotation"  '(0 0 360 1 10 0 0)
-            SF-TOGGLE "Random rotation" TRUE
-            SF-TOGGLE "Use brush instead of pencil" TRUE
-            SF-TOGGLE "Draw on new layer" FALSE)
+(script-fu-register
+  "script-fu-make-a-polygon"
+  "Make a Polygon..."
+  "Makes any regular polygon inside the current selection using current fg color and brush. Use Ctrl-F to repeat the script while making new selections. It's FUN :)"
+  "Alexia Death"
+  "Alexia Death"
+  "18.11.2007"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT  "Segments" '(3 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Rotation"  '(0 0 360 1 10 0 0)
+  SF-TOGGLE "Random rotation" TRUE
+  SF-TOGGLE "Use brush instead of pencil" TRUE
+  SF-TOGGLE "Draw on new layer" FALSE)
+
+(script-fu-menu-register "script-fu-make-a-polygon"
+                         "<Image>/FX-Foundry/Shapes")
 
 
-;Make a Star :D
+;; Make a Star :D
 (define (script-fu-make-a-star image
                     drawable
                     seg
@@ -201,22 +205,27 @@
     )
 )
 
-(script-fu-register "script-fu-make-a-star"
-            "<Image>/FX-Foundry/Shapes/Make a Star..."
-            "Makes a star with any number of tips inside the current selection using current fg color and brush. Use Ctrl-F to repeat the script while making new selections. It's FUN :)"
-            "Alexia Death"
-            "Alexia Death"
-            "18.11.2007"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-            SF-ADJUSTMENT  "Segments" '(5 0 9999 1 10 0 1)
-            SF-ADJUSTMENT "Rotation"  '(0 0 360 1 10 0 0)
-            SF-ADJUSTMENT "Inner point position"  '(50 1 100 1 10 0 0)
-            SF-ADJUSTMENT "Spike length ratio"  '(10 1 100 1 10 0 0)
-            SF-TOGGLE "Random rotation" TRUE
-            SF-TOGGLE "Use brush instead of pencil" TRUE
-            SF-TOGGLE "Draw on new layer" FALSE)
+(script-fu-register
+  "script-fu-make-a-star"
+  "Make a Star..."
+  "Makes a star with any number of tips inside the current selection using current fg color and brush. Use Ctrl-F to repeat the script while making new selections. It's FUN :)"
+  "Alexia Death"
+  "Alexia Death"
+  "18.11.2007"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT  "Segments" '(5 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Rotation"  '(0 0 360 1 10 0 0)
+  SF-ADJUSTMENT "Inner point position"  '(50 1 100 1 10 0 0)
+  SF-ADJUSTMENT "Spike length ratio"  '(10 1 100 1 10 0 0)
+  SF-TOGGLE "Random rotation" TRUE
+  SF-TOGGLE "Use brush instead of pencil" TRUE
+  SF-TOGGLE "Draw on new layer" FALSE)
+
+(script-fu-menu-register "script-fu-make-a-star"
+                         "<Image>/FX-Foundry/Shapes")
+
 
 ;Some shortcut functions to stars and polygons.
 (define (script-fu-make-a-common-star image
@@ -224,59 +233,76 @@
         (script-fu-make-a-star image drawable 5 0 50 20 TRUE TRUE FALSE)
 )
 
-(script-fu-register "script-fu-make-a-common-star"
-            "<Image>/FX-Foundry/Shapes/Presets/5 Point Star"
-            "Makes an ordinary star shape inside the selection on current layer, no questions asked"
-            "Alexia Death"
-            "Alexia Death"
-            "18.11.2007"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0)
+(script-fu-register
+  "script-fu-make-a-common-star"
+  "5 Point Star"
+  "Makes an ordinary star shape inside the selection on current layer, no questions asked"
+  "Alexia Death"
+  "Alexia Death"
+  "18.11.2007"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-make-a-common-star"
+                         "<Image>/FX-Foundry/Shapes/Presets")
+
 
 (define (script-fu-make-a-triangle image
                     drawable)
   (script-fu-make-a-polygon image drawable 3 0 FALSE TRUE FALSE)
 )
 
-(script-fu-register "script-fu-make-a-triangle"
-            "<Image>/FX-Foundry/Shapes/Presets/Triangle"
-            "Makes an ordinary triangle inside the selection on current layer, no questions asked"
-            "Alexia Death"
-            "Alexia Death"
-            "18.11.2007"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0)
+(script-fu-register
+  "script-fu-make-a-triangle"
+  "Triangle"
+  "Makes an ordinary triangle inside the selection on current layer, no questions asked"
+  "Alexia Death"
+  "Alexia Death"
+  "18.11.2007"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-make-a-triangle"
+                         "<Image>/FX-Foundry/Shapes/Presets")
+
 
 (define (script-fu-make-a-square image
                     drawable)
         (script-fu-make-a-polygon image drawable 4 0 FALSE TRUE FALSE)
 )
 
-(script-fu-register "script-fu-make-a-square"
-            "<Image>/FX-Foundry/Shapes/Presets/Square"
-            "Makes an ordinary square inside the selection on current layer, no questions asked"
-            "Alexia Death"
-            "Alexia Death"
-            "18.11.2007"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0)
+(script-fu-register
+  "script-fu-make-a-square"
+  "Square"
+  "Makes an ordinary square inside the selection on current layer, no questions asked"
+  "Alexia Death"
+  "Alexia Death"
+  "18.11.2007"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-make-a-square"
+                         "<Image>/FX-Foundry/Shapes/Presets")
+
 
 (define (script-fu-make-a-pentagon image
                     drawable)
   (script-fu-make-a-polygon image drawable 5 0 FALSE TRUE FALSE)
 )
 
-(script-fu-register "script-fu-make-a-pentagon"
-            "<Image>/FX-Foundry/Shapes/Presets/Pentagon"
-            "Makes an ordinary pentagon inside the selection on current layer, no questions asked"
-            "Alexia Death"
-            "Alexia Death"
-            "18.11.2007"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0)
+(script-fu-register
+  "script-fu-make-a-pentagon"
+  "Pentagon"
+  "Makes an ordinary pentagon inside the selection on current layer, no questions asked"
+  "Alexia Death"
+  "Alexia Death"
+  "18.11.2007"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0)
 
-
+(script-fu-menu-register "script-fu-make-a-pentagon"
+                         "<Image>/FX-Foundry/Shapes/Presets")

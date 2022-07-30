@@ -166,18 +166,21 @@
 
 
 (script-fu-register
- "script-fu-lab-ultra-vivid"
- _"<Image>/FX-Foundry/Color/Lasm's LAB Ultra Vivid"
- "Lasm's famous special effect for photographs. Uncheck Ultra-Vivid for a different saturation. You can use the hue saturation plugin to change colors. Caution: it runs slowly on large images."
- "lasm"
- "Copyright 2005, lasm"
- "Nov 26, 2005"
- "RGB*"
- SF-IMAGE           "The Image"       0
- SF-DRAWABLE         "The Layer"       0
- SF-TOGGLE            _"(Ultra)-Vivid"      TRUE
- SF-ADJUSTMENT      _"Hue"              '(0 -180 180 1 10 0 0)
- SF-ADJUSTMENT      _"Lightness"      '(0 -100 100 1 10 0 0)
- SF-ADJUSTMENT      _"Saturation"      '(0 -100 100 1 10 0 0)
- SF-TOGGLE            _"Flatten"          FALSE
- )
+  "script-fu-lab-ultra-vivid"
+  _"Lasm's LAB Ultra Vivid"
+  "Lasm's famous special effect for photographs. Uncheck Ultra-Vivid for a different saturation. You can use the hue saturation plugin to change colors. Caution: it runs slowly on large images."
+  "lasm"
+  "Copyright 2005, lasm"
+  "Nov 26, 2005"
+  "RGB*"
+  SF-IMAGE           "The Image"       0
+  SF-DRAWABLE         "The Layer"       0
+  SF-TOGGLE            _"(Ultra)-Vivid"      TRUE
+  SF-ADJUSTMENT      _"Hue"              '(0 -180 180 1 10 0 0)
+  SF-ADJUSTMENT      _"Lightness"      '(0 -100 100 1 10 0 0)
+  SF-ADJUSTMENT      _"Saturation"      '(0 -100 100 1 10 0 0)
+  SF-TOGGLE            _"Flatten"          FALSE)
+
+(script-fu-menu-register "script-fu-lab-ultra-vivid"
+                         "<Image>/FX-Foundry/Color")
+

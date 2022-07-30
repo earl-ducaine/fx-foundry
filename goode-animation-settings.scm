@@ -111,15 +111,18 @@
   (gimp-displays-flush)
   )
 
-(script-fu-register "script-fu-anim-settings"
- "<Image>/FX-Foundry/Animation/_Change Settings..." ;; might like to keep it separate from the standard plugins
- "Sets the Frame delay and mode of GIF animations by renaming visible layers."
- "Saul Goode"
- "Saul Goode"
- "3/11/2006"
- ""
- SF-IMAGE    "Image"    0
- SF-DRAWABLE "Drawable" 0
- SF-ADJUSTMENT "Delay: (1-10000 mS, 0=Keep, -1=Clear)" '( 100 -1 10000 1 10 0 1 )
- SF-OPTION "Mode:" '( "Keep" "(combine)" "(replace)" "Clear")
- )
+(script-fu-register
+  "script-fu-anim-settings"
+  "_Change Settings..." ;; might like to keep it separate from the standard plugins
+  "Sets the Frame delay and mode of GIF animations by renaming visible layers."
+  "Saul Goode"
+  "Saul Goode"
+  "3/11/2006"
+  ""
+  SF-IMAGE    "Image"    0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT "Delay: (1-10000 mS, 0=Keep, -1=Clear)" '( 100 -1 10000 1 10 0 1)
+  SF-OPTION "Mode:" '( "Keep" "(combine)" "(replace)" "Clear"))
+
+(script-fu-menu-register "script-fu-anim-settings"
+			 _"<Image>/FX-Foundry/Animation")

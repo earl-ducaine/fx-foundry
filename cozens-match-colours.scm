@@ -112,18 +112,18 @@
   )
 )
 
-(script-fu-register "script-fu-match-colors"
- _"_Match Colors..."
- _"Match the colors of a single layer image to the colors of another single layer image."
-	"Kevin Cozens <kevin@ve3syb.ca>"
-	"Kevin Cozens"
-	"September 12, 2007"
-	"RGB*"
-	SF-IMAGE    _"Image"          0
-	SF-DRAWABLE _"Drawable"       0
-	SF-IMAGE    _"Image to match" 0
-)
+(script-fu-register
+  "script-fu-match-colors"
+  _"_Match Colors..."
+  _"Match the colors of a single layer image to the colors of another single layer image."
+  "Kevin Cozens <kevin@ve3syb.ca>"
+  "Kevin Cozens"
+  "September 12, 2007"
+  "RGB*"
+  SF-IMAGE    _"Image"          0
+  SF-DRAWABLE _"Drawable"       0
+  SF-IMAGE    _"Image to match" 0)
 
 (script-fu-menu-register "script-fu-match-colors"
-			                  _"<Image>/FX-Foundry/Color/")
+			 _"<Image>/FX-Foundry/Color")
 

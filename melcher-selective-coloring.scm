@@ -136,29 +136,32 @@
 ; Register script-fu-selective-coloring
 
 (script-fu-register
-    "script-fu-selective-coloring"
-    "<Image>/FX-Foundry/Selection Effects/xMedia Selective Coloring"
-    "Allows you to change the overall color or the color balance of a selection and all the area around it at the same time, using two different adjustments."
-    "Alexander Melchers"
-    "2002, Alexander Melchers, xMedia"
-    "8th November 2002"
-    "RGB*"
-    SF-IMAGE      "The Image"           0
-    SF-DRAWABLE   "The Layer"           0
-    SF-ADJUSTMENT "Internal Cyan/Red"   '(0 -100 100 1 1 0 0 0)
-    SF-ADJUSTMENT "Magenta/Green"       '(0 -100 100 1 1 0 0 0)
-    SF-ADJUSTMENT "Yellow/Blue"         '(0 -100 100 1 1 0 0 0)
-    SF-OPTION     "Apply To"            '("Shadows" "Midtones" "Highlights")
-    SF-TOGGLE     "Preserve Luminosity" TRUE
-    SF-COLOR      "Color"               '(255 255 0)
-    SF-TOGGLE     "Colorify"            FALSE
-    SF-ADJUSTMENT "External Cyan/Red"   '(0 -100 100 1 1 0 0 0)
-    SF-ADJUSTMENT "Magenta/Green"       '(0 -100 100 1 1 0 0 0)
-    SF-ADJUSTMENT "Yellow/Blue"         '(0 -100 100 1 1 0 0 0)
-    SF-OPTION     "Apply To"            '("Shadows" "Midtones" "Highlights")
-    SF-TOGGLE     "Preserve Luminosity" TRUE
-    SF-COLOR      "Color"               '(255 255 0)
-    SF-TOGGLE     "Colorify"            FALSE
-    SF-TOGGLE     "Work on Copy"        FALSE
-    SF-TOGGLE     "Flatten Image"       FALSE
-)
+  "script-fu-selective-coloring"
+  "xMedia Selective Coloring"
+  "Allows you to change the overall color or the color balance of a selection and all the area around it at the same time, using two different adjustments."
+  "Alexander Melchers"
+  "2002, Alexander Melchers, xMedia"
+  "8th November 2002"
+  "RGB*"
+  SF-IMAGE      "The Image"           0
+  SF-DRAWABLE   "The Layer"           0
+  SF-ADJUSTMENT "Internal Cyan/Red"   '(0 -100 100 1 1 0 0 0)
+  SF-ADJUSTMENT "Magenta/Green"       '(0 -100 100 1 1 0 0 0)
+  SF-ADJUSTMENT "Yellow/Blue"         '(0 -100 100 1 1 0 0 0)
+  SF-OPTION     "Apply To"            '("Shadows" "Midtones" "Highlights")
+  SF-TOGGLE     "Preserve Luminosity" TRUE
+  SF-COLOR      "Color"               '(255 255 0)
+  SF-TOGGLE     "Colorify"            FALSE
+  SF-ADJUSTMENT "External Cyan/Red"   '(0 -100 100 1 1 0 0 0)
+  SF-ADJUSTMENT "Magenta/Green"       '(0 -100 100 1 1 0 0 0)
+  SF-ADJUSTMENT "Yellow/Blue"         '(0 -100 100 1 1 0 0 0)
+  SF-OPTION     "Apply To"            '("Shadows" "Midtones" "Highlights")
+  SF-TOGGLE     "Preserve Luminosity" TRUE
+  SF-COLOR      "Color"               '(255 255 0)
+  SF-TOGGLE     "Colorify"            FALSE
+  SF-TOGGLE     "Work on Copy"        FALSE
+  SF-TOGGLE     "Flatten Image"       FALSE)
+
+(script-fu-menu-register "script-fu-selective-coloring"
+                         "<Image>/FX-Foundry/Selection Effects")
+

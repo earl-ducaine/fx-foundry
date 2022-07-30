@@ -118,7 +118,7 @@
 
 (script-fu-register
     "script-fu-blood-logo"
-    "<Image>/File/New/FX-Foundry/Logos/Dracula"
+    "Dracula"
     "Draws the given text string with a border of dripping blood!"
     "Christopher Gutteridge"
     "1998, Christopher Gutteridge"
@@ -128,6 +128,8 @@
    SF-FONT       _"Font"               "becker"
    SF-ADJUSTMENT _"Font size (pixels)" '(150 2 1000 1 10 0 1)
    SF-ADJUSTMENT _"Boder Size"    '(4 1 99 1 1 0 1)
-   SF-ADJUSTMENT _"Drip Size"    '(10 5 99 1 1 0 1)
-)
+   SF-ADJUSTMENT _"Drip Size"    '(10 5 99 1 1 0 1))
+
+(script-fu-menu-register "script-fu-blood-logo"
+			 _"<Image>/File/New/FX-Foundry/Logos")
 

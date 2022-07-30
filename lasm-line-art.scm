@@ -427,28 +427,30 @@
 
 
 (script-fu-register
- "script-fu-lineart"
- _"<Image>/FX-Foundry/Artistic/Lasm's Advanced Line Art (Sobel)"
- "Lasm's famous Line Art effect for photographs. (Version 3.5) This works on any RGB image.
+  "script-fu-lineart"
+  _"Lasm's Advanced Line Art (Sobel)"
+  "Lasm's famous Line Art effect for photographs. (Version 3.5) This works on any RGB image.
   The technique may not be effective when used on images with large areas of high saturation.
   The default values adjust for that. If the image is too dark, you may want to adjust brightness/contrast values only slightly before starting the script.
   \nTip: If you do not have a good Gimpressionist preset, simply hit cancel at the Gimpressionist dialog window, and you will still get a good greyscale line-art."
- "lasm"
- "Copyright 2001-2005, lasm"
- "March 12, 2001"
- "RGB*"
- SF-IMAGE              "The Image"        0
- SF-DRAWABLE             "The Layer"       0
- SF-OPTION           _"Water Temperature" SCRIPT-FU-LINEART-CHOICE3
- SF-TOGGLE           _"Post Processing Decaffeinator"          FALSE
- SF-TOGGLE           _"Flatten Image"        FALSE
- SF-TOGGLE           _"Texture"           TRUE
- SF-TOGGLE           _"Polychromatic"    FALSE
- SF-COLOR             _"Line Art Color"  '(220 219 219)  ;220 219 219
- SF-OPTION           _"Art Style"         SCRIPT-FU-LINEART-CHOICE2
- SF-OPTION           _"Adjustment"        SCRIPT-FU-LINEART-CHOICE1
- SF-ADJUSTMENT _"Brightness"             '(10 -127 127 1 10 0 0)
- SF-ADJUSTMENT _"Contrast"               '(-9 -127 127 1 10 0 0)
- SF-ADJUSTMENT _"Lightness"              '(100 -100 100 1 10 0 0)
- SF-ADJUSTMENT _"Saturation"             '(-70 -100 100 1 10 0 0)
-)
+  "lasm"
+  "Copyright 2001-2005, lasm"
+  "March 12, 2001"
+  "RGB*"
+  SF-IMAGE              "The Image"        0
+  SF-DRAWABLE             "The Layer"       0
+  SF-OPTION           _"Water Temperature" SCRIPT-FU-LINEART-CHOICE3
+  SF-TOGGLE           _"Post Processing Decaffeinator"          FALSE
+  SF-TOGGLE           _"Flatten Image"        FALSE
+  SF-TOGGLE           _"Texture"           TRUE
+  SF-TOGGLE           _"Polychromatic"    FALSE
+  SF-COLOR             _"Line Art Color"  '(220 219 219)  ;220 219 219
+  SF-OPTION           _"Art Style"         SCRIPT-FU-LINEART-CHOICE2
+  SF-OPTION           _"Adjustment"        SCRIPT-FU-LINEART-CHOICE1
+  SF-ADJUSTMENT _"Brightness"             '(10 -127 127 1 10 0 0)
+  SF-ADJUSTMENT _"Contrast"               '(-9 -127 127 1 10 0 0)
+  SF-ADJUSTMENT _"Lightness"              '(100 -100 100 1 10 0 0)
+  SF-ADJUSTMENT _"Saturation"             '(-70 -100 100 1 10 0 0))
+
+(script-fu-menu-register "script-fu-lineart"
+                         "<Image>/FX-Foundry/Artistic")

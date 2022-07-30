@@ -47,13 +47,17 @@
   (gimp-displays-flush)
   )
 
-(script-fu-register "script-fu-fit-canvas-to-layer"
- "<Image>/FX-Foundry/Toolbox/_Fit Canvas to Layer"
- _"Resize the canvas to the boundaries of the active layer"
- "Saul Goode"
- "Saul Goode"
- "1/1/2007"
- ""
- SF-IMAGE    "Image"    0
- SF-DRAWABLE "Drawable" 0
- )
+(script-fu-register
+  "script-fu-fit-canvas-to-layer"
+  "_Fit Canvas to Layer"
+  _"Resize the canvas to the boundaries of the active layer"
+  "Saul Goode"
+  "Saul Goode"
+  "1/1/2007"
+  ""
+  SF-IMAGE    "Image"    0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-fit-canvas-to-layer"
+                         "<Image>/FX-Foundry/Toolbox")
+

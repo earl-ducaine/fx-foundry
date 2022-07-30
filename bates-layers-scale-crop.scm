@@ -116,22 +116,26 @@
 ))
 
 ; Register script
-(script-fu-register     "script-fu-layers-scalecrop"
-            "<Image>/FX-Foundry/Multi-Layer Tools/Scale or Crop Layers..."
-            "Scales or Crops layers from the specified layer range"
-            "Daniel Bates"
-            "Daniel Bates"
-            "Dec 2007"
-            "*"
-            SF-IMAGE "SF-IMAGE" 0
-            SF-DRAWABLE "SF-DRAWABLE" 0
-            SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
-            SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
-            SF-OPTION _"Scale or Crop?" '(_"Scale" _"Crop")
-            SF-OPTION _"To Image Boundaries? (Further options are ignored if yes)" '(_"No" _"Yes")
-            SF-ADJUSTMENT _"New Width" '(200 1 9000 1 5 0 1)
-            SF-ADJUSTMENT _"New Height" '(200 1 9000 1 5 0 1)
-            SF-ADJUSTMENT _"Offset X (for crop)" '(0 0 9000 1 5 0 1)
-            SF-ADJUSTMENT _"Offset Y (for crop)" '(0 0 9000 1 5 0 1)
-            SF-OPTION _"Center Adjusted Layers?" '(_"Yes" _"No")
-)
+(script-fu-register
+  "script-fu-layers-scalecrop"
+  "Scale or Crop Layers..."
+  "Scales or Crops layers from the specified layer range"
+  "Daniel Bates"
+  "Daniel Bates"
+  "Dec 2007"
+  "*"
+  SF-IMAGE "SF-IMAGE" 0
+  SF-DRAWABLE "SF-DRAWABLE" 0
+  SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
+  SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
+  SF-OPTION _"Scale or Crop?" '(_"Scale" _"Crop")
+  SF-OPTION _"To Image Boundaries? (Further options are ignored if yes)" '(_"No" _"Yes")
+  SF-ADJUSTMENT _"New Width" '(200 1 9000 1 5 0 1)
+  SF-ADJUSTMENT _"New Height" '(200 1 9000 1 5 0 1)
+  SF-ADJUSTMENT _"Offset X (for crop)" '(0 0 9000 1 5 0 1)
+  SF-ADJUSTMENT _"Offset Y (for crop)" '(0 0 9000 1 5 0 1)
+  SF-OPTION _"Center Adjusted Layers?" '(_"Yes" _"No"))
+
+(script-fu-menu-register "script-fu-layers-scalecrop"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")
+

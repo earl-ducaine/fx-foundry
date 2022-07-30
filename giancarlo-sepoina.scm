@@ -323,46 +323,45 @@
 
 
 
-;
-; Register the function with the GIMP:
-;
+;; Register the function with the GIMP:
 (script-fu-register
-"script-fu-SepoinaGrafix"
-_"<Image>/FX-Foundry/Artistic/Sepoina Graf-ix..."
-"Alter a picture into a scratched image or a watercoloured paint.
+  "script-fu-SepoinaGrafix"
+  _"Sepoina Graf-ix..."
+  "Alter a picture into a scratched image or a watercoloured paint.
 Full details, demostrative examples and any new versions on...
-
 http://www.sepoina.it/grafix/index.htm
-
 If you find other levels merges output types
 send it to me at software@sepoina.it !
 Same address for Bug!
 "
-"Ghigi Giancarlo - software@sepoina.it"
-"Ghigi Giancarlo 2004, Italy."
-"16th April 2004"
-"RGB*"
-SF-IMAGE      "The Image"     0
-SF-DRAWABLE   "The Layer"     0
-SF-TOGGLE   _"Equalize" FALSE
-SF-TOGGLE   _"Spreading (slow)" FALSE
-SF-ADJUSTMENT _"Pre-sharp (0=No)"  '(70 0 99 0.05 0.5 2 0)
-SF-ADJUSTMENT _"Smart-blur (0=NO)"  '(1.5 0 30 0.5 1 2 0)
-SF-ADJUSTMENT _"Engraving mask (0=No)"  '(5 0 8 0.05 0.5 2 0)
-SF-ADJUSTMENT _"Post-sharp (0=No)"  '(12 0 99 0.05 0.5 2 0)
-SF-ADJUSTMENT _"Canvasize (0=NO)"  '(0 0 10 1 1 2 0)
-SF-PATTERN _"Scratched texture" "Paper"
-SF-COLOR   _"Paper Color" '(159 122 43)
-SF-OPTION    _"Output type"         '(_"Zaza"
-                       _"LSD"
-                       _"Watercoloured pencils"
-                       _"Scratched pencils"
-                       _"Uncoloured pencils"
-                       _"Yoga"
-                       _"BW pen pencil white paper"
-                       _"BW pen pencil chalk coloured paper"
-                       _"PsicoPaint"
-                       _"Acquarelguson (slow)"
-                       _"Watercolour Faber (slow)"
-                       )
-)
+  "Ghigi Giancarlo - software@sepoina.it"
+  "Ghigi Giancarlo 2004, Italy."
+  "16th April 2004"
+  "RGB*"
+  SF-IMAGE      "The Image"     0
+  SF-DRAWABLE   "The Layer"     0
+  SF-TOGGLE   _"Equalize" FALSE
+  SF-TOGGLE   _"Spreading (slow)" FALSE
+  SF-ADJUSTMENT _"Pre-sharp (0=No)"  '(70 0 99 0.05 0.5 2 0)
+  SF-ADJUSTMENT _"Smart-blur (0=NO)"  '(1.5 0 30 0.5 1 2 0)
+  SF-ADJUSTMENT _"Engraving mask (0=No)"  '(5 0 8 0.05 0.5 2 0)
+  SF-ADJUSTMENT _"Post-sharp (0=No)"  '(12 0 99 0.05 0.5 2 0)
+  SF-ADJUSTMENT _"Canvasize (0=NO)"  '(0 0 10 1 1 2 0)
+  SF-PATTERN _"Scratched texture" "Paper"
+  SF-COLOR   _"Paper Color" '(159 122 43)
+  SF-OPTION    _"Output type"         '(_"Zaza"
+					 _"LSD"
+					 _"Watercoloured pencils"
+					 _"Scratched pencils"
+					 _"Uncoloured pencils"
+					 _"Yoga"
+					 _"BW pen pencil white paper"
+					 _"BW pen pencil chalk coloured paper"
+					 _"PsicoPaint"
+					 _"Acquarelguson (slow)"
+					 _"Watercolour Faber (slow)"
+					 ))
+
+(script-fu-menu-register "script-fu-SepoinaGrafix"
+                         "<Image>/FX-Foundry/Artistic")
+

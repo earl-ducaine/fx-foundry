@@ -195,19 +195,25 @@
          (Aply-script-fu-Liquid-Water img Bump-Layer Back-color ShapeW DropsA LightA)
          (gimp-displays-flush)))
 
-(script-fu-register "script-fu-Liquid-Water-logo-alpha"
-            _"<Image>/FX-Foundry/Alpha to Logo/Liquid-Water"
-            "Liquid-Water effect"
-            "www.demartinenchile.com"
-            "2007 Philippe Demartin"
-            "20.10.2007"
-            ""
-                   SF-IMAGE "Image" 0
-                SF-DRAWABLE "Drawable" 0
-            SF-COLOR "Background" '(0 0 255)
-                SF-ADJUSTMENT "Shape watering" '(20 0 100 1 1 2 0)
-                SF-ADJUSTMENT "Water drops Amount" '(60 1 100 1 1 2 0)
-                SF-ADJUSTMENT "Light Amount" '(0.80 0 1.6 0.01 1 2 0))
+
+(script-fu-register
+  "script-fu-Liquid-Water-logo-alpha"
+  _"Liquid-Water"
+  "Liquid-Water effect"
+  "www.demartinenchile.com"
+  "2007 Philippe Demartin"
+  "20.10.2007"
+  ""
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Background" '(0 0 255)
+  SF-ADJUSTMENT "Shape watering" '(20 0 100 1 1 2 0)
+  SF-ADJUSTMENT "Water drops Amount" '(60 1 100 1 1 2 0)
+  SF-ADJUSTMENT "Light Amount" '(0.80 0 1.6 0.01 1 2 0))
+
+(script-fu-menu-register "script-fu-Liquid-Water-logo-alpha"
+                         "<Image>/FX-Foundry/Alpha to Logo")
+
 
 (define (script-fu-Liquid-Water-logo font size text Back-color ShapeW DropsA LightA )
 
@@ -224,21 +230,21 @@
     (gimp-display-new img)
     ))
 
-(script-fu-register     "script-fu-Liquid-Water-logo"
-            "Liquid Water"
-            "Create a Water logo with random drops"
-            "Philippe Demartin"
-            "www.demartinenchile.com"
-            "10/21/2007"
-            ""
-            SF-FONT "Font Name" "Tahoma Bold"
-            SF-ADJUSTMENT "Font size (pixels)" '(120 50 1000 1 10 0 1)
-            SF-STRING "Enter your text" "Liquid Water..."
-            SF-COLOR "Background" '(0 0 255)
-                SF-ADJUSTMENT "Shape watering" '(40 2 100 1 1 2 0)
-                SF-ADJUSTMENT "Water drops Amount" '(60 0 100 1 1 2 0)
-                SF-ADJUSTMENT "Light Amount" '(0.80 0 1.6 0.01 1 2 0)
-            )
+(script-fu-register
+  "script-fu-Liquid-Water-logo"
+  "Liquid Water"
+  "Create a Water logo with random drops"
+  "Philippe Demartin"
+  "www.demartinenchile.com"
+  "10/21/2007"
+  ""
+  SF-FONT "Font Name" "Tahoma Bold"
+  SF-ADJUSTMENT "Font size (pixels)" '(120 50 1000 1 10 0 1)
+  SF-STRING "Enter your text" "Liquid Water..."
+  SF-COLOR "Background" '(0 0 255)
+  SF-ADJUSTMENT "Shape watering" '(40 2 100 1 1 2 0)
+  SF-ADJUSTMENT "Water drops Amount" '(60 0 100 1 1 2 0)
+  SF-ADJUSTMENT "Light Amount" '(0.80 0 1.6 0.01 1 2 0))
 
 (script-fu-menu-register "script-fu-Liquid-Water-logo"
              "<Image>/File/New/Logos")

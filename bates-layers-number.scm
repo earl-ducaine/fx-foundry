@@ -106,15 +106,19 @@
 ))
 
 ; Register script
-(script-fu-register     "script-fu-number-layers"
-            "<Image>/FX-Foundry/Multi-Layer Tools/Number Layers..."
-            "Edits layer names to number them. Numbering starts at user's specified number. Effect is culmulative if layers maintain original names."
-            "Daniel Bates"
-            "Daniel Bates"
-            "Dec 2007"
-            "*"
-            SF-IMAGE "SF-IMAGE" 0
-            SF-DRAWABLE "SF-DRAWABLE" 0
-            SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
-            SF-TOGGLE _"Maintain current layer names?" TRUE
-)
+(script-fu-register
+  "script-fu-number-layers"
+  "Number Layers..."
+  "Edits layer names to number them. Numbering starts at user's specified number. Effect is culmulative if layers maintain original names."
+  "Daniel Bates"
+  "Daniel Bates"
+  "Dec 2007"
+  "*"
+  SF-IMAGE "SF-IMAGE" 0
+  SF-DRAWABLE "SF-DRAWABLE" 0
+  SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
+  SF-TOGGLE _"Maintain current layer names?" TRUE)
+
+(script-fu-menu-register "script-fu-number-layers"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")
+

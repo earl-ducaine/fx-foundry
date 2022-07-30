@@ -96,17 +96,20 @@
 )
 
 (script-fu-register
-    "script-fu-wrap-effect"
-    "<Image>/FX-Foundry/Artistic/Wrap Effect..."
-    "Draws with wrap effect, which simulates Photoshop's Wrap filter"
-    "Iccii <iccii@hotmail.com>"
-    "Iccii"
-    "Oct, 2001"
-    "RGB*"
-    SF-IMAGE    "Image"            0
-    SF-DRAWABLE    "Drawable"        0
-    SF-ADJUSTMENT    "Randomness"        '(10 0 32 1 10 0 0)
-    SF-ADJUSTMENT    "Highlight Balance"    '(3.0 1.0 10 0.5 0.1 1 0)
-    SF-ADJUSTMENT    "Edge Amount"        '(3.0 1.0 10 0.5 0.1 1 0)
-    SF-TOGGLE    "Smooth"        FALSE
-)
+  "script-fu-wrap-effect"
+  "Wrap Effect..."
+  "Draws with wrap effect, which simulates Photoshop's Wrap filter"
+  "Iccii <iccii@hotmail.com>"
+  "Iccii"
+  "Oct, 2001"
+  "RGB*"
+  SF-IMAGE    "Image"            0
+  SF-DRAWABLE    "Drawable"        0
+  SF-ADJUSTMENT    "Randomness"        '(10 0 32 1 10 0 0)
+  SF-ADJUSTMENT    "Highlight Balance"    '(3.0 1.0 10 0.5 0.1 1 0)
+  SF-ADJUSTMENT    "Edge Amount"        '(3.0 1.0 10 0.5 0.1 1 0)
+  SF-TOGGLE    "Smooth"        FALSE)
+
+(script-fu-menu-register "script-fu-wrap-effect"
+                         "<Image>/FX-Foundry/Artistic")
+

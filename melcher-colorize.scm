@@ -86,15 +86,18 @@
 ; Register script-fu-colorize
 
 (script-fu-register
-    "script-fu-colorize"
-    "<Image>/FX-Foundry/Color/xMedia Colorize..."
-    "Applies a colour to a given selection or to the whole layer if no selection exists."
-    "Alexander Melchers"
-    "2002, Alexander Melchers, xMedia"
-    "7th November 2002"
-    "RGB*"
-    SF-IMAGE    "The Image"           0
-    SF-DRAWABLE "The Layer"           0
-    SF-COLOR    "Color"               '(255 0 0)
-    SF-OPTION   "Quality"             '("normal" "fastest")
-)
+  "script-fu-colorize"
+  "xMedia Colorize..."
+  "Applies a colour to a given selection or to the whole layer if no selection exists."
+  "Alexander Melchers"
+  "2002, Alexander Melchers, xMedia"
+  "7th November 2002"
+  "RGB*"
+  SF-IMAGE    "The Image"           0
+  SF-DRAWABLE "The Layer"           0
+  SF-COLOR    "Color"               '(255 0 0)
+  SF-OPTION   "Quality"             '("normal" "fastest"))
+
+(script-fu-menu-register "script-fu-colorize"
+                         "<Image>/FX-Foundry/Color")
+

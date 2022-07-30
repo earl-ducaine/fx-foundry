@@ -197,18 +197,21 @@
 )
 )
 
-; Register Script
+;; Register Script
+(script-fu-register
+  "script-fu-grad-diff"
+  "Gradient Difference..."
+  "Uses the gradient tool to generate a random design"
+  "Daniel Bates"
+  "Daniel Bates"
+  "Dec 2007"
+  "*"
+  SF-IMAGE      "SF-IMAGE" 0
+  SF-DRAWABLE   "SF-DRAWABLE" 0
+  SF-ADJUSTMENT _"Repeat" '(5 1 200 1 3 0 1)
+  SF-OPTION _"Style" '(_"X axis" _"Y axis" _"Alternating" _"Random"))
 
-(script-fu-register     "script-fu-grad-diff"
-            "<Image>/FX-Foundry/Artistic/Gradient Difference..."
-            "Uses the gradient tool to generate a random design"
-            "Daniel Bates"
-            "Daniel Bates"
-            "Dec 2007"
-            "*"
-            SF-IMAGE      "SF-IMAGE" 0
-            SF-DRAWABLE   "SF-DRAWABLE" 0
-            SF-ADJUSTMENT _"Repeat" '(5 1 200 1 3 0 1)
-            SF-OPTION _"Style" '(_"X axis" _"Y axis" _"Alternating" _"Random")
-)
+(script-fu-menu-register "script-fu-grad-diff"
+                         "<Image>/FX-Foundry/Artistic")
+
 

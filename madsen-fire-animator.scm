@@ -202,26 +202,29 @@
   (gimp-selection-none image)
   (gimp-selection-none origimage)
   (gimp-image-undo-enable image)
-  (gimp-displays-flush)
- )
-)
+  (gimp-displays-flush)))
+
+
 (script-fu-register
-    "script-fu-fireanim"
-    "<Image>/FX-Foundry/Animation/Fire Animator"
-    "FireAnim"
-    "Vidar Madsen <vidar@prosalg.no>"
-    "Vidar Madsen"
-    "16. March 2001"
-    "RGBA"
-    SF-IMAGE "Input Image" 0                    ;gds
-    SF-DRAWABLE "Input Drawable" 0                ;gds
-    SF-ADJUSTMENT "# of frames" '(15 2 255 1 1 0 1)            ;gds
-    SF-ADJUSTMENT "Overlap frames" '(6 0 255 1 1 0 1)        ;gds
-    SF-ADJUSTMENT "Prep frames" '(15 0 255 1 1 0 1)            ;gds
-    SF-GRADIENT "Gradient" "Incandescent"                ;gds
-    SF-ADJUSTMENT "Framerate (ms)" '(50 1 1000 10 10 0 1)        ;gds
-    SF-ADJUSTMENT "Angle (Degrees)" '(0 0 360 .1 .1 1 1)        ;gds
-    SF-ADJUSTMENT "Distance" '(2 0 1000 1 1 0 1)            ;gds
-    SF-TOGGLE "Use background?" FALSE
-    SF-DRAWABLE "Background" 0
-)
+  "script-fu-fireanim"
+  "Fire Animator"
+  "FireAnim"
+  "Vidar Madsen <vidar@prosalg.no>"
+  "Vidar Madsen"
+  "16. March 2001"
+  "RGBA"
+  SF-IMAGE "Input Image" 0                    ;gds
+  SF-DRAWABLE "Input Drawable" 0                ;gds
+  SF-ADJUSTMENT "# of frames" '(15 2 255 1 1 0 1)            ;gds
+  SF-ADJUSTMENT "Overlap frames" '(6 0 255 1 1 0 1)        ;gds
+  SF-ADJUSTMENT "Prep frames" '(15 0 255 1 1 0 1)            ;gds
+  SF-GRADIENT "Gradient" "Incandescent"                ;gds
+  SF-ADJUSTMENT "Framerate (ms)" '(50 1 1000 10 10 0 1)        ;gds
+  SF-ADJUSTMENT "Angle (Degrees)" '(0 0 360 .1 .1 1 1)        ;gds
+  SF-ADJUSTMENT "Distance" '(2 0 1000 1 1 0 1)            ;gds
+  SF-TOGGLE "Use background?" FALSE
+  SF-DRAWABLE "Background" 0)
+
+(script-fu-menu-register "script-fu-fireanim"
+                         "<Image>/FX-Foundry/Animation")
+

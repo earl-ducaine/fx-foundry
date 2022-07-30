@@ -130,16 +130,20 @@
 
     (list image)))
 
-(script-fu-register "script-fu-edge-mask-sharpen"
-                    "<Image>/FX-Foundry/Photo/Sharpen/Edge Mask Sharpen"
-                    "Perform a smart sharpen on an image."
-                    "John Hall"
-                    "John Hall"
-                    "2004-2005"
-                    "RGB* GRAY*"
-                    SF-IMAGE "The image" 0
-                    SF-DRAWABLE "The layer (not used)" 0
-            SF-ADJUSTMENT "Amount of USM" '(1.5 0 10 0.01 0.01 2 0)
-            SF-ADJUSTMENT "Radius of USM" '(1.0 0 20 0.01 0.01 2 0)
-            SF-TOGGLE "Despeckle" FALSE
-            )
+(script-fu-register
+  "script-fu-edge-mask-sharpen"
+  "Edge Mask Sharpen"
+  "Perform a smart sharpen on an image."
+  "John Hall"
+  "John Hall"
+  "2004-2005"
+  "RGB* GRAY*"
+  SF-IMAGE "The image" 0
+  SF-DRAWABLE "The layer (not used)" 0
+  SF-ADJUSTMENT "Amount of USM" '(1.5 0 10 0.01 0.01 2 0)
+  SF-ADJUSTMENT "Radius of USM" '(1.0 0 20 0.01 0.01 2 0)
+  SF-TOGGLE "Despeckle" FALSE)
+
+(script-fu-menu-register "script-fu-edge-mask-sharpen"
+                         "<Image>/FX-Foundry/Photo/Sharpen")
+

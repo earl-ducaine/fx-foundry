@@ -81,19 +81,19 @@
   )
 
 
-(script-fu-register "script-fu-thirds-rule-grid"
-                    _"Rule Of Thirds Grid"
-                    _"Generate a new layer with a Rule Of Thirds grid"
-                    "Saul Goode"
-                    "Saul Goode"
-                    "2007/11/1"
-                    "RGB* GRAY*"
-                    SF-IMAGE       "Image"           0
-                    SF-DRAWABLE    "Drawable"        0
-                    SF-COLOR       "Ruler Color"     '(0 0 0)
-                    SF-ADJUSTMENT  "Ruler Size"      '(2 1 50 1 10 0 1)
-                    SF-TOGGLE      "Image based?"    FALSE
-                    )
+(script-fu-register
+  "script-fu-thirds-rule-grid"
+  _"Rule Of Thirds Grid"
+  _"Generate a new layer with a Rule Of Thirds grid"
+  "Saul Goode"
+  "Saul Goode"
+  "2007/11/1"
+  "RGB* GRAY*"
+  SF-IMAGE       "Image"           0
+  SF-DRAWABLE    "Drawable"        0
+  SF-COLOR       "Ruler Color"     '(0 0 0)
+  SF-ADJUSTMENT  "Ruler Size"      '(2 1 50 1 10 0 1)
+  SF-TOGGLE      "Image based?"    FALSE)
 
 (script-fu-menu-register "script-fu-thirds-rule-grid"
              "<Image>/FX-Foundry/Toolbox/Grids/")

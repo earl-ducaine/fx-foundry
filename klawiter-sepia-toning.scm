@@ -139,30 +139,25 @@
     ) ; let* variables definition
 
 ; Complete the undo group
-    (gimp-image-undo-group-end img)
-
-)
+    (gimp-image-undo-group-end img))
 
 
-
-(script-fu-register "script-fu-Sepia_Toning"
-    "Sepia Toning"
-    "Automatic version of great
+(script-fu-register
+  "script-fu-Sepia_Toning"
+  "Sepia Toning"
+  "Automatic version of great
 Sepia Toning tutorial
 by Eric R. Jeschke (redskiesatnight.com/)
-
 www.gimp.org/tutorials/Sepia_Toning/"
-    "Jakub Klawiter"
-    ""
-    "03.2007"
-    "RGB RGBA"
-    SF-IMAGE      "img"                 0
-    SF-DRAWABLE   "drawable"            0
-    SF-TOGGLE     "Desaturate source"   FALSE
-    SF-TOGGLE     "Merge layers"        FALSE
-    SF-COLOR      "color"               '(162 138 101))
+  "Jakub Klawiter"
+  ""
+  "03.2007"
+  "RGB RGBA"
+  SF-IMAGE      "img"                 0
+  SF-DRAWABLE   "drawable"            0
+  SF-TOGGLE     "Desaturate source"   FALSE
+  SF-TOGGLE     "Merge layers"        FALSE
+  SF-COLOR      "color"               '(162 138 101))
 
-(script-fu-menu-register
-    "script-fu-Sepia_Toning"
-    "<Image>/FX-Foundry/Photo/Effects"
-)
+(script-fu-menu-register "script-fu-Sepia_Toning"
+			 "<Image>/FX-Foundry/Photo/Effects")

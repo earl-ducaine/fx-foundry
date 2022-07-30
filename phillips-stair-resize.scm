@@ -122,17 +122,21 @@
 ))
 
 
-(script-fu-register "script-fu-stair-resize"
-            _"<Image>/FX-Foundry/Toolbox/Step Resize"
-            "Resizes the image to desired size using small steps"
-            "Harry Phillips"
-            "Harry Phillips"
-            "13 August 2007"
-            "*"
-            SF-IMAGE        "Image"                0
-            SF-DRAWABLE        "Drawable"            0
-        SF-OPTION        "Target side"            '("Width" "Height")
-        SF-VALUE        "Target value"            "1024"
-        SF-ADJUSTMENT    "Numbers of steps"        '(10 2 20 1 1 0 0)
-)
+(script-fu-register
+  "script-fu-stair-resize"
+  _"Step Resize"
+  "Resizes the image to desired size using small steps"
+  "Harry Phillips"
+  "Harry Phillips"
+  "13 August 2007"
+  "*"
+  SF-IMAGE        "Image"                0
+  SF-DRAWABLE        "Drawable"            0
+  SF-OPTION        "Target side"            '("Width" "Height")
+  SF-VALUE        "Target value"            "1024"
+  SF-ADJUSTMENT    "Numbers of steps"        '(10 2 20 1 1 0 0))
+
+(script-fu-menu-register "script-fu-stair-resize"
+                         "<Image>/FX-Foundry/Toolbox")
+
 

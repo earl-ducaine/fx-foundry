@@ -96,15 +96,19 @@
     )
 )
 
-(script-fu-register "script-fu-stamp"
-                    _"<Image>/FX-Foundry/Artistic/_Press print..."
-                    "Make a stamp from the image"
-                    "twjacobs@gmail.com"
-                    "Tim Jacobs"
-                    "March 26, 2005"
-                    ""
-                    SF-IMAGE "Image" 0
-                    SF-DRAWABLE "Drawable" 0
-                    SF-COLOR "Ink Color" '(96 128 59)
-                    SF-ADJUSTMENT _"Displacement size"  '(15 1 255 1 10 0 0)
-)
+(script-fu-register
+  "script-fu-stamp"
+  _"_Press print..."
+  "Make a stamp from the image"
+  "twjacobs@gmail.com"
+  "Tim Jacobs"
+  "March 26, 2005"
+  ""
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Ink Color" '(96 128 59)
+  SF-ADJUSTMENT _"Displacement size"  '(15 1 255 1 10 0 0))
+
+(script-fu-menu-register "script-fu-stamp"
+                         "<Image>/FX-Foundry/Artistic")
+

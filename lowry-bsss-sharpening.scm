@@ -141,16 +141,20 @@
 )
 
 
-(script-fu-register "script-fu-BSSS"
-      "<Image>/FX-Foundry/Photo/Sharpen/BSSS Sharpening"
-      "Creates a layer set to screen mode and another layer above it set to subtract mode. The subtract layer is then blurred and merged down with the screen layer, the result of which is merged down with the original layer (if so selected).  You may duplicate the screen layer as many times as desired to increase the effect."
-      "Mark Lowry"
-      "technique by lylejk of dpreview.com"
-      "2007"
-      "RGB*, GRAY*"
-      SF-IMAGE "Image" 0
-      SF-DRAWABLE "Current Layer" 0
-      SF-VALUE "Gaussian Blur Radius"  "5"
-      SF-TOGGLE "Merge Layers?"  TRUE
- )
+(script-fu-register
+  "script-fu-BSSS"
+  "BSSS Sharpening"
+  "Creates a layer set to screen mode and another layer above it set to subtract mode. The subtract layer is then blurred and merged down with the screen layer, the result of which is merged down with the original layer (if so selected).  You may duplicate the screen layer as many times as desired to increase the effect."
+  "Mark Lowry"
+  "technique by lylejk of dpreview.com"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-VALUE "Gaussian Blur Radius"  "5"
+  SF-TOGGLE "Merge Layers?"  TRUE)
+
+(script-fu-menu-register "script-fu-BSSS"
+                         "<Image>/FX-Foundry/Photo/Sharpen")
+
 

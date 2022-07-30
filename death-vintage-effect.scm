@@ -179,7 +179,8 @@
 )
 
 
-(script-fu-register "script-fu-vintage-effect"
+(script-fu-register
+  "script-fu-vintage-effect"
   _"_Vintage Film effect..."
   _"Give that vintage look to a photo."
   "Alexia Death"
@@ -189,8 +190,7 @@
   SF-IMAGE      "The image"               0
   SF-DRAWABLE   "The layer"               0
   SF-TOGGLE     _"Work on copy"           FALSE
-  SF-TOGGLE     _"Flatten image"          FALSE
-)
+  SF-TOGGLE     _"Flatten image"          FALSE)
 
 (script-fu-menu-register "script-fu-vintage-effect"
                          "<Image>/FX-Foundry/Photo/Effects")

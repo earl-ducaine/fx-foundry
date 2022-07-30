@@ -463,23 +463,28 @@
 
 
 (script-fu-register
- "script-fu-labwow"
- _"<Image>/FX-Foundry/Color/Lasm's LAB Wow"
- "Version 4.3 \nLasm's famous special effect for photographs. This works on any RGB image. Caution: it runs slowly on large images.\n
+  "script-fu-labwow"
+  _"<Image>/FX-Foundry/Color/Lasm's LAB Wow"
+  "Version 4.3 \nLasm's famous special effect for photographs. This works on any RGB image. Caution: it runs slowly on large images.\n
   Shaolin Line Art works best on sharp macro photos with high contrast. Try using various options in 18 Dragon Subduing Palm"
- "lasm"
- "Copyright 2005, lasm"
- "Oct 5, 2005"
- "RGB*"
- SF-IMAGE              "The Image"                       0
- SF-DRAWABLE              "The Layer"                       0
- SF-OPTION            _"Main Art Style"                  SCRIPT-FU-LABWOW-CHOICE1
- SF-ADJUSTMENT        _"Tai Chi Curves"                '(42 1 127 1 10 0 0)
- SF-OPTION            _"School"                          SCRIPT-FU-LABWOW-CHOICE2
- SF-OPTION            _"Yang's Style 108 Postures(For Line-Art Supremo only)"     SCRIPT-FU-LABWOW-CHOICE3
- SF-TOGGLE            _"Kung-fu"                         FALSE
- SF-TOGGLE            _"BodhiDharma's Secret Manual ?"    FALSE
- SF-TOGGLE            _"Book of Changing the Sinew"        FALSE
- SF-TOGGLE            _"Wakeup Sermon"                FALSE
- SF-TOGGLE            _"18 Weapons"                     TRUE
-)
+  "lasm"
+  "Copyright 2005, lasm"
+  "Oct 5, 2005"
+  "RGB*"
+  SF-IMAGE              "The Image"                       0
+  SF-DRAWABLE              "The Layer"                       0
+  SF-OPTION            _"Main Art Style"                  SCRIPT-FU-LABWOW-CHOICE1
+  SF-ADJUSTMENT        _"Tai Chi Curves"                '(42 1 127 1 10 0 0)
+  SF-OPTION            _"School"                          SCRIPT-FU-LABWOW-CHOICE2
+  SF-OPTION            _"Yang's Style 108 Postures(For Line-Art Supremo only)"     SCRIPT-FU-LABWOW-CHOICE3
+  SF-TOGGLE            _"Kung-fu"                         FALSE
+  SF-TOGGLE            _"BodhiDharma's Secret Manual ?"    FALSE
+  SF-TOGGLE            _"Book of Changing the Sinew"        FALSE
+  SF-TOGGLE            _"Wakeup Sermon"                FALSE
+  SF-TOGGLE            _"18 Weapons"                     TRUE)
+
+(script-fu-menu-register "script-fu-labwow"
+                         "<Image>/FX-Foundry/Color")
+
+
+

@@ -177,30 +177,34 @@
 	)
 )
 
-(script-fu-register "photo-RoyLichtenstein" 
-	"<Image>/FX-Foundry/Photo/Effects/Roy Lichtenstein..."
-	"Add Roy Lichtenstein effect to an image"
-	"Cprogrammer"
-	"Cprogrammer"
-	"Date: 2008-04-06 15:31:32+05:30"
-	"RGB*"
-	SF-IMAGE        "Image"                   0
-	SF-TOGGLE       "Work on copy"            FALSE
-	SF-TOGGLE       "Flatten image"           FALSE
-	SF-ADJUSTMENT   "Base Layer Opacity"      '(80 0 100 5 10 1 0)
-	SF-COLOR        "Background Colour"       '(255 255 255)
-	SF-ADJUSTMENT   "Contrast"                '(55 -127 127 1 5 0 0)
-	SF-OPTION       "Edge Detect Algorithm"   '("Sobel" "Prewitt Compass" "Gradient" "Roberts" "Differntial" "Laplace")
-	SF-ADJUSTMENT   "Edge Amount"             '(4 1 10 1 5 0 0)
-	SF-TOGGLE       "Erode image"             FALSE
-	SF-TOGGLE       "News Print Effect"       TRUE
-	SF-ADJUSTMENT   "Newsprint Pixel Size"    '(3 1 20 1 10 1 1)
-	SF-OPTION       "Spot Function"           '("Round" "Line" "Diamond" "PS Square" "PS Diamond")
-	SF-ADJUSTMENT   "Black Angle"             '(45 -90 90 1 10 1 1)
-	SF-ADJUSTMENT   "Cyan Angle"              '(15 -90 90 1 10 1 1)
-	SF-ADJUSTMENT   "Magenta  Angle"          '(75 -90 90 1 10 1 1)
-	SF-ADJUSTMENT   "Yellow Angle"            '(0 -90 90 1 10 1 1)
-	SF-ADJUSTMENT   "Posterize Level"         '(7 1 255 1 10 1 1)
-	SF-ADJUSTMENT   "Newsprint Layer Opacity" '(50 0 100 5 10 1 1)
-	SF-TOGGLE       "Despeckle"               TRUE
-)
+(script-fu-register
+  "photo-RoyLichtenstein" 
+  "Roy Lichtenstein..."
+  "Add Roy Lichtenstein effect to an image"
+  "Cprogrammer"
+  "Cprogrammer"
+  "Date: 2008-04-06 15:31:32+05:30"
+  "RGB*"
+  SF-IMAGE        "Image"                   0
+  SF-TOGGLE       "Work on copy"            FALSE
+  SF-TOGGLE       "Flatten image"           FALSE
+  SF-ADJUSTMENT   "Base Layer Opacity"      '(80 0 100 5 10 1 0)
+  SF-COLOR        "Background Colour"       '(255 255 255)
+  SF-ADJUSTMENT   "Contrast"                '(55 -127 127 1 5 0 0)
+  SF-OPTION       "Edge Detect Algorithm"   '("Sobel" "Prewitt Compass" "Gradient" "Roberts" "Differntial" "Laplace")
+  SF-ADJUSTMENT   "Edge Amount"             '(4 1 10 1 5 0 0)
+  SF-TOGGLE       "Erode image"             FALSE
+  SF-TOGGLE       "News Print Effect"       TRUE
+  SF-ADJUSTMENT   "Newsprint Pixel Size"    '(3 1 20 1 10 1 1)
+  SF-OPTION       "Spot Function"           '("Round" "Line" "Diamond" "PS Square" "PS Diamond")
+  SF-ADJUSTMENT   "Black Angle"             '(45 -90 90 1 10 1 1)
+  SF-ADJUSTMENT   "Cyan Angle"              '(15 -90 90 1 10 1 1)
+  SF-ADJUSTMENT   "Magenta  Angle"          '(75 -90 90 1 10 1 1)
+  SF-ADJUSTMENT   "Yellow Angle"            '(0 -90 90 1 10 1 1)
+  SF-ADJUSTMENT   "Posterize Level"         '(7 1 255 1 10 1 1)
+  SF-ADJUSTMENT   "Newsprint Layer Opacity" '(50 0 100 5 10 1 1)
+  SF-TOGGLE       "Despeckle"               TRUE)
+
+(script-fu-menu-register "photo-RoyLichtenstein"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

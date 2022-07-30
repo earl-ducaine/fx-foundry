@@ -1021,41 +1021,37 @@
 
     (plug-in-convmatrix 1 img drawable argc_matrix matrix alpha_alg
                         divisor offset argc_channles channels bmode)
-    (gimp-displays-flush)))
-)(if (not convolution-preset-type-is-basic)
-(script-fu-register
-  "script-fu-convolution-presets-blur-symmetric"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Symmetric Blur..."
-  (string-append CONV-PRESET-DESCRIPTION "(Symmetric Blur)")
-  "Iccii <iccii@hotmail.com>"
-  CONV-PRESET-COPYRIGHT
-  CONV-PRESET-DATE
-  CONV-PRESET-IMAGE-TYPE
-  SF-IMAGE      "Image"           0
-  SF-DRAWABLE   "Drawable"        0
-  SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
-  SF-ADJUSTMENT "Amount"          '(3 1 128 1 1 0 0)
-  SF-ADJUSTMENT "Center Value"    '(1 1 128 1 1 0 0)
-  SF-TOGGLE     "Calculate Divisor" TRUE
-  SF-TOGGLE     "Alpha-weighting" TRUE
-  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
-  SF-TOGGLE     "Gray Channel"    FALSE
-  SF-TOGGLE     "Red Channel"     TRUE
-  SF-TOGGLE     "Green Channel"   TRUE
-  SF-TOGGLE     "Blue Channel"    TRUE
-  SF-TOGGLE     "Alpha Channel"   FALSE)
-)
+    (gimp-displays-flush))))
 
 
+(if (not convolution-preset-type-is-basic)
+    (script-fu-register
+      "script-fu-convolution-presets-blur-symmetric"
+      "Symmetric Blur..."
+      (string-append CONV-PRESET-DESCRIPTION "(Symmetric Blur)")
+      "Iccii <iccii@hotmail.com>"
+      CONV-PRESET-COPYRIGHT
+      CONV-PRESET-DATE
+      CONV-PRESET-IMAGE-TYPE
+      SF-IMAGE      "Image"           0
+      SF-DRAWABLE   "Drawable"        0
+      SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
+      SF-ADJUSTMENT "Amount"          '(3 1 128 1 1 0 0)
+      SF-ADJUSTMENT "Center Value"    '(1 1 128 1 1 0 0)
+      SF-TOGGLE     "Calculate Divisor" TRUE
+      SF-TOGGLE     "Alpha-weighting" TRUE
+      SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
+      SF-TOGGLE     "Gray Channel"    FALSE
+      SF-TOGGLE     "Red Channel"     TRUE
+      SF-TOGGLE     "Green Channel"   TRUE
+      SF-TOGGLE     "Blue Channel"    TRUE
+      SF-TOGGLE     "Alpha Channel"   FALSE))
 
+(if (not convolution-preset-type-is-basic)
+    (script-fu-menu-register "script-fu-convolution-presets-blur-symmetric"
+                             "<Image>/FX-Foundry/Convolution Matrix Presets"))
 
-
-
-
-
-
-
-    ;; Symmetric Edge Detect
+;; Symmetric Edge Detect
 
 (if (not convolution-preset-type-is-basic)
 (define (script-fu-convolution-presets-edge-symmetric
@@ -1082,28 +1078,33 @@
     (plug-in-convmatrix 1 img drawable argc_matrix matrix alpha_alg
                         divisor offset argc_channles channels bmode)
     (gimp-displays-flush)))
-)(if (not convolution-preset-type-is-basic)
-(script-fu-register
-  "script-fu-convolution-presets-edge-symmetric"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Symmetric Edge Detect..."
-  (string-append CONV-PRESET-DESCRIPTION "(Symmetric Edge Detect)")
-  "Iccii <iccii@hotmail.com>"
-  CONV-PRESET-COPYRIGHT
-  CONV-PRESET-DATE
-  CONV-PRESET-IMAGE-TYPE
-  SF-IMAGE      "Image"           0
-  SF-DRAWABLE   "Drawable"        0
-  SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
-  SF-ADJUSTMENT "Amount"          '(2 1 128 1 1 0 0)
-  SF-OPTION     "Mode"            '("Default" "White" "Gray" "Black")
-  SF-TOGGLE     "Alpha-weighting" TRUE
-  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
-  SF-TOGGLE     "Gray Channel"    FALSE
-  SF-TOGGLE     "Red Channel"     TRUE
-  SF-TOGGLE     "Green Channel"   TRUE
-  SF-TOGGLE     "Blue Channel"    TRUE
-  SF-TOGGLE     "Alpha Channel"   FALSE)
 )
+
+(if (not convolution-preset-type-is-basic)
+    (script-fu-register
+      "script-fu-convolution-presets-edge-symmetric"
+      "Symmetric Edge Detect..."
+      (string-append CONV-PRESET-DESCRIPTION "(Symmetric Edge Detect)")
+      "Iccii <iccii@hotmail.com>"
+      CONV-PRESET-COPYRIGHT
+      CONV-PRESET-DATE
+      CONV-PRESET-IMAGE-TYPE
+      SF-IMAGE      "Image"           0
+      SF-DRAWABLE   "Drawable"        0
+      SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
+      SF-ADJUSTMENT "Amount"          '(2 1 128 1 1 0 0)
+      SF-OPTION     "Mode"            '("Default" "White" "Gray" "Black")
+      SF-TOGGLE     "Alpha-weighting" TRUE
+      SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
+      SF-TOGGLE     "Gray Channel"    FALSE
+      SF-TOGGLE     "Red Channel"     TRUE
+      SF-TOGGLE     "Green Channel"   TRUE
+      SF-TOGGLE     "Blue Channel"    TRUE
+      SF-TOGGLE     "Alpha Channel"   FALSE))
+
+(if (not convolution-preset-type-is-basic)
+    (script-fu-menu-register "script-fu-convolution-presets-edge-symmetric"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets"))
 
 
 
@@ -1137,38 +1138,36 @@
     (plug-in-convmatrix 1 img drawable argc_matrix matrix alpha_alg
                         divisor offset argc_channles channels bmode)
     (gimp-displays-flush)))
-)(if (not convolution-preset-type-is-basic)
-(script-fu-register
-  "script-fu-convolution-presets-sharp-symmetric"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Symmetric Sharp..."
-  (string-append CONV-PRESET-DESCRIPTION "(Symmetric Sharp)")
-  "Iccii <iccii@hotmail.com>"
-  CONV-PRESET-COPYRIGHT
-  CONV-PRESET-DATE
-  CONV-PRESET-IMAGE-TYPE
-  SF-IMAGE      "Image"           0
-  SF-DRAWABLE   "Drawable"        0
-  SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
-  SF-ADJUSTMENT "Amount"          '(-1 -128 1 1 1 0 1)
-  SF-ADJUSTMENT "Center Value"    '( 9  1 128 1 1 0 0)
-  SF-TOGGLE     "Calculate Divisor" TRUE
-  SF-TOGGLE     "Alpha-weighting" TRUE
-  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
-  SF-TOGGLE     "Gray Channel"    FALSE
-  SF-TOGGLE     "Red Channel"     TRUE
-  SF-TOGGLE     "Green Channel"   TRUE
-  SF-TOGGLE     "Blue Channel"    TRUE
-  SF-TOGGLE     "Alpha Channel"   FALSE)
 )
 
+(if (not convolution-preset-type-is-basic)
+    (script-fu-register
+      "script-fu-convolution-presets-sharp-symmetric"
+      "Symmetric Sharp..."
+      (string-append CONV-PRESET-DESCRIPTION "(Symmetric Sharp)")
+      "Iccii <iccii@hotmail.com>"
+      CONV-PRESET-COPYRIGHT
+      CONV-PRESET-DATE
+      CONV-PRESET-IMAGE-TYPE
+      SF-IMAGE      "Image"           0
+      SF-DRAWABLE   "Drawable"        0
+      SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
+      SF-ADJUSTMENT "Amount"          '(-1 -128 1 1 1 0 1)
+      SF-ADJUSTMENT "Center Value"    '( 9  1 128 1 1 0 0)
+      SF-TOGGLE     "Calculate Divisor" TRUE
+      SF-TOGGLE     "Alpha-weighting" TRUE
+      SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
+      SF-TOGGLE     "Gray Channel"    FALSE
+      SF-TOGGLE     "Red Channel"     TRUE
+      SF-TOGGLE     "Green Channel"   TRUE
+      SF-TOGGLE     "Blue Channel"    TRUE
+      SF-TOGGLE     "Alpha Channel"   FALSE))
 
+(if (not convolution-preset-type-is-basic)
+    (script-fu-menu-register "script-fu-convolution-presets-sharp-symmetric"
+                             "<Image>/FX-Foundry/Convolution Matrix Presets"))
 
-
-
-
-
-
-    ;; Symmetric General
+;; Symmetric General
 
 (if (not convolution-preset-type-is-basic)
 (define (script-fu-convolution-presets-general-symmetric
@@ -1190,30 +1189,35 @@
     (plug-in-convmatrix 1 img drawable argc_matrix matrix alpha_alg
                         divisor offset argc_channles channels bmode)
     (gimp-displays-flush)))
-)(if (not convolution-preset-type-is-basic)
-(script-fu-register
-  "script-fu-convolution-presets-general-symmetric"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Symmetric General..."
-  (string-append CONV-PRESET-DESCRIPTION "(Symmetric General)")
-  "Iccii <iccii@hotmail.com>"
-  CONV-PRESET-COPYRIGHT
-  CONV-PRESET-DATE
-  CONV-PRESET-IMAGE-TYPE
-  SF-IMAGE      "Image"           0
-  SF-DRAWABLE   "Drawable"        0
-  SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
-  SF-ADJUSTMENT "Amount"          '(-2 -128 128  1 1 0 1)
-  SF-ADJUSTMENT "Center Value"    '(10 -128 128  1 1 0 1)
-  SF-ADJUSTMENT "Offset"          '(0 -9999 9999 1 1 0 1)
-  SF-TOGGLE     "Calculate Divisor" TRUE
-  SF-TOGGLE     "Alpha-weighting" TRUE
-  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
-  SF-TOGGLE     "Gray Channel"    FALSE
-  SF-TOGGLE     "Red Channel"     TRUE
-  SF-TOGGLE     "Green Channel"   TRUE
-  SF-TOGGLE     "Blue Channel"    TRUE
-  SF-TOGGLE     "Alpha Channel"   FALSE)
 )
+
+(if (not convolution-preset-type-is-basic)
+    (script-fu-register
+      "script-fu-convolution-presets-general-symmetric"
+      "Symmetric General..."
+      (string-append CONV-PRESET-DESCRIPTION "(Symmetric General)")
+      "Iccii <iccii@hotmail.com>"
+      CONV-PRESET-COPYRIGHT
+      CONV-PRESET-DATE
+      CONV-PRESET-IMAGE-TYPE
+      SF-IMAGE      "Image"           0
+      SF-DRAWABLE   "Drawable"        0
+      SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
+      SF-ADJUSTMENT "Amount"          '(-2 -128 128  1 1 0 1)
+      SF-ADJUSTMENT "Center Value"    '(10 -128 128  1 1 0 1)
+      SF-ADJUSTMENT "Offset"          '(0 -9999 9999 1 1 0 1)
+      SF-TOGGLE     "Calculate Divisor" TRUE
+      SF-TOGGLE     "Alpha-weighting" TRUE
+      SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
+      SF-TOGGLE     "Gray Channel"    FALSE
+      SF-TOGGLE     "Red Channel"     TRUE
+      SF-TOGGLE     "Green Channel"   TRUE
+      SF-TOGGLE     "Blue Channel"    TRUE
+      SF-TOGGLE     "Alpha Channel"   FALSE))
+
+(if (not convolution-preset-type-is-basic)
+    (script-fu-menu-register "script-fu-convolution-presets-general-symmetric"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets"))
 
 
 
@@ -1249,7 +1253,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-sharp"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Sharp..."
+  "Sharp..."
   (string-append CONV-PRESET-DESCRIPTION "(Sharp)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1266,6 +1270,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-sharp"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1301,7 +1309,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-sharp-adjustable"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Adjustable Sharp..."
+  "Adjustable Sharp..."
   (string-append CONV-PRESET-DESCRIPTION "(Adjustable Sharp)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1319,6 +1327,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-sharp-adjustable"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1430,7 +1442,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-unsharp-mask"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Unsharp Mask..."
+  "Unsharp Mask..."
   (string-append CONV-PRESET-DESCRIPTION "(Unsharp Mask)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1448,6 +1460,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-unsharp-mask"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1487,7 +1503,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-blur"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Blur..."
+  "Blur..."
   (string-append CONV-PRESET-DESCRIPTION "(Blur)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1505,6 +1521,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-blur"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1537,37 +1557,36 @@
     (plug-in-convmatrix 1 img drawable argc_matrix matrix alpha_alg
                         divisor offset argc_channles channels bmode)
     (gimp-displays-flush)))
-)(if convolution-preset-type-is-basic
-(script-fu-register
-  "script-fu-convolution-presets-blur-adjustable"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Adjustable Blur..."
-  (string-append CONV-PRESET-DESCRIPTION "(Adjustable Blur)")
-  "Iccii <iccii@hotmail.com>"
-  CONV-PRESET-COPYRIGHT
-  CONV-PRESET-DATE
-  CONV-PRESET-IMAGE-TYPE
-  SF-IMAGE      "Image"           0
-  SF-DRAWABLE   "Drawable"        0
-  SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
-  SF-ADJUSTMENT "Amount"          '(10 1 1024 1 1 0 0)
-  SF-ADJUSTMENT "Center Value"    '(10 1  256 1 1 0 0)
-  SF-TOGGLE     "Alpha-weighting" TRUE
-  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
-  SF-TOGGLE     "Gray Channel"    FALSE
-  SF-TOGGLE     "Red Channel"     TRUE
-  SF-TOGGLE     "Green Channel"   TRUE
-  SF-TOGGLE     "Blue Channel"    TRUE
-  SF-TOGGLE     "Alpha Channel"   FALSE)
 )
 
+(if convolution-preset-type-is-basic
+    (script-fu-register
+      "script-fu-convolution-presets-blur-adjustable"
+      "Adjustable Blur..."
+      (string-append CONV-PRESET-DESCRIPTION "(Adjustable Blur)")
+      "Iccii <iccii@hotmail.com>"
+      CONV-PRESET-COPYRIGHT
+      CONV-PRESET-DATE
+      CONV-PRESET-IMAGE-TYPE
+      SF-IMAGE      "Image"           0
+      SF-DRAWABLE   "Drawable"        0
+      SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
+      SF-ADJUSTMENT "Amount"          '(10 1 1024 1 1 0 0)
+      SF-ADJUSTMENT "Center Value"    '(10 1  256 1 1 0 0)
+      SF-TOGGLE     "Alpha-weighting" TRUE
+      SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
+      SF-TOGGLE     "Gray Channel"    FALSE
+      SF-TOGGLE     "Red Channel"     TRUE
+      SF-TOGGLE     "Green Channel"   TRUE
+      SF-TOGGLE     "Blue Channel"    TRUE
+      SF-TOGGLE     "Alpha Channel"   FALSE))
+
+(if convolution-preset-type-is-basic
+    (script-fu-menu-register "script-fu-convolution-presets-blur-adjustable"
+                             "<Image>/FX-Foundry/Convolution Matrix Presets"))
 
 
-
-
-
-
-
-    ;; Blur Gaussian
+;; Blur Gaussian
 
 
 (define (script-fu-convolution-presets-blur-gaussian
@@ -1662,7 +1681,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-blur-gaussian"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Blur (Gaussian)..."
+  "Blur (Gaussian)..."
   (string-append CONV-PRESET-DESCRIPTION "(Blur Gaussian)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1683,6 +1702,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-blur-gaussian"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1722,7 +1745,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect..."
+  "Edge Detect..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1740,6 +1763,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1790,7 +1817,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect-laplace"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect (Laplace)..."
+  "Edge Detect (Laplace)..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect Laplace)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1811,6 +1838,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect-laplace"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -1950,7 +1981,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect-sobel"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect (Sobel)..."
+  "Edge Detect (Sobel)..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect Sobel)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -1973,6 +2004,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect-sobel"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2109,7 +2144,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect-prewitt"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect (Prewitt)..."
+  "Edge Detect (Prewitt)..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect Prewitt)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2129,6 +2164,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect-prewitt"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2285,7 +2324,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect-line"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect (Line)..."
+  "Edge Detect (Line)..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect Line Detection)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2305,6 +2344,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect-line"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2404,7 +2447,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect-compass"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect (Compass)..."
+  "Edge Detect (Compass)..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect Compass)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2424,6 +2467,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect-compass"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2477,7 +2524,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-edge-detect-blur"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Edge Detect (Blur)..."
+  "Edge Detect (Blur)..."
   (string-append CONV-PRESET-DESCRIPTION "(Edge Detect using Blur)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2497,6 +2544,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-edge-detect-blur"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2533,7 +2584,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-blur-edge"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Blur Edge..."
+  "Blur Edge..."
   (string-append CONV-PRESET-DESCRIPTION "(Blur Edge)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2550,6 +2601,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-blur-edge"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2688,7 +2743,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-vibration"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Vibration (Motion Blur)..."
+  "Vibration (Motion Blur)..."
   (string-append CONV-PRESET-DESCRIPTION "(Vibration)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2697,11 +2752,11 @@
   SF-IMAGE      "Image"           0
   SF-DRAWABLE   "Drawable"        0
   SF-OPTION     "Angle"           '( "0 (Small)"  "45 (Small)"
-                                    "90 (Small)" "135 (Small)"
+                                     "90 (Small)" "135 (Small)"
                                      "0"   "30"   "45"   "60"
-                                    "90"  "120"  "135"  "150"
+                                     "90"  "120"  "135"  "150"
                                      "0 (Wide)"   "45 (Wide)"
-                                    "90 (Wide)"  "135 (Wide)")
+                                     "90 (Wide)"  "135 (Wide)")
   SF-ADJUSTMENT "Amount"          '(3.0 0.1 16.0 1 1 1 0)
   SF-TOGGLE     "Motion Blur"     FALSE
   SF-TOGGLE     "Alpha-weighting" TRUE
@@ -2711,6 +2766,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-vibration"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2858,7 +2917,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-emboss-standard"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Emboss Standard..."
+  "Emboss Standard..."
   (string-append CONV-PRESET-DESCRIPTION "(Emboss Standard)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -2884,6 +2943,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-emboss-standard"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -2980,7 +3043,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-emboss"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Emboss..."
+  "Emboss..."
   (string-append CONV-PRESET-DESCRIPTION "(Emboss)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3001,6 +3064,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-emboss"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets/")
+
 
 
 
@@ -3093,7 +3160,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-emboss-variation"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Emboss Variation..."
+  "Emboss Variation..."
   (string-append CONV-PRESET-DESCRIPTION "(Emboss Variation)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3113,12 +3180,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
-
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-emboss-variation"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
     ;; Brightness-Contrast
@@ -3152,7 +3215,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-brightness-contrast"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Brightness-Contrast..."
+  "Brightness-Contrast..."
   (string-append CONV-PRESET-DESCRIPTION "(Brightness-Contrast)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3169,6 +3232,10 @@
   SF-TOGGLE     "Green Channel"   TRUE
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
+
+(script-fu-menu-register "script-fu-convolution-presets-brightness-contrast"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
+
 
 
 
@@ -3205,7 +3272,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-posterize"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Posterize..."
+  "Posterize..."
   (string-append CONV-PRESET-DESCRIPTION "(Posterize)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3223,10 +3290,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-posterize"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3301,7 +3366,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-posterize-variation"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Posterize Variation..."
+  "Posterize Variation..."
   (string-append CONV-PRESET-DESCRIPTION "(Posterize Variation)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3319,9 +3384,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-posterize-variation"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3416,7 +3480,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-shake"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Shake..."
+  "Shake..."
   (string-append CONV-PRESET-DESCRIPTION "(Shake)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3438,10 +3502,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-shake"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3511,7 +3573,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-color-invert"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Color Invert..."
+  "Color Invert..."
   (string-append CONV-PRESET-DESCRIPTION "(Color Invert)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3529,7 +3591,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
+(script-fu-menu-register "script-fu-convolution-presets-color-invert"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3573,7 +3636,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-artistic"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Artistic..."
+  "Artistic..."
   (string-append CONV-PRESET-DESCRIPTION "(Artistic)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3593,10 +3656,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-artistic"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3635,7 +3696,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-smudge"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Smudge..."
+  "Smudge..."
   (string-append CONV-PRESET-DESCRIPTION "(Smudge)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3654,8 +3715,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
+(script-fu-menu-register "script-fu-convolution-presets-smudge"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3850,7 +3911,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-others"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Others..."
+  "Others..."
   (string-append CONV-PRESET-DESCRIPTION "(Others)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3872,11 +3933,8 @@
   SF-TOGGLE     "Blue Channel"    TRUE
   SF-TOGGLE     "Alpha Channel"   FALSE)
 
-
-
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-others"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -3925,7 +3983,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-random-color"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Random Color (test)..."
+  "Random Color (test)..."
   (string-append CONV-PRESET-DESCRIPTION "(Random Color)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -3935,14 +3993,10 @@
   SF-DRAWABLE   "Drawable"        0
   SF-OPTION     "Matrix Type"     CONV-PRESET-TYPE-LIST
   SF-ADJUSTMENT "Amount"          '(1.0 0.1 16.0 1 1 1 0)
-  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST
-)
+  SF-OPTION     "Edge"            CONV-PRESET-EDGE-LIST)
 
-
-
-
-
-
+(script-fu-menu-register "script-fu-convolution-presets-random-color"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets")
 
 
 
@@ -4037,7 +4091,7 @@
 
 (script-fu-register
   "script-fu-convolution-presets-effects-test"
-  "<Image>/FX-Foundry/Convolution Matrix Presets/Effects/Test..."
+  "Test..."
   (string-append CONV-PRESET-DESCRIPTION "(Effects)")
   "Iccii <iccii@hotmail.com>"
   CONV-PRESET-COPYRIGHT
@@ -4048,6 +4102,7 @@
   SF-OPTION     "Type"            CONV-PRESET-TYPE-LIST
   SF-ADJUSTMENT "Amount"          '(1.0 0.1 16.0 1 1 1 0)
   SF-OPTION     "Effects"         '("no name1 (edge)" "no name2(edge)"
-                                    "no name3" "no name4 (noisify)")
-)
+                                    "no name3" "no name4 (noisify)"))
 
+(script-fu-menu-register "script-fu-convolution-presets-effects-test"
+                         "<Image>/FX-Foundry/Convolution Matrix Presets/Effects")

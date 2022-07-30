@@ -92,22 +92,26 @@
     (gimp-displays-flush)
 ;
 )
-;
-(script-fu-register "script-fu-Eg-ShadowRecovery"
-    "<Image>/FX-Foundry/Photo/Enhancement/Eg Recover Shadows"
-    "Lighten-up Shadows"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "2.06.2005"
-    "RGB* GRAY*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-OPTION     "Shadow Recovery Method"
-            '(
-                        "Normal"
-                        "Strong"
-            )
-    SF-ADJUSTMENT    "Layer Opacity"    '(60.0 1.0 100.0 1.0 0 2 0)
-    SF-TOGGLE    "Flatten Image"    FALSE
-)
-;
+
+
+(script-fu-register
+  "script-fu-Eg-ShadowRecovery"
+  "Eg Recover Shadows"
+  "Lighten-up Shadows"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "2.06.2005"
+  "RGB* GRAY*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-OPTION     "Shadow Recovery Method"
+  '(
+    "Normal"
+    "Strong"
+    )
+  SF-ADJUSTMENT    "Layer Opacity"    '(60.0 1.0 100.0 1.0 0 2 0)
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-ShadowRecovery"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+

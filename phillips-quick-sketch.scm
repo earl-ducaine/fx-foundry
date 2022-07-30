@@ -84,14 +84,18 @@
 )
 
 
-(script-fu-register "script-fu-quick-sketch"
-            _"<Image>/FX-Foundry/Artistic/Quick sketch..."
-            "Create a sketch from a photo"
-            "Harry Phillips"
-            "Harry Phillips"
-            "Sep. 9 2007"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE        "Drawable"  0
-        SF-ADJUSTMENT    _"Blur factor"      '(30 5 200 1 1 0 0)
-)
+(script-fu-register
+  "script-fu-quick-sketch"
+  _"Quick sketch..."
+  "Create a sketch from a photo"
+  "Harry Phillips"
+  "Harry Phillips"
+  "Sep. 9 2007"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE        "Drawable"  0
+  SF-ADJUSTMENT    _"Blur factor"      '(30 5 200 1 1 0 0))
+
+(script-fu-menu-register "script-fu-quick-sketch"
+                         "<Image>/FX-Foundry/Artistic")
+

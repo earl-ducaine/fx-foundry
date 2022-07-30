@@ -121,19 +121,22 @@
     )
 )
 
-(script-fu-register "script-fu-lab-sharpening"
-            "<Image>/FX-Foundry/Photo/Sharpen/Luminocity Sharpen"
-            "Sharpen images intelligently. Smart sharpen only sharpens images on the edges, where sharpening counts. Even areas are not sharpened, so noise levels are kept down when compared to normal unsharp mask. You may need to tweak the parameters for best result."
-            "Olli Salonen <olli@cabbala.net>"
-            "Olli Salonen"
-            "Jan 07, 2004"
-            ""
-            SF-IMAGE              "Image"                0
-            SF-DRAWABLE           "Drawable"             0
-            SF-ADJUSTMENT         "Amount of USM"        '(0.5 0 10 0.01 0.01 2 0)
-            SF-ADJUSTMENT         "Radius of USM"        '(0.5 0 10 0.01 0.01 2 0)
-            SF-ADJUSTMENT         "FindEdge amount"      '(2.0 0 10 0.01 0.01 2 0)
+(script-fu-register
+  "script-fu-lab-sharpening"
+  "Luminocity Sharpen"
+  "Sharpen images intelligently. Smart sharpen only sharpens images on the edges, where sharpening counts. Even areas are not sharpened, so noise levels are kept down when compared to normal unsharp mask. You may need to tweak the parameters for best result."
+  "Olli Salonen <olli@cabbala.net>"
+  "Olli Salonen"
+  "Jan 07, 2004"
+  ""
+  SF-IMAGE              "Image"                0
+  SF-DRAWABLE           "Drawable"             0
+  SF-ADJUSTMENT         "Amount of USM"        '(0.5 0 10 0.01 0.01 2 0)
+  SF-ADJUSTMENT         "Radius of USM"        '(0.5 0 10 0.01 0.01 2 0)
+  SF-ADJUSTMENT         "FindEdge amount"      '(2.0 0 10 0.01 0.01 2 0))
 
-            )
+(script-fu-menu-register "script-fu-lab-sharpening"
+                         "<Image>/FX-Foundry/Photo/Sharpen")
+
 
 

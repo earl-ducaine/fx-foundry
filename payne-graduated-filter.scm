@@ -87,15 +87,19 @@
   )
 )
 
-(script-fu-register "script-fu-grad_kp"
-            _"<Image>/FX-Foundry/Photo/Enhancement/Graduated Filter..."
-            "Add a graduated filter of an image"
-            "Kevin Payne <paynekj@hotmail.com>"
-            "Kevin Payne"
-            "14/04/2004"
-            "RGB*"
-            SF-IMAGE "Input Image" 0
-            SF-DRAWABLE "Input Drawable" 0
-            SF-COLOR _"Filter Colour" '(255 204 153)
-            SF-TOGGLE     _"Gradient Reverse"   TRUE
-            )
+(script-fu-register
+  "script-fu-grad_kp"
+  _"Graduated Filter..."
+  "Add a graduated filter of an image"
+  "Kevin Payne <paynekj@hotmail.com>"
+  "Kevin Payne"
+  "14/04/2004"
+  "RGB*"
+  SF-IMAGE "Input Image" 0
+  SF-DRAWABLE "Input Drawable" 0
+  SF-COLOR _"Filter Colour" '(255 204 153)
+  SF-TOGGLE     _"Gradient Reverse"   TRUE)
+
+(script-fu-menu-register "script-fu-grad_kp"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+

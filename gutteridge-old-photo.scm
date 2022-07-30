@@ -104,11 +104,10 @@
  )
 )
 
-; Register the function with the GIMP:
-
+;; Register the function with the GIMP:
 (script-fu-register
     "script-fu-old-photo-2"
-    "<Image>/FX-Foundry/Photo/Effects/Old Photo..."
+    "Old Photo..."
     "Makes the image look like an old photo (more configurable)"
     "Chris Gutteridge - Modification by Davide Galimberti (dgali@tiscalinet.it)"
     "1998, Chris Gutteridge / ECS dept, University of Southampton, England. - 2001, Davide Galimberti (dgali@tiscalinet.it)"
@@ -122,5 +121,8 @@
     SF-TOGGLE "Sepia" TRUE
     SF-TOGGLE "Mottle" FALSE
     SF-ADJUSTMENT "Mottle Size" '(0.5 0 10 0.1 10 2 1)
-    SF-TOGGLE "Work on Copy" TRUE
-)
+    SF-TOGGLE "Work on Copy" TRUE)
+
+(script-fu-menu-register "script-fu-old-photo-2"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

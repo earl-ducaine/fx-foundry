@@ -69,17 +69,21 @@
     (gimp-image-undo-group-end img)
     (gimp-displays-flush)))
 
-(script-fu-register "script-fu-hue-change-animator"
-            _"<Image>/FX-Foundry/Animation/Hue Changer ..."
-            ""
-            "noclayto"
-            "noclayto"
-            "July 2005"
-            ""
-                    SF-IMAGE       "Image"    0
-            SF-DRAWABLE    "Drawable" 0
-            SF-ADJUSTMENT _"Color Step"  '(45 1 360 1 10 0 1)
-            )
+(script-fu-register
+  "script-fu-hue-change-animator"
+  _"Hue Changer ..."
+  ""
+  "noclayto"
+  "noclayto"
+  "July 2005"
+  ""
+  SF-IMAGE       "Image"    0
+  SF-DRAWABLE    "Drawable" 0
+  SF-ADJUSTMENT _"Color Step"  '(45 1 360 1 10 0 1))
+
+(script-fu-menu-register "script-fu-hue-change-animator"
+                         "<Image>/FX-Foundry/Animation")
+
 
 
 

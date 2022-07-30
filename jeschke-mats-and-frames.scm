@@ -507,57 +507,64 @@
 
 ; Obligatory script registrations...
 
-(script-fu-register "script-fu-add-mat"
-            "<Image>/FX-Foundry/Image Effects/Add Mat..."
-            "Add a single mat around an image"
-            "Eric Jeschke <eric@redskiesatnight.com>"
-            "Eric Jeschke"
-            "5/27/03"
-            "RGB* GRAY*"
-            SF-IMAGE "Input Image" 0
-            SF-DRAWABLE "Input Drawable" 0
-            SF-ADJUSTMENT _"Bevel Width" '(5 0 250 1 10 0 1)
-            SF-OPTION _"Bevel Fill" '(_"Color" _"FG color" _"BG color" _"Pattern")
-            SF-COLOR _"Bevel Fill Color" '(221 221 221)
-            SF-ADJUSTMENT _"Delta Value on Bevel Color" '(25 1 255 1 10 0 1)
-            SF-ADJUSTMENT _"Mat Width" '(35 0 1000 1 10 0 1)
-            SF-OPTION _"Mat Fill" '(_"Color" _"FG color" _"BG color" _"Pattern")
-            SF-COLOR _"Mat Fill Color" '(128 128 128)
-            SF-TOGGLE  _"Texture Mat" FALSE
-            SF-PATTERN _"Texture Pattern" _"Wood"
-            SF-TOGGLE  _"Leave Texture Bump Map" FALSE
-            SF-TOGGLE  _"Bump Interactively" FALSE
-            SF-ADJUSTMENT _"Left Pad" '(0 0 1000 1 10 0 1)
-            SF-ADJUSTMENT _"Top Pad" '(0 0 1000 1 10 0 1)
-            SF-ADJUSTMENT _"Right Pad" '(0 0 1000 1 10 0 1)
-            SF-ADJUSTMENT _"Bottom Pad" '(0 0 1000 1 10 0 1)
-            SF-TOGGLE  _"Use Layers" FALSE
-            SF-TOGGLE  _"Leave Selection" FALSE
-            )
+(script-fu-register
+  "script-fu-add-mat"
+  "Add Mat..."
+  "Add a single mat around an image"
+  "Eric Jeschke <eric@redskiesatnight.com>"
+  "Eric Jeschke"
+  "5/27/03"
+  "RGB* GRAY*"
+  SF-IMAGE "Input Image" 0
+  SF-DRAWABLE "Input Drawable" 0
+  SF-ADJUSTMENT _"Bevel Width" '(5 0 250 1 10 0 1)
+  SF-OPTION _"Bevel Fill" '(_"Color" _"FG color" _"BG color" _"Pattern")
+  SF-COLOR _"Bevel Fill Color" '(221 221 221)
+  SF-ADJUSTMENT _"Delta Value on Bevel Color" '(25 1 255 1 10 0 1)
+  SF-ADJUSTMENT _"Mat Width" '(35 0 1000 1 10 0 1)
+  SF-OPTION _"Mat Fill" '(_"Color" _"FG color" _"BG color" _"Pattern")
+  SF-COLOR _"Mat Fill Color" '(128 128 128)
+  SF-TOGGLE  _"Texture Mat" FALSE
+  SF-PATTERN _"Texture Pattern" _"Wood"
+  SF-TOGGLE  _"Leave Texture Bump Map" FALSE
+  SF-TOGGLE  _"Bump Interactively" FALSE
+  SF-ADJUSTMENT _"Left Pad" '(0 0 1000 1 10 0 1)
+  SF-ADJUSTMENT _"Top Pad" '(0 0 1000 1 10 0 1)
+  SF-ADJUSTMENT _"Right Pad" '(0 0 1000 1 10 0 1)
+  SF-ADJUSTMENT _"Bottom Pad" '(0 0 1000 1 10 0 1)
+  SF-TOGGLE  _"Use Layers" FALSE
+  SF-TOGGLE  _"Leave Selection" FALSE)
 
-(script-fu-register "script-fu-add-frame"
-            "<Image>/FX-Foundry/Image Effects/Add Frame..."
-            "Add a frame around an image"
-            "Eric Jeschke <eric@redskiesatnight.com>"
-            "Eric Jeschke"
-            "5/27/03"
-            "RGB* GRAY*"
-            SF-IMAGE "Input Image" 0
-            SF-DRAWABLE "Input Drawable" 0
-            SF-ADJUSTMENT _"Frame Width" '(35 0 1000 1 10 0 1)
-            SF-OPTION _"Frame Fill" '(_"Color" _"FG color" _"BG color" _"Pattern")
-            SF-COLOR _"Frame Fill Color" '(128 128 128)
-            SF-TOGGLE  _"Texture Frame" FALSE
-            SF-PATTERN _"Texture Pattern" _"Wood"
-            SF-TOGGLE  _"Leave Texture Bump Map" FALSE
-            SF-TOGGLE  _"Bump Interactively" FALSE
-            SF-ADJUSTMENT _"Beveling Index" '(10 0 250 1 10 0 1)
-            SF-ADJUSTMENT _"Inner Shadow Width" '(8 0 100 1 10 0 1)
-            SF-ADJUSTMENT _"Inner Shadow Opacity" '(50 0 100 1 10 0 1)
-            SF-TOGGLE  _"Use Layers" FALSE
-            SF-TOGGLE  _"Leave Selection" FALSE
-            SF-TOGGLE  _"Leave Bevel Bump Map" FALSE
-            )
+(script-fu-menu-register "script-fu-add-mat"
+                         "<Image>/FX-Foundry/Image Effects")
+
+
+(script-fu-register
+  "script-fu-add-frame"
+  "Add Frame..."
+  "Add a frame around an image"
+  "Eric Jeschke <eric@redskiesatnight.com>"
+  "Eric Jeschke"
+  "5/27/03"
+  "RGB* GRAY*"
+  SF-IMAGE "Input Image" 0
+  SF-DRAWABLE "Input Drawable" 0
+  SF-ADJUSTMENT _"Frame Width" '(35 0 1000 1 10 0 1)
+  SF-OPTION _"Frame Fill" '(_"Color" _"FG color" _"BG color" _"Pattern")
+  SF-COLOR _"Frame Fill Color" '(128 128 128)
+  SF-TOGGLE  _"Texture Frame" FALSE
+  SF-PATTERN _"Texture Pattern" _"Wood"
+  SF-TOGGLE  _"Leave Texture Bump Map" FALSE
+  SF-TOGGLE  _"Bump Interactively" FALSE
+  SF-ADJUSTMENT _"Beveling Index" '(10 0 250 1 10 0 1)
+  SF-ADJUSTMENT _"Inner Shadow Width" '(8 0 100 1 10 0 1)
+  SF-ADJUSTMENT _"Inner Shadow Opacity" '(50 0 100 1 10 0 1)
+  SF-TOGGLE  _"Use Layers" FALSE
+  SF-TOGGLE  _"Leave Selection" FALSE
+  SF-TOGGLE  _"Leave Bevel Bump Map" FALSE)
+
+(script-fu-menu-register "script-fu-add-frame"
+                         "<Image>/FX-Foundry/Image Effects")
 
 ;
 ; END mats-and-frames.scm

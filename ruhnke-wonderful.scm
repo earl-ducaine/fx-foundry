@@ -57,18 +57,20 @@
 
   (gimp-image-undo-group-end inImage)) ;; fin d'historique d'annulation
 
-(script-fu-register "script-fu-grumbel-wonderful"
-            "<Image>/FX-Foundry/Photo/Effects/Make wonderful..."
-            "Creates a new tuxracer level"
-            "Ingo Ruhnke"
-            "1999, Ingo Ruhnke"
-            "2000"
-            "RGB RGBA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-            SF-ADJUSTMENT "Flou" '(35 0 5600 1 100 0 1)
-            SF-ADJUSTMENT "Luminosite" '(0 -127 127 1 10 0 1)
-            SF-ADJUSTMENT "Contraste" '(0 -127 127 1 10 0 1)
-            SF-TOGGLE "Aplatir l'image" FALSE)
+(script-fu-register
+  "script-fu-grumbel-wonderful"
+  "Make wonderful..."
+  "Creates a new tuxracer level"
+  "Ingo Ruhnke"
+  "1999, Ingo Ruhnke"
+  "2000"
+  "RGB RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT "Flou" '(35 0 5600 1 100 0 1)
+  SF-ADJUSTMENT "Luminosite" '(0 -127 127 1 10 0 1)
+  SF-ADJUSTMENT "Contraste" '(0 -127 127 1 10 0 1)
+  SF-TOGGLE "Aplatir l'image" FALSE)
 
-;; EOF ;;
+(script-fu-menu-register "script-fu-grumbel-wonderful"
+                         "<Image>/FX-Foundry/Photo/Effects")

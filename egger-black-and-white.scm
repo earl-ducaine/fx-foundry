@@ -109,31 +109,32 @@
     (gimp-displays-flush)
 ;
 )
-;
-; Register the function with the GIMP
-;
+
+;; Register the function with the GIMP
 (script-fu-register
-    "script-fu-Eg-Black&White"
-    "<Image>/FX-Foundry/Photo/Effects/Eg Black and White"
-    "Black and White conversions"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "11.07.2005"
-    "RGB*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-OPTION     "Which B&W conversion"
-            '(
-                    "B&W (Gimp)"
-                    "B&W (Channel Mixer)"
-                    "B&W + RED filter"
-                    "B&W + ORANGE filter"
-                    "B&W + YELLOW filter"
-                    "B&W + GREEN filter"
-                    "B&W (Lithographic film)"
-                    "B&W (Orthochromatic film)"
-            )
-    SF-TOGGLE    "Film grain simulation(RGB scatter plugin required)" FALSE
-    SF-TOGGLE    "Flatten Image"    FALSE
-)
-;
+  "script-fu-Eg-Black&White"
+  "Eg Black and White"
+  "Black and White conversions"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "11.07.2005"
+  "RGB*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-OPTION     "Which B&W conversion"
+  '(
+    "B&W (Gimp)"
+    "B&W (Channel Mixer)"
+    "B&W + RED filter"
+    "B&W + ORANGE filter"
+    "B&W + YELLOW filter"
+    "B&W + GREEN filter"
+    "B&W (Lithographic film)"
+    "B&W (Orthochromatic film)"
+    )
+  SF-TOGGLE    "Film grain simulation(RGB scatter plugin required)" FALSE
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-Black&White"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

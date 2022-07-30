@@ -101,27 +101,26 @@
             )
         )
     )
-;
-; Finish work
-;
+;; Finish work
     (gimp-image-undo-group-end InImage)
-    (gimp-displays-flush)
-)
-;
+    (gimp-displays-flush))
+
+
 (script-fu-register
-    "script-fu-Eg-Infrared"
-    "<Image>/FX-Foundry/Photo/Effects/Eg Infrared Simulation"
-    "Simulate digital Infrared"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "12.07.2005"
-    "RGB*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-ADJUSTMENT    "IR Layer Opacity" '(80.0 1.0 100.0 1.0 0 2 0)
-    SF-ADJUSTMENT    "Contrast/Glow Layer Opacity" '(50.0 1.0 100.0 1.0 0 2 0)
-    SF-TOGGLE    "Film grain simulation(requires RGB scater plug-in)" FALSE
-    SF-TOGGLE    "Blur Image"    FALSE
-    SF-TOGGLE    "Flatten Image"    FALSE
-    )
-;
+  "script-fu-Eg-Infrared"
+  "<Image>/FX-Foundry/Photo/Effects/Eg Infrared Simulation"
+  "Simulate digital Infrared"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "12.07.2005"
+  "RGB*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-ADJUSTMENT    "IR Layer Opacity" '(80.0 1.0 100.0 1.0 0 2 0)
+  SF-ADJUSTMENT    "Contrast/Glow Layer Opacity" '(50.0 1.0 100.0 1.0 0 2 0)
+  SF-TOGGLE    "Film grain simulation(requires RGB scater plug-in)" FALSE
+  SF-TOGGLE    "Blur Image"    FALSE
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-Infrared"
+                         "<Image>/FX-Foundry/Photo/Effects")

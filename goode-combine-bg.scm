@@ -74,16 +74,20 @@
   (gimp-displays-flush)
   )
 
-(script-fu-register "script-fu-anim-combine-background"
- "<Image>/FX-Foundry/Animation/_Combine with background"
- "Combine each layer of the image with a copy of the background layer"
- "Saul Goode"
- "Saul Goode"
- "4/22/2007"
- ""
- SF-IMAGE    "Image"    0
- SF-DRAWABLE "Drawable" 0
- )
+(script-fu-register
+  "script-fu-anim-combine-background"
+  "_Combine with background"
+  "Combine each layer of the image with a copy of the background layer"
+  "Saul Goode"
+  "Saul Goode"
+  "4/22/2007"
+  ""
+  SF-IMAGE    "Image"    0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-anim-combine-background"
+                         "<Image>/FX-Foundry/Animation")
+
 
 ;; Overlay each layer of the image with a copy of the background layer
 
@@ -124,13 +128,17 @@
   (gimp-displays-flush)
   )
 
-(script-fu-register "script-fu-anim-overlay-background"
- "<Image>/FX-Foundry/Animation/_Overlay background"
- "Overlay each layer of the image with a copy of the background layer"
- "Saul Goode"
- "Saul Goode"
- "4/22/2007"
- ""
- SF-IMAGE    "Image"    0
- SF-DRAWABLE "Drawable" 0
- )
+(script-fu-register
+  "script-fu-anim-overlay-background"
+  "_Overlay background"
+  "Overlay each layer of the image with a copy of the background layer"
+  "Saul Goode"
+  "Saul Goode"
+  "4/22/2007"
+  ""
+  SF-IMAGE    "Image"    0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-anim-overlay-background"
+                         "<Image>/FX-Foundry/Animation")
+

@@ -174,21 +174,25 @@
 
 ; Register the function with the GIMP:
 
-(script-fu-register "script-fu-photo-frame"
-    _"<Image>/FX-Foundry/Image Effects/Alexios Photo Frame..."
-    "Frame a photograph"
-    "Alexios Chouchoulas"
-    "2003, Alexios Chouchoulas"
-    "20th September 2003"
-    "RGB* GRAY* INDEXED*"
-    SF-IMAGE       "The Image"      0
-    SF-DRAWABLE    "The Layer"      0
-    SF-COLOR       _"Frame color"   '(0 0 0)
-    SF-ADJUSTMENT  _"Frame width"   '(3 1 300 1 10 0 1)
-    SF-COLOR       _"Padding color" '(255 255 255)
-    SF-ADJUSTMENT  _"Padding width" '(10 1 300 1 10 0 1)
-    SF-TOGGLE      _"Work on Copy"  TRUE
-    SF-TOGGLE      _"Flatten Image" TRUE
-)
+(script-fu-register
+  "script-fu-photo-frame"
+  _"Alexios Photo Frame..."
+  "Frame a photograph"
+  "Alexios Chouchoulas"
+  "2003, Alexios Chouchoulas"
+  "20th September 2003"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE       "The Image"      0
+  SF-DRAWABLE    "The Layer"      0
+  SF-COLOR       _"Frame color"   '(0 0 0)
+  SF-ADJUSTMENT  _"Frame width"   '(3 1 300 1 10 0 1)
+  SF-COLOR       _"Padding color" '(255 255 255)
+  SF-ADJUSTMENT  _"Padding width" '(10 1 300 1 10 0 1)
+  SF-TOGGLE      _"Work on Copy"  TRUE
+  SF-TOGGLE      _"Flatten Image" TRUE)
+
+(script-fu-menu-register "script-fu-photo-frame"
+                         "<Image>/FX-Foundry/Image Effects")
+
 
 ;;; End Of File.

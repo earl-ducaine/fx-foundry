@@ -87,16 +87,20 @@
 )
 
 
-(script-fu-register "script-fu-tone-mapping"
-            _"<Image>/FX-Foundry/Photo/Effects/Tone Mapping..."
-            "Performs a tone mapping operation with a specified blur on the open image"
-            "David Meiklejohn"
-            "2006, David Meiklejohn, Harry Phillips (Process)"
-            "Feb. 02 2006"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE     "Drawable"  0
-            SF-ADJUSTMENT   _"Blur:"     '(100 100 500 10 10 1 0)
-        SF-ADJUSTMENT   _"Opacity"      '(90 0 100 1 10 1 0)
-)
+(script-fu-register
+  "script-fu-tone-mapping"
+  _"Tone Mapping..."
+  "Performs a tone mapping operation with a specified blur on the open image"
+  "David Meiklejohn"
+  "2006, David Meiklejohn, Harry Phillips (Process)"
+  "Feb. 02 2006"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE     "Drawable"  0
+  SF-ADJUSTMENT   _"Blur:"     '(100 100 500 10 10 1 0)
+  SF-ADJUSTMENT   _"Opacity"      '(90 0 100 1 10 1 0))
+
+(script-fu-menu-register "script-fu-tone-mapping"
+                         "<Image>/FX-Foundry/Photo/Effects")
+
 

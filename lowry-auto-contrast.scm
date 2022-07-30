@@ -104,23 +104,23 @@
 
    ; Flush the display
 
-   (gimp-displays-flush)
-
-   )
-
-)
+   (gimp-displays-flush)))
 
 
-(script-fu-register "script-fu-auto-contrast"
-      "<Image>/FX-Foundry/Photo/Enhancement/Auto contrast correction"
-      "Automatically adjust contrast of drawable. Brightens dull photos."
-      "Mark Lowry"
-      "Mark Lowry"
-      "2007"
-      "RGB*, GRAY*"
-      SF-IMAGE "Image" 0
-      SF-DRAWABLE "Current Layer" 0
-      SF-TOGGLE "Merge Layers"  FALSE
-      SF-TOGGLE "Skip auto levels"  FALSE
- )
+(script-fu-register
+  "script-fu-auto-contrast"
+  "Auto contrast correction"
+  "Automatically adjust contrast of drawable. Brightens dull photos."
+  "Mark Lowry"
+  "Mark Lowry"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-TOGGLE "Merge Layers"  FALSE
+  SF-TOGGLE "Skip auto levels"  FALSE)
+
+(script-fu-menu-register "script-fu-auto-contrast"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+
 

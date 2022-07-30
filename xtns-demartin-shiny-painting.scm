@@ -162,23 +162,28 @@
 (Aply-script-fu-shiny img Bump-Layer fond-color damage LightA LightPX LightPY Bcolor Crackeled bumpmap_depth)
  (gimp-displays-flush)))
 
-(script-fu-register "script-fu-shiny-logo-alpha"
-            _"<Image>/FX-Foundry/Alpha to Logo/Corroded Painting"
-            "Scott-effect : Shiny Corroded Painting"
-            "titix raymond and philippe"
-            "2001, titix and raymond 2007 Philippe Demartin"
-            "20.10.2007"
-            ""
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-                    SF-COLOR "Background" '(178 178 178)
-                    SF-ADJUSTMENT "Painting Damage %" '(70 10 100 1 0 0 0)
-            SF-ADJUSTMENT "Light Amount" '(0.70 0 10 0.1 1 2 0)
-            SF-ADJUSTMENT "Light Position X" '(0 -50 50 1 0 0 0)
-            SF-ADJUSTMENT "Light Position y" '(0 -50 50 1 0 0 0)
-            SF-COLOR "Painting Color" '(255 0 0)
-            SF-TOGGLE "Crackeled" FALSE
-                    SF-ADJUSTMENT "Bumpmap depth" '(15 1 50 1 0 0 0))
+(script-fu-register
+  "script-fu-shiny-logo-alpha"
+  _"Corroded Painting"
+  "Scott-effect : Shiny Corroded Painting"
+  "titix raymond and philippe"
+  "2001, titix and raymond 2007 Philippe Demartin"
+  "20.10.2007"
+  ""
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Background" '(178 178 178)
+  SF-ADJUSTMENT "Painting Damage %" '(70 10 100 1 0 0 0)
+  SF-ADJUSTMENT "Light Amount" '(0.70 0 10 0.1 1 2 0)
+  SF-ADJUSTMENT "Light Position X" '(0 -50 50 1 0 0 0)
+  SF-ADJUSTMENT "Light Position y" '(0 -50 50 1 0 0 0)
+  SF-COLOR "Painting Color" '(255 0 0)
+  SF-TOGGLE "Crackeled" FALSE
+  SF-ADJUSTMENT "Bumpmap depth" '(15 1 50 1 0 0 0))
+
+(script-fu-menu-register "script-fu-shiny-logo-alpha"
+			 _"<Image>/FX-Foundry/Alpha to Logo")
+
 
 (define (script-fu-shiny-logo font text Text-Color Back-color size damage LightA LightPX LightPY Bcolor Crackeled bumpmap_depth)
 
@@ -200,25 +205,26 @@
     (gimp-display-new img)
     ))
 
-(script-fu-register     "script-fu-shiny-logo"
-            "Corroded Painting"
-            "Create corroded painted logo"
-            "Philippe Demartin"
-            "Inspired from the Corrosion script from titix and raymond"
-            "10/21/2007"
-            ""
-            SF-FONT "Font Name" "Tahoma Bold"
-            SF-STRING "Enter your text" "Corroded..."
-            SF-COLOR "Font Color" '(133 52 2)
-            SF-COLOR "Background" '(178 178 178)
-            SF-ADJUSTMENT "Font size (pixels)" '(150 2 1000 1 10 0 1)
-                    SF-ADJUSTMENT "Painting Damage %" '(70 10 100 1 0 0 0)
-            SF-ADJUSTMENT "Light Amount" '(0.70 0 10 0.01 1 2 0)
-            SF-ADJUSTMENT "Light Position X" '(0 -2 2 0.1 1 1 0)
-            SF-ADJUSTMENT "Light Position y" '(0 -2 2 0.1 1 1 1)
-            SF-COLOR "Painting Color" '(255 0 0)
-            SF-TOGGLE _"Crackeled" FALSE
-                    SF-ADJUSTMENT "Bumpmap depth" '(15 1 50 1 0 0 0)            )
+(script-fu-register
+  "script-fu-shiny-logo"
+  "Corroded Painting"
+  "Create corroded painted logo"
+  "Philippe Demartin"
+  "Inspired from the Corrosion script from titix and raymond"
+  "10/21/2007"
+  ""
+  SF-FONT "Font Name" "Tahoma Bold"
+  SF-STRING "Enter your text" "Corroded..."
+  SF-COLOR "Font Color" '(133 52 2)
+  SF-COLOR "Background" '(178 178 178)
+  SF-ADJUSTMENT "Font size (pixels)" '(150 2 1000 1 10 0 1)
+  SF-ADJUSTMENT "Painting Damage %" '(70 10 100 1 0 0 0)
+  SF-ADJUSTMENT "Light Amount" '(0.70 0 10 0.01 1 2 0)
+  SF-ADJUSTMENT "Light Position X" '(0 -2 2 0.1 1 1 0)
+  SF-ADJUSTMENT "Light Position y" '(0 -2 2 0.1 1 1 1)
+  SF-COLOR "Painting Color" '(255 0 0)
+  SF-TOGGLE _"Crackeled" FALSE
+  SF-ADJUSTMENT "Bumpmap depth" '(15 1 50 1 0 0 0))
 
 (script-fu-menu-register "script-fu-shiny-logo"
              "<Image>/File/New/FX-Foundry/Logos")

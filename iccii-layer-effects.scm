@@ -191,7 +191,7 @@
 
 (script-fu-register
     "script-fu-layer-effects-drop-shadow"
-    "<Image>/FX-Foundry/Layer Effects/Drop Shadow..."
+    _"Drop Shadow..."
     "Create the Drop Shadow on the layer with alpha"
     "Iccii "
     "Iccii"
@@ -208,8 +208,10 @@
     SF-OPTION "Shadow Layer Mode" '("Default (Multiply)" "Dissolve" "Normal"
     "Multiply" "Screen" "Overlay" "Difference"
     "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-)
+    "Hue" "Saturation" "Color" "Value" "Divide"))
+
+(script-fu-menu-register "script-fu-layer-effects-drop-shadow"
+			 _"<Image>/FX-Foundry/Layer Effects")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -239,30 +241,33 @@
         opacity layer-mode "Inner Shadow" 1)
         (gimp-context-set-background old-bg)
         (gimp-image-undo-group-end img)
-        (gimp-displays-flush)
-    )
-)
+        (gimp-displays-flush)))
+
+
 (script-fu-register
-    "script-fu-layer-effects-inner-shadow"
-    "<Image>/FX-Foundry/Layer Effects/Inner Shadow..."
-    "Create the Inner Shadow on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-COLOR "Shadow Color" '(0 0 0)
-    SF-ADJUSTMENT "Lighting (degrees)" '(30 0 360 1 15 0 0)
-    SF-ADJUSTMENT "Offset Radius" '(5 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Shadow Radius" '(0 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Shadow Blur Radius" '(5 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Drop Shadow Opacity" '(75 0 100 1 10 0 0)
-    SF-OPTION "Shadow Layer Mode" '("Default (Multiply)" "Dissolve" "Normal"
+  "script-fu-layer-effects-inner-shadow"
+  "Inner Shadow..."
+  "Create the Inner Shadow on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Shadow Color" '(0 0 0)
+  SF-ADJUSTMENT "Lighting (degrees)" '(30 0 360 1 15 0 0)
+  SF-ADJUSTMENT "Offset Radius" '(5 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Shadow Radius" '(0 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Shadow Blur Radius" '(5 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Drop Shadow Opacity" '(75 0 100 1 10 0 0)
+  SF-OPTION "Shadow Layer Mode"
+  '("Default (Multiply)" "Dissolve" "Normal"
     "Multiply" "Screen" "Overlay" "Difference"
     "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-)
+    "Hue" "Saturation" "Color" "Value" "Divide"))
+
+(script-fu-menu-register "script-fu-layer-effects-inner-shadow"
+                         "<Image>/FX-Foundry/Layer Effects")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -290,29 +295,31 @@
     (layer-effects-common1 img layer color 0 0 radius blur-radius
     opacity layer-mode "Outer Glow" 0)
     (gimp-image-undo-group-end img)
-    (gimp-displays-flush)
-  )
-)
+    (gimp-displays-flush)))
+
 
 (script-fu-register
-    "script-fu-layer-effects-outer-glow"
-    "<Image>/FX-Foundry/Layer Effects/Outer Glow..."
-    "Create the Outer Glow on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-COLOR "Glow Color" '(255 255 191)
-    SF-ADJUSTMENT "Glow Radius" '(2 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Blur Radius" '(10 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Opacity" '(75 0 100 1 10 0 0)
-    SF-OPTION "Glow Layer Mode" '("Default (Screen)" "Dissolve" "Normal"
+  "script-fu-layer-effects-outer-glow"
+  "Outer Glow..."
+  "Create the Outer Glow on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Glow Color" '(255 255 191)
+  SF-ADJUSTMENT "Glow Radius" '(2 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Blur Radius" '(10 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Opacity" '(75 0 100 1 10 0 0)
+  SF-OPTION "Glow Layer Mode"
+  '("Default (Screen)" "Dissolve" "Normal"
     "Multiply" "Screen" "Overlay" "Difference"
     "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-)
+    "Hue" "Saturation" "Color" "Value" "Divide"))
+
+(script-fu-menu-register "script-fu-layer-effects-outer-glow"
+                         "<Image>/FX-Foundry/Layer Effects")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -342,13 +349,12 @@
     (layer-effects-common1 img layer color 0 0 radius blur-radius
     opacity layer-mode "Inner Glow" glow-type)
     (gimp-image-undo-group-end img)
-    (gimp-displays-flush)
-  )
-)
+    (gimp-displays-flush)))
+
 
 (script-fu-register
     "script-fu-layer-effects-inner-glow"
-    "<Image>/FX-Foundry/Layer Effects/Inner Glow..."
+    "Inner Glow..."
     "Create the Inner Glow on the layer with alpha"
     "Iccii "
     "Iccii"
@@ -364,8 +370,11 @@
     "Multiply" "Screen" "Overlay" "Difference"
     "Addition" "Subtract" "Darken" "Lighten"
     "Hue" "Saturation" "Color" "Value" "Divide")
-    SF-OPTION "Glow Type" '("Edge" "Inner")
-)
+    SF-OPTION "Glow Type" '("Edge" "Inner"))
+
+(script-fu-menu-register "script-fu-layer-effects-inner-glow"
+                         "<Image>/FX-Foundry/Layer Effects")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -452,8 +461,11 @@
     SF-OPTION "Shadow Layer Mode" '("Default (Multiply)" "Dissolve" "Normal"
     "Multiply" "Screen" "Overlay" "Difference"
     "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-)
+    "Hue" "Saturation" "Color" "Value" "Divide"))
+
+(script-fu-menu-register "script-fu-pixelgradient"
+                         "<Image>/FX-Foundry/Selection Effects")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -544,26 +556,29 @@
 )
 
 (script-fu-register
-    "script-fu-layer-effects-satin"
-    "<Image>/FX-Foundry/Layer Effects/Satin..."
-    "Create the Satin effect on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-COLOR "Satin Color" '(0 0 0)
-    SF-ADJUSTMENT "Angle" '(30 0 360 1 15 0 0)
-    SF-ADJUSTMENT "Satin Radius" '(10 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Blur Radius" '(10 0 100 1 10 0 1)
-    SF-ADJUSTMENT "Opacity" '(50 0 100 1 10 0 0)
-    SF-OPTION "Satin Layer Mode" '("Default (Multiply)" "Dissolve" "Normal"
-    "Multiply" "Screen" "Overlay" "Difference"
-    "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-    SF-TOGGLE "Invert" TRUE
-)
+  "script-fu-layer-effects-satin"
+  "Satin..."
+  "Create the Satin effect on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Satin Color" '(0 0 0)
+  SF-ADJUSTMENT "Angle" '(30 0 360 1 15 0 0)
+  SF-ADJUSTMENT "Satin Radius" '(10 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Blur Radius" '(10 0 100 1 10 0 1)
+  SF-ADJUSTMENT "Opacity" '(50 0 100 1 10 0 0)
+  SF-OPTION "Satin Layer Mode" '("Default (Multiply)" "Dissolve" "Normal"
+				 "Multiply" "Screen" "Overlay" "Difference"
+				 "Addition" "Subtract" "Darken" "Lighten"
+				 "Hue" "Saturation" "Color" "Value" "Divide")
+  SF-TOGGLE "Invert" TRUE)
+
+(script-fu-menu-register "script-fu-layer-effects-satin"
+                         "<Image>/FX-Foundry/Layer Effects")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -601,27 +616,29 @@
         (gimp-context-set-background old-bg)
         (gimp-image-undo-group-end img)
         (gimp-displays-flush)
-        (list color-layer)
-      )
-)
+        (list color-layer)))
+
 
 (script-fu-register
-    "script-fu-layer-effects-color-overlay"
-    "<Image>/FX-Foundry/Layer Effects/Color Overlay..."
-    "Create the Color overlay effect on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-COLOR "Color" '(0 0 0)
-    SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
-    SF-OPTION "Color Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
-    "Multiply" "Screen" "Overlay" "Difference"
-    "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-)
+  "script-fu-layer-effects-color-overlay"
+  "Color Overlay..."
+  "Create the Color overlay effect on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Color" '(0 0 0)
+  SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
+  SF-OPTION "Color Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
+				"Multiply" "Screen" "Overlay" "Difference"
+				"Addition" "Subtract" "Darken" "Lighten"
+				"Hue" "Saturation" "Color" "Value" "Divide"))
+
+(script-fu-menu-register "script-fu-layer-effects-color-overlay"
+                         "<Image>/FX-Foundry/Layer Effects")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -697,33 +714,36 @@
 )
 
 (script-fu-register
-    "script-fu-layer-effects-gradient-overlay"
-    "<Image>/FX-Foundry/Layer Effects/Gradient Overlay..."
-    "Create the Gradient overlay effect on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-COLOR "Foreground Color" '(127 255 255)
-    SF-COLOR "Background Color" '(127 255 127)
-    SF-OPTION "Blend Mode" '("FG-BG RGB" "FG-BG HSV" "FG-Trans" "Custom")
-    SF-GRADIENT "Gradient" "Sunrise"
-    SF-ADJUSTMENT "Angle" '(30 0 360 1 15 0 0)
-    SF-ADJUSTMENT "Scale" '(1.00 0.05 5 0.05 0.1 2 0)
-    SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
-    SF-OPTION "Gradient Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
-    "Multiply" "Screen" "Overlay" "Difference"
-    "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-    SF-OPTION "Gradient Style" '("Linear" "Biliner" "Radial" "Square"
-    "Conical Symmetric" "Conical Asymmetric"
-    "Shapeburst Angular" "Shapeburst Spherical"
-    "Shapeburst Dimpled" "Spiral Clockwise"
-    "Spiral Anticlockwise")
-    SF-OPTION "Repeat" '("None" "Sawtooth Wave" "Triangular Wave")
-)
+  "script-fu-layer-effects-gradient-overlay"
+  "Gradient Overlay..."
+  "Create the Gradient overlay effect on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-COLOR "Foreground Color" '(127 255 255)
+  SF-COLOR "Background Color" '(127 255 127)
+  SF-OPTION "Blend Mode" '("FG-BG RGB" "FG-BG HSV" "FG-Trans" "Custom")
+  SF-GRADIENT "Gradient" "Sunrise"
+  SF-ADJUSTMENT "Angle" '(30 0 360 1 15 0 0)
+  SF-ADJUSTMENT "Scale" '(1.00 0.05 5 0.05 0.1 2 0)
+  SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
+  SF-OPTION "Gradient Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
+				   "Multiply" "Screen" "Overlay" "Difference"
+				   "Addition" "Subtract" "Darken" "Lighten"
+				   "Hue" "Saturation" "Color" "Value" "Divide")
+  SF-OPTION "Gradient Style" '("Linear" "Biliner" "Radial" "Square"
+			       "Conical Symmetric" "Conical Asymmetric"
+			       "Shapeburst Angular" "Shapeburst Spherical"
+			       "Shapeburst Dimpled" "Spiral Clockwise"
+			       "Spiral Anticlockwise")
+  SF-OPTION "Repeat" '("None" "Sawtooth Wave" "Triangular Wave"))
+
+(script-fu-menu-register "script-fu-layer-effects-gradient-overlay"
+                         "<Image>/FX-Foundry/Layer Effects")
+
 
 
 
@@ -767,22 +787,25 @@
 )
 
 (script-fu-register
-    "script-fu-layer-effects-pattern-overlay"
-    "<Image>/FX-Foundry/Layer Effects/Pattern Overlay..."
-    "Create the Pattern overlay effect on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-PATTERN "Pattern" "Pine?"
-    SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
-    SF-OPTION "Pattern Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
-    "Multiply" "Screen" "Overlay" "Difference"
-    "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-)
+  "script-fu-layer-effects-pattern-overlay"
+  "Pattern Overlay..."
+  "Create the Pattern overlay effect on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-PATTERN "Pattern" "Pine?"
+  SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
+  SF-OPTION "Pattern Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
+				  "Multiply" "Screen" "Overlay" "Difference"
+				  "Addition" "Subtract" "Darken" "Lighten"
+				  "Hue" "Saturation" "Color" "Value" "Divide"))
+
+(script-fu-menu-register "script-fu-layer-effects-pattern-overlay"
+                         "<Image>/FX-Foundry/Layer Effects")
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -867,39 +890,42 @@
 )
 
 (script-fu-register
-    "script-fu-layer-effects-add-border"
-    "<Image>/FX-Foundry/Layer Effects/Add Border..."
-    "Create the Add Border effect on the layer with alpha"
-    "Iccii "
-    "Iccii"
-    "Aug, 2001"
-    "RGBA"
-    SF-IMAGE "Image" 0
-    SF-DRAWABLE "Drawable" 0
-    SF-OPTION "Border Fill Type" '("Color" "Gradient" "Pattern")
-    SF-ADJUSTMENT "Border Size" '(5 3 100 1 10 0 1)
-    SF-OPTION "Border Position" '("Inner Border" "Outer Border" "Center Border")
-    SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
-    SF-OPTION "Border Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
-    "Multiply" "Screen" "Overlay" "Difference"
-    "Addition" "Subtract" "Darken" "Lighten"
-    "Hue" "Saturation" "Color" "Value" "Divide")
-    SF-COLOR "Color" '(0 0 0)
-    SF-COLOR "Foreground Color" '(127 255 255)
-    SF-COLOR "Background Color" '(127 255 127)
-    SF-OPTION "Blend Mode" '("FG-BG RGB" "FG-BG HSV" "FG-Trans" "Custom")
-    SF-GRADIENT "Gradient" "Sunrise"
-    SF-ADJUSTMENT "Angle" '(30 0 360 1 15 0 0)
-    SF-ADJUSTMENT "Scale" '(1.00 0.05 5 0.05 0.1 2 0)
-    SF-OPTION "Gradient Style" '("Linear" "Biliner" "Radial" "Square"
-    "Conical Symmetric" "Conical Asymmetric"
-    "Shapeburst Angular" "Shapeburst Spherical"
-    "Shapeburst Dimpled" "Spiral Clockwise"
-    "Spiral Anticlockwise")
-    SF-OPTION "Repeat" '("None" "Sawtooth Wave" "Triangular Wave")
-    SF-PATTERN "Pattern" "Pine?"
-    SF-TOGGLE "Antialias" TRUE
-)
+  "script-fu-layer-effects-add-border"
+  "Add Border..."
+  "Create the Add Border effect on the layer with alpha"
+  "Iccii "
+  "Iccii"
+  "Aug, 2001"
+  "RGBA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-OPTION "Border Fill Type" '("Color" "Gradient" "Pattern")
+  SF-ADJUSTMENT "Border Size" '(5 3 100 1 10 0 1)
+  SF-OPTION "Border Position" '("Inner Border" "Outer Border" "Center Border")
+  SF-ADJUSTMENT "Opacity" '(100 0 100 1 10 0 0)
+  SF-OPTION "Border Fill Mode" '("Default (Normal)" "Dissolve" "Normal"
+				 "Multiply" "Screen" "Overlay" "Difference"
+				 "Addition" "Subtract" "Darken" "Lighten"
+				 "Hue" "Saturation" "Color" "Value" "Divide")
+  SF-COLOR "Color" '(0 0 0)
+  SF-COLOR "Foreground Color" '(127 255 255)
+  SF-COLOR "Background Color" '(127 255 127)
+  SF-OPTION "Blend Mode" '("FG-BG RGB" "FG-BG HSV" "FG-Trans" "Custom")
+  SF-GRADIENT "Gradient" "Sunrise"
+  SF-ADJUSTMENT "Angle" '(30 0 360 1 15 0 0)
+  SF-ADJUSTMENT "Scale" '(1.00 0.05 5 0.05 0.1 2 0)
+  SF-OPTION "Gradient Style" '("Linear" "Biliner" "Radial" "Square"
+			       "Conical Symmetric" "Conical Asymmetric"
+			       "Shapeburst Angular" "Shapeburst Spherical"
+			       "Shapeburst Dimpled" "Spiral Clockwise"
+			       "Spiral Anticlockwise")
+  SF-OPTION "Repeat" '("None" "Sawtooth Wave" "Triangular Wave")
+  SF-PATTERN "Pattern" "Pine?"
+  SF-TOGGLE "Antialias" TRUE)
+
+(script-fu-menu-register "script-fu-layer-effects-add-border"
+                         "<Image>/FX-Foundry/Layer Effects")
+
 
 
 
@@ -931,9 +957,11 @@
             (gimp-displays-flush)
     )
 )
+
+
 (script-fu-register
     "script-fu-layer-effects-styles-sample"
-    "<Image>/FX-Foundry/Layer Effects/Style Sample..."
+    "Style Sample..."
     "Layer Style sample script."
     "Iccii "
     "Iccii"
@@ -942,5 +970,8 @@
     SF-IMAGE "Image" 0
     SF-DRAWABLE "Drawable" 0
     SF-ADJUSTMENT "Angle (Degree)" '(30 0 360 1 10 0 0)
-    SF-PATTERN "Pattern" "Pine?"
-)
+    SF-PATTERN "Pattern" "Pine?")
+
+(script-fu-menu-register "script-fu-layer-effects-styles-sample"
+                         "<Image>/FX-Foundry/Layer Effects")
+

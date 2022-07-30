@@ -125,14 +125,18 @@
     (gimp-image-undo-enable img)
     (gimp-display-new img)))
 
-(script-fu-register "script-fu-shrek-text"
-            _"<Image>/File/New/FX-Foundry/Logos/Shrek Text..."
-                    "Give text a iMac effect"
-                    "Ivan Zenkov"
-                    "Ivan Zenkov"
-                    "September 17, 2004"
-                    ""
-                    SF-STRING     _"Text" "Shrek"
-                    SF-FONT       _"Font" "Serif Bold"
-                    SF-ADJUSTMENT _"Font Size (pixels)" '(100 2 1000 1 10 0 1)
-                    SF-COLOR      _"Text Color" '(84 155 8))
+(script-fu-register
+  "script-fu-shrek-text"
+  _"Shrek Text..."
+  "Give text a iMac effect"
+  "Ivan Zenkov"
+  "Ivan Zenkov"
+  "September 17, 2004"
+  ""
+  SF-STRING     _"Text" "Shrek"
+  SF-FONT       _"Font" "Serif Bold"
+  SF-ADJUSTMENT _"Font Size (pixels)" '(100 2 1000 1 10 0 1)
+  SF-COLOR      _"Text Color" '(84 155 8))
+
+(script-fu-menu-register "script-fu-shrek-text"
+			 _"<Image>/File/New/FX-Foundry/Logos")

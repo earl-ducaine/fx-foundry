@@ -288,32 +288,35 @@
 
 
 (script-fu-register
- "script-fu-gm-channel-extract"
- _"<Image>/FX-Foundry/Toolbox/Lasm's Channel Extract"
- "Version 1.1 \nThis utility works on any RGBA image and let you extract all or any one of the 17 greyscale channels of the image for photo-retouch, black and white conversion, creating masks and many other image processing purposes. Caution: it may run slowly on large images."
- "lasm"
- "Copyright 2005, lasm"
- "Dec 7, 2005"
- "RGB*"
- SF-IMAGE           "The Image"       0
- SF-DRAWABLE         "The Layer"       0
- SF-TOGGLE            _"All Channels"      TRUE
- SF-TOGGLE            _"Red"              FALSE
- SF-TOGGLE            _"Green"          FALSE
- SF-TOGGLE            _"Blue"              FALSE
- SF-TOGGLE            _"L"              FALSE
- SF-TOGGLE            _"A"              FALSE
- SF-TOGGLE            _"B"              FALSE
- SF-TOGGLE            _"Cyan"              FALSE
- SF-TOGGLE            _"Magenta"          FALSE
- SF-TOGGLE            _"Yellow"          FALSE
- SF-TOGGLE            _"Hue"              FALSE
- SF-TOGGLE            _"Saturation"      FALSE
- SF-TOGGLE            _"Value"          FALSE
- SF-TOGGLE            _"Cyan-K"          FALSE
- SF-TOGGLE            _"Magenta-K"      FALSE
- SF-TOGGLE            _"Yellow-K"          FALSE
- SF-TOGGLE            _"Black"          FALSE
- SF-TOGGLE            _"Alpha"          FALSE
- )
+  "script-fu-gm-channel-extract"
+  _"Lasm's Channel Extract"
+  "Version 1.1 \nThis utility works on any RGBA image and let you extract all or any one of the 17 greyscale channels of the image for photo-retouch, black and white conversion, creating masks and many other image processing purposes. Caution: it may run slowly on large images."
+  "lasm"
+  "Copyright 2005, lasm"
+  "Dec 7, 2005"
+  "RGB*"
+  SF-IMAGE           "The Image"       0
+  SF-DRAWABLE         "The Layer"       0
+  SF-TOGGLE            _"All Channels"      TRUE
+  SF-TOGGLE            _"Red"              FALSE
+  SF-TOGGLE            _"Green"          FALSE
+  SF-TOGGLE            _"Blue"              FALSE
+  SF-TOGGLE            _"L"              FALSE
+  SF-TOGGLE            _"A"              FALSE
+  SF-TOGGLE            _"B"              FALSE
+  SF-TOGGLE            _"Cyan"              FALSE
+  SF-TOGGLE            _"Magenta"          FALSE
+  SF-TOGGLE            _"Yellow"          FALSE
+  SF-TOGGLE            _"Hue"              FALSE
+  SF-TOGGLE            _"Saturation"      FALSE
+  SF-TOGGLE            _"Value"          FALSE
+  SF-TOGGLE            _"Cyan-K"          FALSE
+  SF-TOGGLE            _"Magenta-K"      FALSE
+  SF-TOGGLE            _"Yellow-K"          FALSE
+  SF-TOGGLE            _"Black"          FALSE
+  SF-TOGGLE            _"Alpha"          FALSE)
+
+(script-fu-menu-register "script-fu-gm-channel-extract"
+                         "<Image>/FX-Foundry/Toolbox")
+
 

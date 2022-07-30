@@ -41,32 +41,31 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-; User Options Popup
-;
-(script-fu-register "script-fu-glass-effect-text"
-            _"_GlassEffect Text..."
-            "Creates Glass-Effect Text with a drop shadow"
-            "Scott Mosteller"
-            "Scott Mosteller"
-            "2007"
-            ""
-            SF-STRING     _"Text"               "Gimp"
-            SF-ADJUSTMENT _"Font size (pixels)" '(150 2 1000 1 10 0 1)
-            SF-FONT       _"Font"               "Arial Black"
-            SF-COLOR      _"Text color"         '(123 149 176)
-                    SF-PATTERN    _"Background Pattern" "Dried mud"
-                    SF-ADJUSTMENT _"Glass Depth"        '(3 1 10 1 1 0 1)
-                    SF-ADJUSTMENT _"Glass Translucency" '(64 0 255 1 1 0 1)
-            SF-COLOR      _"Shadow color"       '(0 0 0)
-                    SF-ADJUSTMENT _"Shadow Offset X"    '(12 -25 25 1 1 0 1)
-                    SF-ADJUSTMENT _"Shadow Offset Y"    '(12 -25 25 1 1 0 1)
-                    SF-ADJUSTMENT _"Shadow Blur"        '(8 0 25 1 1 0 1)
-                    SF-ADJUSTMENT _"Shadow Opacity"     '(60 0 100 1 1 0 1)
-                    SF-TOGGLE     _"Include Shadow?"     TRUE
-                    SF-TOGGLE     _"Include Background"  TRUE)
-;
-; Register on Menu
-;
+;; User Options Popup
+(script-fu-register
+  "script-fu-glass-effect-text"
+  _"_GlassEffect Text..."
+  "Creates Glass-Effect Text with a drop shadow"
+  "Scott Mosteller"
+  "Scott Mosteller"
+  "2007"
+  ""
+  SF-STRING     _"Text"               "Gimp"
+  SF-ADJUSTMENT _"Font size (pixels)" '(150 2 1000 1 10 0 1)
+  SF-FONT       _"Font"               "Arial Black"
+  SF-COLOR      _"Text color"         '(123 149 176)
+  SF-PATTERN    _"Background Pattern" "Dried mud"
+  SF-ADJUSTMENT _"Glass Depth"        '(3 1 10 1 1 0 1)
+  SF-ADJUSTMENT _"Glass Translucency" '(64 0 255 1 1 0 1)
+  SF-COLOR      _"Shadow color"       '(0 0 0)
+  SF-ADJUSTMENT _"Shadow Offset X"    '(12 -25 25 1 1 0 1)
+  SF-ADJUSTMENT _"Shadow Offset Y"    '(12 -25 25 1 1 0 1)
+  SF-ADJUSTMENT _"Shadow Blur"        '(8 0 25 1 1 0 1)
+  SF-ADJUSTMENT _"Shadow Opacity"     '(60 0 100 1 1 0 1)
+  SF-TOGGLE     _"Include Shadow?"     TRUE
+  SF-TOGGLE     _"Include Background"  TRUE)
+
+;; Register on Menu
 (script-fu-menu-register "script-fu-glass-effect-text"
              _"<Image>/File/New/FX-Foundry/Logos")
 ;

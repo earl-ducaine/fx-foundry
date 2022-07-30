@@ -85,15 +85,19 @@
 )
 )
 
-(script-fu-register "script-fu-lomo"
-            _"<Image>/FX-Foundry/Photo/Effects/Bercovich Lomo..."
-            "Turn an image into a 'LOMO' snap. \n\nwww.lomography.com for those that are not sure what lomo's are.\n\nEnjoy!"
-            "Avi Bercovich <avi@sillypages.org>"
-            "Avi Bercovich"
-            "April 2003"
-            "RGB* GRAY* INDEXED*"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-                SF-ADJUSTMENT "Fringe offset" '(4 1 10 1 10 0 1)
-                SF-TOGGLE "Boost fringe?" FALSE
-)
+(script-fu-register
+  "script-fu-lomo"
+  _"Bercovich Lomo..."
+  "Turn an image into a 'LOMO' snap. \n\nwww.lomography.com for those that are not sure what lomo's are.\n\nEnjoy!"
+  "Avi Bercovich <avi@sillypages.org>"
+  "Avi Bercovich"
+  "April 2003"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT "Fringe offset" '(4 1 10 1 10 0 1)
+  SF-TOGGLE "Boost fringe?" FALSE)
+
+(script-fu-menu-register "script-fu-lomo"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

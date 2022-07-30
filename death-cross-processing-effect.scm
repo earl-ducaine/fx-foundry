@@ -241,35 +241,20 @@
 
 
 
-(script-fu-register "script-fu-cross-processing-effect"
-
+(script-fu-register
+  "script-fu-cross-processing-effect"
   _"_Cross processing effect..."
-
   _"Give cross processing look to a photo."
-
   "Alexia Death"
-
   "2007, Alexia Death."
-
   "3rd October 2007"
-
   "RGB* GRAY*"
-
   SF-IMAGE      "The image"               0
-
   SF-DRAWABLE   "The layer"               0
-
   SF-TOGGLE     _"Work on copy"           FALSE
-
   SF-TOGGLE     _"Flatten image"          FALSE
-
-  SF-COLOR     _"Overcast color"          '(0 255 180)
-
-)
-
-
+  SF-COLOR     _"Overcast color"          '(0 255 180))
 
 (script-fu-menu-register "script-fu-cross-processing-effect"
-
                          "<Image>/FX-Foundry/Photo/Effects")
 

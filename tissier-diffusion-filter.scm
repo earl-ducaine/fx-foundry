@@ -98,19 +98,24 @@
     (gimp-context-set-background old_bg_color)
     (gimp-context-set-foreground old_fg_color)
     (gimp-image-undo-group-end image)
-    (gimp-displays-flush)))))
-)
+    (gimp-displays-flush))))))
 
-(script-fu-register "photo-diffusion_filter"
-                                "<Image>/FX-Foundry/Photo/Effects/Diffusion filter"
-                                "Fakes a diffusion filter"
-                                "Antoine Tissier"
-                                "Antoine Tissier"
-                                "September 2003"
-                                "RGB RGBA GRAY GRAYA"
-                                SF-IMAGE "Image" 0
-                                SF-DRAWABLE "Drawable" 0
-                                SF-ADJUSTMENT "Levels" '(1.5  0.1  10   1  10   1   0)
-                                SF-ADJUSTMENT "Radius" '( 15    1 100   1   1   0   0)
-                                SF-ADJUSTMENT "Intensity" '(75  1 100   1   1   0   0)
-                                SF-TOGGLE "Negative" FALSE )
+
+(script-fu-register
+  "photo-diffusion_filter"
+  "Diffusion filter"
+  "Fakes a diffusion filter"
+  "Antoine Tissier"
+  "Antoine Tissier"
+  "September 2003"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT "Levels" '(1.5  0.1  10   1  10   1   0)
+  SF-ADJUSTMENT "Radius" '( 15    1 100   1   1   0   0)
+  SF-ADJUSTMENT "Intensity" '(75  1 100   1   1   0   0)
+  SF-TOGGLE "Negative" FALSE )
+
+(script-fu-menu-register "photo-diffusion_filter"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

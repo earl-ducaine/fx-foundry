@@ -106,16 +106,18 @@
 )
 
 (script-fu-register
- "script-fu-pixelgradient"
- _"<Image>/FX-Foundry/Selection Effects/Pixel Gradient"
- "Pixelizes a selection (or layer) from left to right with increasing pixel sizes."
- "Jeff Trefftzs"
- "Copyright 2003, Jeff Trefftzs"
- "November 17, 2003"
- "RGB* GRAY* INDEXED*"
- SF-IMAGE "The Image" 0
- SF-DRAWABLE "The Layer" 0
- SF-ADJUSTMENT "Minimum Pixel Size" '(5 1 256 1 5 0 1)
- SF-ADJUSTMENT "Maximum Pixel Size" '(64 1 256 1 5 0 1)
- SF-ADJUSTMENT "Number of Steps"  '(5 1 256 1 5 0 1)
-)
+  "script-fu-pixelgradient"
+  _"Pixel Gradient"
+  "Pixelizes a selection (or layer) from left to right with increasing pixel sizes."
+  "Jeff Trefftzs"
+  "Copyright 2003, Jeff Trefftzs"
+  "November 17, 2003"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE "The Image" 0
+  SF-DRAWABLE "The Layer" 0
+  SF-ADJUSTMENT "Minimum Pixel Size" '(5 1 256 1 5 0 1)
+  SF-ADJUSTMENT "Maximum Pixel Size" '(64 1 256 1 5 0 1)
+  SF-ADJUSTMENT "Number of Steps"  '(5 1 256 1 5 0 1))
+
+(script-fu-menu-register "script-fu-pixelgradient"
+                         "<Image>/FX-Foundry/Selection Effects")

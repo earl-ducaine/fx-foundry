@@ -75,15 +75,19 @@
    )
 )
 
-(script-fu-register "script-fu-contrast"
-        _"<Image>/FX-Foundry/Photo/Enhancement/_Contrast Overlay"
-        "Create a contrast layer with hue and saturation copies of original image"
-        "www.tankedup-imaging.com"
-        "Tanked Up Underwater Imaging"
-        "06 July 2006"
-        ""
-        SF-IMAGE "Image" 0
-        SF-DRAWABLE "Drawable" 0
-        SF-ADJUSTMENT   _"Blur Radius" '(20 1 200 1 1 1 0 1)
-        SF-ADJUSTMENT "Opacity" '(80 0 100 1 20 0 0)
-)
+(script-fu-register
+  "script-fu-contrast"
+  _"_Contrast Overlay"
+  "Create a contrast layer with hue and saturation copies of original image"
+  "www.tankedup-imaging.com"
+  "Tanked Up Underwater Imaging"
+  "06 July 2006"
+  ""
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT   _"Blur Radius" '(20 1 200 1 1 1 0 1)
+  SF-ADJUSTMENT "Opacity" '(80 0 100 1 20 0 0))
+
+(script-fu-menu-register "script-fu-contrast"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+
