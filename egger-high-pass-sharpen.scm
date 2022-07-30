@@ -79,20 +79,21 @@
 ; Finish work
 ;
     (gimp-image-undo-group-end InImage)
-    (gimp-displays-flush)
-)
-;
+    (gimp-displays-flush))
+
+
 (script-fu-register
-    "script-fu-Eg-HighPassSharpen"
-    "<Image>/FX-Foundry/Photo/Sharpen/Eg High-Pass Filter Sharpen"
-    "Highpass Filter Sharpening"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "13.05.2005"
-    "RGB* GRAY*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-ADJUSTMENT    "Sharpening Strength"    '(10.0 1.0 20.0 1.0 0 2 0)
-    SF-TOGGLE    "Flatten Image"    FALSE
-)
-;
+  "script-fu-Eg-HighPassSharpen"
+  "Eg High-Pass Filter Sharpen"
+  "Highpass Filter Sharpening"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "13.05.2005"
+  "RGB* GRAY*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-ADJUSTMENT    "Sharpening Strength"    '(10.0 1.0 20.0 1.0 0 2 0)
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-HighPassSharpen"
+                         "<Image>/FX-Foundry/Photo/Sharpen")

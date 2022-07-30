@@ -155,17 +155,20 @@
 ;; Register scripts
 
 (script-fu-register
- "script-fu-gm-ultra-vivid-solarize"
- _"<Image>/FX-Foundry/Color/Lasm's Asymmetric Ultra-Vivid Solarize"
- "Version 2.0\nLasm's fancy solarize effect. Toggle the (Ultra) Vivid button for a turbo-charged boost to the solarize effect."
- "lasm"
- "Copyright 2005, lasm"
- "December 01, 2005"
- "RGB*"
- SF-IMAGE        "The Image"            0
- SF-DRAWABLE    "The Layer"            0
- SF-TOGGLE        _"Automatic"        TRUE
- SF-TOGGLE        _"(Ultra)-Vivid"    TRUE
- SF-ADJUSTMENT  _"Intensity"        '(127 0 255 1 10 0 0)
-)
+  "script-fu-gm-ultra-vivid-solarize"
+  _"Lasm's Asymmetric Ultra-Vivid Solarize"
+  "Version 2.0\nLasm's fancy solarize effect. Toggle the (Ultra) Vivid button for a turbo-charged boost to the solarize effect."
+  "lasm"
+  "Copyright 2005, lasm"
+  "December 01, 2005"
+  "RGB*"
+  SF-IMAGE        "The Image"            0
+  SF-DRAWABLE    "The Layer"            0
+  SF-TOGGLE        _"Automatic"        TRUE
+  SF-TOGGLE        _"(Ultra)-Vivid"    TRUE
+  SF-ADJUSTMENT  _"Intensity"        '(127 0 255 1 10 0 0))
+
+(script-fu-menu-register "script-fu-gm-ultra-vivid-solarize"
+                         "<Image>/FX-Foundry/Color")
+
 

@@ -165,17 +165,22 @@
     (gimp-displays-flush)))
     ))
 
-(script-fu-register "script-fu-glow"
-            "<Image>/FX-Foundry/Selection Effects/Glow Selection"
-            "Makes a glow around the outside of the current selection."
-            "Adrian Likins <adrian@gimp.org>"
-            "Adrian Likins"
-            "10/12/97"
-            "RGB RGBA GRAY GRAYA"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-            SF-VALUE "Glow Radius" "2"
-            SF-VALUE "Feather Radius" "10"
-            SF-COLOR "Glow Color" '(255 255 255)
-            SF-VALUE "Glow Opacity (only for seperate layer)" "100"
-            SF-TOGGLE "Keep Selection?" TRUE)
+(script-fu-register
+  "script-fu-glow"
+  "Glow Selection"
+  "Makes a glow around the outside of the current selection."
+  "Adrian Likins <adrian@gimp.org>"
+  "Adrian Likins"
+  "10/12/97"
+  "RGB RGBA GRAY GRAYA"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-VALUE "Glow Radius" "2"
+  SF-VALUE "Feather Radius" "10"
+  SF-COLOR "Glow Color" '(255 255 255)
+  SF-VALUE "Glow Opacity (only for seperate layer)" "100"
+  SF-TOGGLE "Keep Selection?" TRUE)
+
+(script-fu-menu-register "script-fu-glow"
+                         "<Image>/FX-Foundry/Selection Effects")
+

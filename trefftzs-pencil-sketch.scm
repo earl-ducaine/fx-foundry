@@ -125,24 +125,26 @@
   )
 
 (script-fu-register
- "script-fu-pencil-sketch"
- _"<Image>/FX-Foundry/Artistic/Pencil Sketch..."
- "Creates an interesting simulation of a pencil sketch by placing a textured layer mask on the original image, above a white layer, and below a layer containing edges from the original image.
+  "script-fu-pencil-sketch"
+  _"Pencil Sketch..."
+  "Creates an interesting simulation of a pencil sketch by placing a textured layer mask on the original image, above a white layer, and below a layer containing edges from the original image.
 
 This script does most of the work, but you may want to adjust the levels of thelayer mask to vary the amount of image texture.  If you have additional edge detector plugins (such as the ipx suite), you may want to use one of them for the edges instead of the built-in laplacian.  I did not include this option, since the ipx tools are still very much beta at this time.
 
 Additional interesting effects can be obtained by varying the levels of the Paper Layer."
- "Jeff Trefftzs"
- "Copyright 2002, Jeff Trefftzs"
- "January 12, 2002"
- "RGB* GRAY*"
- SF-IMAGE "The Image" 0
- SF-DRAWABLE "The Layer" 0
- SF-ADJUSTMENT "Line Weight (Fine) 1 <----> 128 (Thick)"
- '(3 1 128 1 8 0 1)
- SF-OPTION "Edge Detector" '("Laplace" "Sobel" "Synthetic")
- SF-PATTERN "Image Texture" "Paper"
- SF-TOGGLE  "Textured Paper" FALSE
- SF-PATTERN "Paper Texture" "Crinkled Paper"
+  "Jeff Trefftzs"
+  "Copyright 2002, Jeff Trefftzs"
+  "January 12, 2002"
+  "RGB* GRAY*"
+  SF-IMAGE "The Image" 0
+  SF-DRAWABLE "The Layer" 0
+  SF-ADJUSTMENT "Line Weight (Fine) 1 <----> 128 (Thick)"
+  '(3 1 128 1 8 0 1)
+  SF-OPTION "Edge Detector" '("Laplace" "Sobel" "Synthetic")
+  SF-PATTERN "Image Texture" "Paper"
+  SF-TOGGLE  "Textured Paper" FALSE
+  SF-PATTERN "Paper Texture" "Crinkled Paper")
 
-)
+(script-fu-menu-register "script-fu-pencil-sketch"
+                         "<Image>/FX-Foundry/Artistic")
+

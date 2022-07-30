@@ -36,85 +36,78 @@
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.
 
-;
-; Define the function
-;
-(define (script-fu-Eg-Border InImage InLayer InOuterPercentWidth InOuterPercentHeight InInnerPercent InOuterColor InInnerColor InFeather)
-;
+
+;; Define the function
+(define (script-fu-Eg-Border InImage InLayer InOuterPercentWidth InOuterPercentHeight
+			     InInnerPercent InOuterColor InInnerColor InFeather)
+					;
+  (let* ((TheImage (car (gimp-image-duplicate InImage)))
+         (TheLayer (car (gimp-image-flatten TheImage)))
+         (TheWidth (car (gimp-image-width TheImage)))
+         (TheHeight (car (gimp-image-height TheImage)))
+         (outer-border-width (/ (* TheWidth InOuterPercentWidth) 100))
+         (outer-border-height (/ (* TheHeight InOuterPercentHeight) 100))
+         (inner-border-width (/ (* TheWidth InInnerPercent) 100))
+         (inner-border-height inner-border-width)
+         (total-border-width (+ inner-border-width outer-border-width))
+         (total-border-height (+ inner-border-height outer-border-height))
+         (image-width (+ TheWidth  (* 2 total-border-width)))
+         (image-height (+ TheHeight (* 2 total-border-height)))
+         )
+    (gimp-image-undo-disable TheImage)
+    (gimp-selection-none TheImage)
+    (gimp-drawable-set-name TheLayer "WithBorder")
+					;
+					; Generate the border
+					;
+    (gimp-image-resize TheImage image-width image-height total-border-width total-border-height)
+					;
     (let*    (
-        (TheImage (car (gimp-image-duplicate InImage)))
-        (TheLayer (car (gimp-image-flatten TheImage)))
-        (TheWidth (car (gimp-image-width TheImage)))
-        (TheHeight (car (gimp-image-height TheImage)))
-        (outer-border-width (/ (* TheWidth InOuterPercentWidth) 100))
-        (outer-border-height (/ (* TheHeight InOuterPercentHeight) 100))
-        (inner-border-width (/ (* TheWidth InInnerPercent) 100))
-        (inner-border-height inner-border-width)
-        (total-border-width (+ inner-border-width outer-border-width))
-        (total-border-height (+ inner-border-height outer-border-height))
-        (image-width (+ TheWidth  (* 2 total-border-width)))
-        (image-height (+ TheHeight (* 2 total-border-height)))
+              (BorderLayer (car (gimp-layer-new TheImage image-width image-height RGBA-IMAGE "TempLayer" 100 NORMAL-MODE)))
+              )
+      (gimp-image-add-layer TheImage BorderLayer -1)
+      (gimp-edit-clear BorderLayer)
+					;
+      (gimp-rect-select TheImage 0 0 image-width image-height CHANNEL-OP-REPLACE FALSE 0)
+      (gimp-rect-select TheImage total-border-width total-border-height TheWidth TheHeight CHANNEL-OP-SUBTRACT FALSE 0)
+      (gimp-context-set-foreground InOuterColor)
+      (gimp-edit-fill BorderLayer FOREGROUND-FILL)
+					;
+      (cond
+       ((> InInnerPercent 0)
+        (begin
+          (gimp-rect-select TheImage outer-border-width outer-border-height (- image-width  (* outer-border-width 2)) (- image-height (* outer-border-height 2)) CHANNEL-OP-REPLACE InFeather (* 1.2 inner-border-width))
+          (gimp-rect-select TheImage total-border-width total-border-height TheWidth TheHeight CHANNEL-OP-SUBTRACT FALSE 0)
+          (gimp-context-set-foreground InInnerColor)
+          (gimp-edit-fill BorderLayer FOREGROUND-FILL)
+          )
         )
-        (gimp-image-undo-disable TheImage)
-        (gimp-selection-none TheImage)
-        (gimp-drawable-set-name TheLayer "WithBorder")
-;
-; Generate the border
-;
-        (gimp-image-resize TheImage image-width image-height total-border-width total-border-height)
-;
-        (let*    (
-            (BorderLayer (car (gimp-layer-new TheImage image-width image-height RGBA-IMAGE "TempLayer" 100 NORMAL-MODE)))
-            )
-            (gimp-image-add-layer TheImage BorderLayer -1)
-            (gimp-edit-clear BorderLayer)
-;
-            (gimp-rect-select TheImage 0 0 image-width image-height CHANNEL-OP-REPLACE FALSE 0)
-            (gimp-rect-select TheImage total-border-width total-border-height TheWidth TheHeight CHANNEL-OP-SUBTRACT FALSE 0)
-            (gimp-context-set-foreground InOuterColor)
-            (gimp-edit-fill BorderLayer FOREGROUND-FILL)
-;
-            (cond
-                ((> InInnerPercent 0)
-                    (begin
-                        (gimp-rect-select TheImage outer-border-width outer-border-height (- image-width  (* outer-border-width 2)) (- image-height (* outer-border-height 2)) CHANNEL-OP-REPLACE InFeather (* 1.2 inner-border-width))
-                        (gimp-rect-select TheImage total-border-width total-border-height TheWidth TheHeight CHANNEL-OP-SUBTRACT FALSE 0)
-                        (gimp-context-set-foreground InInnerColor)
-                        (gimp-edit-fill BorderLayer FOREGROUND-FILL)
-                    )
-                )
-            )
-            (gimp-image-merge-down TheImage BorderLayer CLIP-TO-IMAGE)
-        )
-;
-        (gimp-selection-none TheImage)
-        (gimp-display-new TheImage)
-        (gimp-image-undo-enable TheImage)
-    )
-;
-; Finish work
-;
-    (gimp-displays-flush)
-;
-)
-;
-; Register the function with the GIMP
-;
+       )
+      (gimp-image-merge-down TheImage BorderLayer CLIP-TO-IMAGE))
+    (gimp-selection-none TheImage)
+    (gimp-display-new TheImage)
+    (gimp-image-undo-enable TheImage))
+  ;; Finish work
+  (gimp-displays-flush))
+
+
+;; Register the function with the GIMP
 (script-fu-register
-    "script-fu-Eg-Border"
-    "<Image>/FX-Foundry/Image Effects/Eg Matt and Border"
-    "Generate a border around an image"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "26.08.2005"
-    "RGB*,GRAY*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-ADJUSTMENT     "Outer border size (width in percent)" '(15 1.0 100 1.0 0 2 0)
-    SF-ADJUSTMENT     "Outer border size (height in percent)" '(15 1.0 100 1.0 0 2 0)
-    SF-ADJUSTMENT    "Inner border size (in percent)" '(0.5 0.0 10.0 0.1 0 2 0)
-    SF-COLOR "Outer border color" '(255 255 255)
-    SF-COLOR "Inner border color" '(0 0 0)
-    SF-TOGGLE "Feather inner border" TRUE
-)
-;
+  "script-fu-Eg-Border"
+  "Eg Matt and Border"
+  "Generate a border around an image"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "26.08.2005"
+  "RGB*,GRAY*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-ADJUSTMENT     "Outer border size (width in percent)" '(15 1.0 100 1.0 0 2 0)
+  SF-ADJUSTMENT     "Outer border size (height in percent)" '(15 1.0 100 1.0 0 2 0)
+  SF-ADJUSTMENT    "Inner border size (in percent)" '(0.5 0.0 10.0 0.1 0 2 0)
+  SF-COLOR "Outer border color" '(255 255 255)
+  SF-COLOR "Inner border color" '(0 0 0)
+  SF-TOGGLE "Feather inner border" TRUE)
+
+(script-fu-menu-register "script-fu-Eg-Border"
+                         "<Image>/FX-Foundry/Image Effects")

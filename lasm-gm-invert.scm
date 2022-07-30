@@ -112,64 +112,79 @@
 ;; Register scripts
 
 (script-fu-register
- "script-fu-gm-color-invert 0"
- _"<Image>/FX-Foundry/Color/Lasm's Light Invert"
- "Version 2.0\nLasm's color invert effect. This turns the photo into a photo negative without changing the colors and the effect is reversible.
+  "script-fu-gm-color-invert 0"
+  _"Lasm's Light Invert"
+  "Version 2.0\nLasm's color invert effect. This turns the photo into a photo negative without changing the colors and the effect is reversible.
   Cycle through all 3 effects in random order and you will arrive back to the original image"
- "lasm"
- "Copyright 2002-2005, lasm"
- "February 20, 2002"
- "RGB*"
- SF-IMAGE "The Image"      0
- SF-DRAWABLE "The Layer" 0
-)
+  "lasm"
+  "Copyright 2002-2005, lasm"
+  "February 20, 2002"
+  "RGB*"
+  SF-IMAGE "The Image"      0
+  SF-DRAWABLE "The Layer" 0)
+
+(script-fu-menu-register "script-fu-gm-color-invert"
+                         "<Image>/FX-Foundry/Color")
+
 
 (script-fu-register
- "script-fu-gm-color-invert 1"
- _"<Image>/FX-Foundry/Color/Lasm's Color Only Invert"
- "Version 2.0\nLasm's color invert effect. This inverts color only, leaving brightness alone on any RGB image and the effect is reversible.
+  "script-fu-gm-color-invert 1"
+  _"Lasm's Color Only Invert"
+  "Version 2.0\nLasm's color invert effect. This inverts color only, leaving brightness alone on any RGB image and the effect is reversible.
  Cycle through all 3 effects in random order and you will arrive back to the original image"
- "lasm"
- "Copyright 2002-2005, lasm"
- "February 20, 2002"
- "RGB*"
- SF-IMAGE "The Image"      0
- SF-DRAWABLE "The Layer" 0
-)
+  "lasm"
+  "Copyright 2002-2005, lasm"
+  "February 20, 2002"
+  "RGB*"
+  SF-IMAGE "The Image"      0
+  SF-DRAWABLE "The Layer" 0)
+
+(script-fu-menu-register "script-fu-gm-color-invert"
+                         "<Image>/FX-Foundry/Color")
+
 
 (script-fu-register
- "script-fu-gm-color-invert 2"
- _"<Image>/FX-Foundry/Color/Lasm's Simple Color Invert"
- "Version 2.0\nLasm's color invert effect. This is vanilla color invert and the effect is reversible.
+  "script-fu-gm-color-invert 2"
+  _"Lasm's Simple Color Invert"
+  "Version 2.0\nLasm's color invert effect. This is vanilla color invert and the effect is reversible.
  Cycle through all 3 effects in random order and you will arrive back to the original image"
- "lasm"
- "Copyright 2002-2005, lasm"
- "February 20, 2002"
- "RGB*"
- SF-IMAGE "The Image"      0
- SF-DRAWABLE "The Layer" 0
-)
+  "lasm"
+  "Copyright 2002-2005, lasm"
+  "February 20, 2002"
+  "RGB*"
+  SF-IMAGE "The Image"      0
+  SF-DRAWABLE "The Layer" 0)
+
+(script-fu-menu-register "script-fu-gm-color-invert"
+                         "<Image>/FX-Foundry/Color")
+
 
 (script-fu-register
- "script-fu-gm-color-invert 3"
- _"<Image>/FX-Foundry/Color/Lasm's Asymmetric Solarize"
- "Version 2.0\nThe solarize effect is irreversible."
- "lasm"
- "Copyright 2002-2005, lasm"
- "November 19, 2005"
- "RGB*"
- SF-IMAGE "The Image"      0
- SF-DRAWABLE "The Layer" 0
-)
+  "script-fu-gm-color-invert 3"
+  _"Lasm's Asymmetric Solarize"
+  "Version 2.0\nThe solarize effect is irreversible."
+  "lasm"
+  "Copyright 2002-2005, lasm"
+  "November 19, 2005"
+  "RGB*"
+  SF-IMAGE "The Image"      0
+  SF-DRAWABLE "The Layer" 0)
+
+(script-fu-menu-register "script-fu-gm-color-invert"
+                         "<Image>/FX-Foundry/Color")
+
 
 (script-fu-register
- "script-fu-gm-color-invert 4"
- _"<Image>/FX-Foundry/Color/Lasm's Vivid V-Invert"
- "Version 2.0\nProduces a highly saturated version of v-invert. Compare this image with the regular plug-in-vinvert ! Toggle it twice and it will stay in the V-invert mode, but the effect is not reversible to the original image."
- "lasm"
- "Copyright 2002-2005, lasm"
- "November 21, 2005"
- "RGB*"
- SF-IMAGE "The Image"      0
- SF-DRAWABLE "The Layer" 0
-)
+  "script-fu-gm-color-invert 4"
+  _"Lasm's Vivid V-Invert"
+  "Version 2.0\nProduces a highly saturated version of v-invert. Compare this image with the regular plug-in-vinvert ! Toggle it twice and it will stay in the V-invert mode, but the effect is not reversible to the original image."
+  "lasm"
+  "Copyright 2002-2005, lasm"
+  "November 21, 2005"
+  "RGB*"
+  SF-IMAGE "The Image"      0
+  SF-DRAWABLE "The Layer" 0)
+
+(script-fu-menu-register "script-fu-gm-color-invert"
+                         "<Image>/FX-Foundry/Color")
+

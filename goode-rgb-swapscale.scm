@@ -121,25 +121,28 @@
     (gimp-displays-flush)
     )
   )
-(script-fu-register "script-fu-rgb-swapscale"
-        "<Image>/FX-Foundry/Color/RGB s_wapscale..."
-        "Swaps and scales RGB channels"
-        "Saul Goode"
-        "Saul Goode"
-        "March 2006"
-        "RGBA"
-        SF-IMAGE      "SF-IMAGE" 0
-        SF-DRAWABLE   "SF-DRAWABLE" 0
-        SF-ADJUSTMENT "SCALE RED (negative to invert)"   '( 100 -100 100 1 10 0 0)
-        SF-ADJUSTMENT "SCALE GREEN (negative to invert)" '( 100 -100 100 1 10 0 0)
-        SF-ADJUSTMENT "SCALE BLUE (negative to invert)" '( 100 -100 100 1 10 0 0)
-        SF-OPTION     "SWAP/ROTATE" '("No Swap Or Rotate (RGB->RGB)"
-                                                 "Swap Blue & Green (RGB->RBG)"
-                                                 "Swap Red & Blue (RGB->BGR)"
-                                                 "Swap Green & Red (RGB->GRB)"
-                                                 "------------------------"
-                                                 "Rotate Right (RGB->BRG)"
-                                                 "Rotate Left (RGB->GBR)" )
-        )
 
-;; EOF ;;
+(script-fu-register
+  "script-fu-rgb-swapscale"
+  "RGB s_wapscale..."
+  "Swaps and scales RGB channels"
+  "Saul Goode"
+  "Saul Goode"
+  "March 2006"
+  "RGBA"
+  SF-IMAGE      "SF-IMAGE" 0
+  SF-DRAWABLE   "SF-DRAWABLE" 0
+  SF-ADJUSTMENT "SCALE RED (negative to invert)"   '( 100 -100 100 1 10 0 0)
+  SF-ADJUSTMENT "SCALE GREEN (negative to invert)" '( 100 -100 100 1 10 0 0)
+  SF-ADJUSTMENT "SCALE BLUE (negative to invert)" '( 100 -100 100 1 10 0 0)
+  SF-OPTION     "SWAP/ROTATE" '("No Swap Or Rotate (RGB->RGB)"
+                                "Swap Blue & Green (RGB->RBG)"
+                                "Swap Red & Blue (RGB->BGR)"
+                                "Swap Green & Red (RGB->GRB)"
+                                "------------------------"
+                                "Rotate Right (RGB->BRG)"
+                                "Rotate Left (RGB->GBR)" ))
+
+(script-fu-menu-register "script-fu-rgb-swapscale"
+                         "<Image>/FX-Foundry/Color")
+

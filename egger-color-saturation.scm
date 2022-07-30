@@ -66,20 +66,22 @@
     (gimp-displays-flush)
 ;
 )
-;
-; Register the function with the GIMP
-;
+
+;; Register the function with the GIMP
 (script-fu-register
-    "script-fu-Eg-ColorSaturation"
-    "<Image>/FX-Foundry/Color/Eg Color Saturation"
-    "Saturate or desaturate color images"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "15.05.2005"
-    "RGB*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-ADJUSTMENT    "Intensity"    '(1 -7 7 0.5 0 2 0)
-    SF-TOGGLE    "Flatten Image"    FALSE
-)
-;
+  "script-fu-Eg-ColorSaturation"
+  "Eg Color Saturation"
+  "Saturate or desaturate color images"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "15.05.2005"
+  "RGB*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-ADJUSTMENT    "Intensity"    '(1 -7 7 0.5 0 2 0)
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-ColorSaturation"
+                         "<Image>/FX-Foundry/Color")
+
+

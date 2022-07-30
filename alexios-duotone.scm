@@ -138,20 +138,23 @@
 ; Register the function with the GIMP:
 
 (script-fu-register
-    "script-fu-duotone"
-    _"<Image>/FX-Foundry/Photo/Effects/Simple Duotone..."
-    "Produces a duotone photograph.
+  "script-fu-duotone"
+  _"Simple Duotone..."
+  "Produces a duotone photograph.
 
 Some interesting values for the colour are Sepia (162 138 101) and Selenium (229 232 234). Play with the colour saturation for more interesting effects, or uncheck the Flatten box and then modify the new layer's opacity. "
-    "Alexios Chouchoulas"
-    "2004, Alexios Chouchoulas"
-    "31st January 2004"
-    "RGB* GRAY* INDEXED*"
-    SF-IMAGE       "The Image"      0
-    SF-DRAWABLE    "The Layer"      0
-    SF-COLOR       _"Tint colour"   '(162 138 101)
-    SF-TOGGLE      _"Work on Copy"  TRUE
-    SF-TOGGLE      _"Flatten Image" TRUE
-)
+  "Alexios Chouchoulas"
+  "2004, Alexios Chouchoulas"
+  "31st January 2004"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE       "The Image"      0
+  SF-DRAWABLE    "The Layer"      0
+  SF-COLOR       _"Tint colour"   '(162 138 101)
+  SF-TOGGLE      _"Work on Copy"  TRUE
+  SF-TOGGLE      _"Flatten Image" TRUE)
+
+(script-fu-menu-register "script-fu-duotone"
+                         "<Image>/FX-Foundry/Photo/Effects")
+
 
 ;;; End Of File.

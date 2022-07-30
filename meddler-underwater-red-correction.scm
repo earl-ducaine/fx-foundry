@@ -73,13 +73,17 @@
 )
 
 
-(script-fu-register "script-fu-med"
-        _"<Image>/FX-Foundry/Photo/Enhancement/Underwater _Red Enhance"
-        "Based on the mandrake method for Photoshop. Translated to GIMP by meddler. See www.scubaboard.com for the original articles."
-        "www.tankedup-imaging.com"
-        "Tanked Up Underwater Imaging"
-        "06 July 2006"
-        ""
-        SF-IMAGE "Image" 0
-        SF-DRAWABLE "Drawable" 0
-)
+(script-fu-register
+  "script-fu-med"
+  _"Underwater _Red Enhance"
+  "Based on the mandrake method for Photoshop. Translated to GIMP by meddler. See www.scubaboard.com for the original articles."
+  "www.tankedup-imaging.com"
+  "Tanked Up Underwater Imaging"
+  "06 July 2006"
+  ""
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-med"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+

@@ -64,7 +64,7 @@
 
 (script-fu-register
   "script-fu-soft-focus"
-  "<Image>/FX-Foundry/Photo/Effects/Soft Focus..."
+  "Effects/Soft Focus..."
   "Soft focus effect"
   "Iccii <iccii@hotmail.com>"
   "Iccii"
@@ -72,5 +72,8 @@
   "RGB* GRAYA"
   SF-IMAGE      "Image"        0
   SF-DRAWABLE   "Drawable"    0
-  SF-ADJUSTMENT _"Blur Amount"  '(10 1 100 1 10 0 0)
-)
+  SF-ADJUSTMENT _"Blur Amount"  '(10 1 100 1 10 0 0))
+
+(script-fu-menu-register "script-fu-soft-focus"
+                         "<Image>/FX-Foundry/Photo")
+

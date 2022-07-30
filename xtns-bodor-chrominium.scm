@@ -309,22 +309,22 @@
     (gimp-image-undo-enable img)
     (gimp-display-new img)))
 
-(script-fu-register "script-fu-chrominium-logo"
-            _"Chrominium..."
-            "Chrominium logo"
-            "Denis bodor"
-            "Denis bodor"
-            "2007"
-            ""
-            SF-STRING     _"Text"               "Chrome"
-            SF-FONT       _"Font"               "Ethnocentric"
-            SF-ADJUSTMENT _"Font size (pixels)" '(150 2 1000 1 10 0 1)
-            SF-TOGGLE     _"Gradient Fill"       TRUE
-            SF-GRADIENT      _"Gradient"         "Full saturation spectrum CCW"
-            SF-COLOR      _"Color Fill"        '(0 250 0)
-            SF-COLOR      _"Background color"   '(0 0 0)
-            SF-TOGGLE      _"Sparkles"        TRUE
-                    )
+(script-fu-register
+  "script-fu-chrominium-logo"
+  _"Chrominium..."
+  "Chrominium logo"
+  "Denis bodor"
+  "Denis bodor"
+  "2007"
+  ""
+  SF-STRING     _"Text"               "Chrome"
+  SF-FONT       _"Font"               "Ethnocentric"
+  SF-ADJUSTMENT _"Font size (pixels)" '(150 2 1000 1 10 0 1)
+  SF-TOGGLE     _"Gradient Fill"       TRUE
+  SF-GRADIENT      _"Gradient"         "Full saturation spectrum CCW"
+  SF-COLOR      _"Color Fill"        '(0 250 0)
+  SF-COLOR      _"Background color"   '(0 0 0)
+  SF-TOGGLE      _"Sparkles"        TRUE)
 
 (script-fu-menu-register "script-fu-chrominium-logo"
              _"<Image>/File/New/FX-Foundry/Logos")

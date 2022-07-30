@@ -105,28 +105,31 @@
     (gimp-displays-flush)
 ;
 )
-;
+
 (script-fu-register
-    "script-fu-Eg-SmartSharpen"
-    "<Image>/FX-Foundry/Photo/Sharpen/Eg Smart Redux Sharpen"
-    "Smart Sharpening, Redux version"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2007, Martin Egger, Bern, Switzerland"
-    "28.01.2007"
-    "RGB* GRAY*"
-    SF-IMAGE    "The Image"        0
-    SF-DRAWABLE    "The Layer"        0
-    SF-ADJUSTMENT    "USM: Radius"        '(2.0 0.0 50.0 1 0 2 0)
-    SF-ADJUSTMENT    "USM: Amount"        '(1.0 0.0 5.0 0.5 0 2 0)
-    SF-ADJUSTMENT    "USM: Threshold"        '(0.0 0.0 50.0 1.0 0 2 0)
-    SF-TOGGLE    "Use refocus plugin"    FALSE
-    SF-ADJUSTMENT    "Refocus: Size of matrix"     '(5.0 0.0 10.0 1.0 0 2 0)
-    SF-ADJUSTMENT    "Refocus: Circle radius"         '(1.0 0.0 25.0 0.1 0 2 0)
-    SF-ADJUSTMENT    "Refocus: Parameter for Gaussian" '(0.0 0.0 25.0 0.1 0 2 0)
-    SF-ADJUSTMENT    "Refocus: Correlation"         '(0.5 0.0 1.0 0.05 0 2 0)
-    SF-ADJUSTMENT    "Refocus: Noise to Signal ratio"     '(0.01 0.0 1.0 0.01 0 2 0)
-    SF-ADJUSTMENT    "Edges: Detect Amount"    '(6.0 1.0 10.0 1.0 0 2 0)
-    SF-ADJUSTMENT    "Edges: Blur Pixels"    '(6.0 1.0 10.0 1.0 0 2 0)
-    SF-TOGGLE    "Flatten Image"        FALSE
-)
-;
+  "script-fu-Eg-SmartSharpen"
+  "Eg Smart Redux Sharpen"
+  "Smart Sharpening, Redux version"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2007, Martin Egger, Bern, Switzerland"
+  "28.01.2007"
+  "RGB* GRAY*"
+  SF-IMAGE    "The Image"        0
+  SF-DRAWABLE    "The Layer"        0
+  SF-ADJUSTMENT    "USM: Radius"        '(2.0 0.0 50.0 1 0 2 0)
+  SF-ADJUSTMENT    "USM: Amount"        '(1.0 0.0 5.0 0.5 0 2 0)
+  SF-ADJUSTMENT    "USM: Threshold"        '(0.0 0.0 50.0 1.0 0 2 0)
+  SF-TOGGLE    "Use refocus plugin"    FALSE
+  SF-ADJUSTMENT    "Refocus: Size of matrix"     '(5.0 0.0 10.0 1.0 0 2 0)
+  SF-ADJUSTMENT    "Refocus: Circle radius"         '(1.0 0.0 25.0 0.1 0 2 0)
+  SF-ADJUSTMENT    "Refocus: Parameter for Gaussian" '(0.0 0.0 25.0 0.1 0 2 0)
+  SF-ADJUSTMENT    "Refocus: Correlation"         '(0.5 0.0 1.0 0.05 0 2 0)
+  SF-ADJUSTMENT    "Refocus: Noise to Signal ratio"     '(0.01 0.0 1.0 0.01 0 2 0)
+  SF-ADJUSTMENT    "Edges: Detect Amount"    '(6.0 1.0 10.0 1.0 0 2 0)
+  SF-ADJUSTMENT    "Edges: Blur Pixels"    '(6.0 1.0 10.0 1.0 0 2 0)
+  SF-TOGGLE    "Flatten Image"        FALSE)
+
+(script-fu-menu-register "script-fu-Eg-SmartSharpen"
+                         "<Image>/FX-Foundry/Photo/Sharpen")
+
+

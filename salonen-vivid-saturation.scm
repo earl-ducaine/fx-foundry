@@ -68,16 +68,21 @@
   )
 
 
-(script-fu-register "script-fu-vivid-saturation"
-            "<Image>/FX-Foundry/Photo/Enhancement/_Vivid Saturation"
-            "Vivid saturation of image. Gives similar effect as many Digital Velvia filters do for the Other Product."
-            "Olli Salonen <olli@cabbala.net>"
-            "Olli Salonen"
-            "Jan 15, 2004"
-            ""
-            SF-IMAGE              "Image"                0
-            SF-DRAWABLE           "Drawable"             0
-            SF-ADJUSTMENT         "Amount"              '(10 0 50 1 1 0 0))
+(script-fu-register
+  "script-fu-vivid-saturation"
+  "_Vivid Saturation"
+  "Vivid saturation of image. Gives similar effect as many Digital Velvia filters do for the Other Product."
+  "Olli Salonen <olli@cabbala.net>"
+  "Olli Salonen"
+  "Jan 15, 2004"
+  ""
+  SF-IMAGE              "Image"                0
+  SF-DRAWABLE           "Drawable"             0
+  SF-ADJUSTMENT         "Amount"              '(10 0 50 1 1 0 0))
+
+(script-fu-menu-register "script-fu-vivid-saturation"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+
 
 
 

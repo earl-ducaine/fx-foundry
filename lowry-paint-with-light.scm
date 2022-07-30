@@ -129,26 +129,20 @@
 )
 
 
-(script-fu-register "script-fu-Paintwithlight"
+(script-fu-register
+  "script-fu-Paintwithlight"
+  "Paint with Light(two layers)"
+  "Add black dodge layer and white burn layer.  Painting on the black layer will add lighter regions to the layer below, and painting on the white layer will add darker regions to the layer below.  BEST WHEN USED GENTLY!  Try soft brush set to 3% opacity."
+  "Mark Lowry"
+  "Mark Lowry"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0)
 
+(script-fu-menu-register "script-fu-Paintwithlight"
+                         "<Image>/FX-Foundry/Light and Shadow")
 
-      "<Image>/FX-Foundry/Light and Shadow/Paint with Light(two layers)"
-
-      "Add black dodge layer and white burn layer.  Painting on the black layer will add lighter regions to the layer below, and painting on the white layer will add darker regions to the layer below.  BEST WHEN USED GENTLY!  Try soft brush set to 3% opacity."
-
-      "Mark Lowry"
-
-      "Mark Lowry"
-
-      "2007"
-
-      "RGB*, GRAY*"
-
-      SF-IMAGE "Image" 0
-
-      SF-DRAWABLE "Current Layer" 0
-
- )
 
 (define (script-fu-Paintwithlight2  img drawable )
 
@@ -214,24 +208,19 @@
 )
 
 
-(script-fu-register "script-fu-Paintwithlight2"
+(script-fu-register
+  "script-fu-Paintwithlight2"
+  "Paint with Light(one layer)"
+  "Add 50% gray overlay layer.  Painting on the layer in white will lighten regions below, and painting on the layer in black will will darken the regions below.  BEST USED GENTLY!  Try soft brush set to 3% opacity."
+  "Mark Lowry"
+  "Mark Lowry"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0)
 
-      "<Image>/FX-Foundry/Light and Shadow/Paint with Light(one layer)"
+(script-fu-menu-register "script-fu-Paintwithlight2"
+                         "<Image>/FX-Foundry/Light and Shadow")
 
-      "Add 50% gray overlay layer.  Painting on the layer in white will lighten regions below, and painting on the layer in black will will darken the regions below.  BEST USED GENTLY!  Try soft brush set to 3% opacity."
-
-      "Mark Lowry"
-
-      "Mark Lowry"
-
-      "2007"
-
-      "RGB*, GRAY*"
-
-      SF-IMAGE "Image" 0
-
-      SF-DRAWABLE "Current Layer" 0
-
- )
 
 

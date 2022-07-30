@@ -142,34 +142,35 @@
     (gimp-displays-flush)
 ;
 )
-;
-; Register the function with the GIMP
-;
+
+;; Register the function with the GIMP
 (script-fu-register
-    "script-fu-Eg-DuotoneSimulation"
-    "<Image>/FX-Foundry/Photo/Effects/Eg Duotone Simulation"
-    "Simulate Duotones in GIMP"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "12.07.2005"
-    "RGB*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-OPTION    "Select Tone"
-            '(
-                    "Cyano"
-                    "Palladium (Yellow)"
-                    "Selenium (Magenta)"
-                    "Sepia (Brown)"
-                    "Sepia (Grey)"
-                    "Sepia (Red)"
-                    "Sepia (Yellow)"
-                    "Silver (Blue)"
-                    "Color from selection"
-            )
-    SF-ADJUSTMENT    "Layer Opacity"    '(65.0 1.0 100.0 1.0 0 2 0)
-    SF-COLOR    "Select Color"    '(167 127 92)
-    SF-TOGGLE    "Convert to B/W" FALSE
-    SF-TOGGLE    "Flatten Image"    FALSE
-)
-;
+  "script-fu-Eg-DuotoneSimulation"
+  "Eg Duotone Simulation"
+  "Simulate Duotones in GIMP"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "12.07.2005"
+  "RGB*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-OPTION    "Select Tone"
+  '(
+    "Cyano"
+    "Palladium (Yellow)"
+    "Selenium (Magenta)"
+    "Sepia (Brown)"
+    "Sepia (Grey)"
+    "Sepia (Red)"
+    "Sepia (Yellow)"
+    "Silver (Blue)"
+    "Color from selection"
+    )
+  SF-ADJUSTMENT    "Layer Opacity"    '(65.0 1.0 100.0 1.0 0 2 0)
+  SF-COLOR    "Select Color"    '(167 127 92)
+  SF-TOGGLE    "Convert to B/W" FALSE
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-DuotoneSimulation"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

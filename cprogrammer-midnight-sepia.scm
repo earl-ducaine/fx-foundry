@@ -236,26 +236,29 @@
 		(gimp-displays-flush)
 		; Restore the original foreground & background palette
 		(gimp-context-set-foreground old-fg)
-		(gimp-context-set-background old-bg)
-	)
-)
+		(gimp-context-set-background old-bg)))
 
-(script-fu-register "photo-midnightSepia" 
-	"<Image>/FX-Foundry/Photo/Effects/Midnight Sepia..."
-	"Add Midnight Sepia Effect to an image"
-	"Cprogrammer"
-	"Cprogrammer"
-	"Date: 2008-04-07 11:40:20+05:30"
-	"RGB*"
-	SF-IMAGE        "Image"            0
-	SF-DRAWABLE     "Drawable"         0
-	SF-TOGGLE       "Work on copy"     FALSE
-	SF-TOGGLE       "Flatten image"    FALSE
-	SF-TOGGLE       "Desaturate"       FALSE
-	SF-TOGGLE       "Internal RGB-HSV" TRUE
-	SF-ADJUSTMENT   "Hue"              '(45 -180 180 5 10 1 0)
-	SF-ADJUSTMENT   "Lightness"        '(0  -100 100 5 10 1 0)
-	SF-ADJUSTMENT   "Saturation"       '(35 -100 100 5 10 1 0)
-	SF-ADJUSTMENT   "Opacity"          '(80 0 100 5 10 1 0)
-	SF-COLOR        "Colour"           '(125 65 55)
-)
+(script-fu-register
+  "photo-midnightSepia" 
+  "Midnight Sepia..."
+  "Add Midnight Sepia Effect to an image"
+  "Cprogrammer"
+  "Cprogrammer"
+  "Date: 2008-04-07 11:40:20+05:30"
+  "RGB*"
+  SF-IMAGE        "Image"            0
+  SF-DRAWABLE     "Drawable"         0
+  SF-TOGGLE       "Work on copy"     FALSE
+  SF-TOGGLE       "Flatten image"    FALSE
+  SF-TOGGLE       "Desaturate"       FALSE
+  SF-TOGGLE       "Internal RGB-HSV" TRUE
+  SF-ADJUSTMENT   "Hue"              '(45 -180 180 5 10 1 0)
+  SF-ADJUSTMENT   "Lightness"        '(0  -100 100 5 10 1 0)
+  SF-ADJUSTMENT   "Saturation"       '(35 -100 100 5 10 1 0)
+  SF-ADJUSTMENT   "Opacity"          '(80 0 100 5 10 1 0)
+  SF-COLOR        "Colour"           '(125 65 55))
+
+
+(script-fu-menu-register "photo-midnightSepia"
+                         "<Image>/FX-Foundry/Photo/Effects")
+

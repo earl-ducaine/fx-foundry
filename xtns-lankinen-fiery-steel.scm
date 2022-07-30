@@ -347,32 +347,29 @@
 ; Hajaa-ho!
 ;
 (script-fu-register
- "script-fu-fiery-steel"
- "<Image>/File/New/FX-Foundry/Logos/Fiery Steel..."
- "An effect inspired by the Terminator 2: Judgement Day\n opening titles. Metallic letters in hellfire."
- "Weyfour WWWWolf (Urpo Lankinen) <wwwwolf@iki.fi>"
- "Weyfour WWWWolf"
- "9 May 1998 (Enhanced greatly on 19 May, 29 May, 18-19 July)"
- ""
- SF-STRING     "Text String"           "Fiery"
- SF-FONT       "Font"                  "Utopia Bold Italic"
- SF-ADJUSTMENT "Font Size"             '(180 2 1000 1 10 0 1)
- SF-GRADIENT   "Gradient"              "Flare Glow Radial 1"
- SF-ADJUSTMENT "Engulfment percentage" '(1 0 1 0.01 0.1 2 0)
- SF-ADJUSTMENT "Text border"           '(5 0 1000 1 10 0 1)
+  "script-fu-fiery-steel"
+  "Fiery Steel..."
+  "An effect inspired by the Terminator 2: Judgement Day\n opening titles. Metallic letters in hellfire."
+  "Weyfour WWWWolf (Urpo Lankinen) <wwwwolf@iki.fi>"
+  "Weyfour WWWWolf"
+  "9 May 1998 (Enhanced greatly on 19 May, 29 May, 18-19 July)"
+  ""
+  SF-STRING     "Text String"           "Fiery"
+  SF-FONT       "Font"                  "Utopia Bold Italic"
+  SF-ADJUSTMENT "Font Size"             '(180 2 1000 1 10 0 1)
+  SF-GRADIENT   "Gradient"              "Flare Glow Radial 1"
+  SF-ADJUSTMENT "Engulfment percentage" '(1 0 1 0.01 0.1 2 0)
+  SF-ADJUSTMENT "Text border"           '(5 0 1000 1 10 0 1)
+  SF-TOGGLE     "Darken?"               TRUE
+  SF-TOGGLE     "Fire effects?"         TRUE
+  SF-ADJUSTMENT "Spread coefficient"    '(35 0 1000 1 10 0 1)
+  SF-ADJUSTMENT "# of fire randomizes"  '(20 0 1000 1 10 0 1)
+  SF-TOGGLE     "Fire over background"   FALSE
+  SF-TOGGLE     "Add flame turbulence"   TRUE
+  SF-ADJUSTMENT "Turbulence"             '(2 0 1000 1 10 0 1))
 
- SF-TOGGLE     "Darken?"               TRUE
-
- SF-TOGGLE     "Fire effects?"         TRUE
-
- SF-ADJUSTMENT "Spread coefficient"    '(35 0 1000 1 10 0 1)
- SF-ADJUSTMENT "# of fire randomizes"  '(20 0 1000 1 10 0 1)
-
- SF-TOGGLE     "Fire over background"   FALSE
-
- SF-TOGGLE     "Add flame turbulence"   TRUE
- SF-ADJUSTMENT "Turbulence"             '(2 0 1000 1 10 0 1)
-)
+(script-fu-menu-register "script-fu-fiery-steel"
+			 _"<Image>/File/New/FX-Foundry/Logos")
 
 
 

@@ -137,19 +137,21 @@
 )
 
 
-(script-fu-register "script-fu-film-grain"
-            _"<Image>/FX-Foundry/Photo/Effects/Film Grain..."
-            "Performs a tone mapping operation with a specified blur on the open image"
-            "Harry Phillips"
-            "Harry Phillips"
-            "May. 05 2007"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE     "Drawable"  0
-            SF-ADJUSTMENT   _"Grain size"     '(50 10 500 5 5 1 0)
-        SF-ADJUSTMENT   _"Blur amount"      '(1 1 5 0.1 1 1 0)
-        SF-TOGGLE         _"Add a layer mask"       FALSE
-            SF-ADJUSTMENT   _"Midpoint adjustment"     '(127 0 255 1 1 1 0)
+(script-fu-register
+  "script-fu-film-grain"
+  _"Film Grain..."
+  "Performs a tone mapping operation with a specified blur on the open image"
+  "Harry Phillips"
+  "Harry Phillips"
+  "May. 05 2007"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE     "Drawable"  0
+  SF-ADJUSTMENT   _"Grain size"     '(50 10 500 5 5 1 0)
+  SF-ADJUSTMENT   _"Blur amount"      '(1 1 5 0.1 1 1 0)
+  SF-TOGGLE         _"Add a layer mask"       FALSE
+  SF-ADJUSTMENT   _"Midpoint adjustment"     '(127 0 255 1 1 1 0))
 
+(script-fu-menu-register "script-fu-film-grain"
+                         "<Image>/FX-Foundry/Photo/Effects")
 
-)

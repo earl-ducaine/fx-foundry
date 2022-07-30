@@ -129,16 +129,18 @@
    )
  )
 
-(script-fu-register "script-fu-planet-render"
-                   _"_Planet render..."
-                   "Creates a planet.(Color, size and sun orientation can be set)"
-                   "Aurore D. (Rore)"
-                   "aurore.d@gmail.com"
-                   "October 2005"
-                   ""
-                   SF-ADJUSTMENT "Planet size (pixels)" '(400 40 2000 1 10 0 1)
-                   SF-COLOR "Planet color" '(10 70 100)
-                   SF-ADJUSTMENT _"Sun orientation (degrees) " '(0 0 360 1 10 1 0)
-                       SF-ADJUSTMENT _"Sun Tilt " '(1 0 5 1 10 1 0) )
+(script-fu-register
+  "script-fu-planet-render"
+  _"_Planet render..."
+  "Creates a planet.(Color, size and sun orientation can be set)"
+  "Aurore D. (Rore)"
+  "aurore.d@gmail.com"
+  "October 2005"
+  ""
+  SF-ADJUSTMENT "Planet size (pixels)" '(400 40 2000 1 10 0 1)
+  SF-COLOR "Planet color" '(10 70 100)
+  SF-ADJUSTMENT _"Sun orientation (degrees) " '(0 0 360 1 10 1 0)
+  SF-ADJUSTMENT _"Sun Tilt " '(1 0 5 1 10 1 0) )
+
 (script-fu-menu-register "script-fu-planet-render"
-                              _"<Image>/File/New/FX-Foundry/Render")
+                         _"<Image>/File/New/FX-Foundry/Render")

@@ -69,27 +69,18 @@
 )
 
 
-(script-fu-register "script-fu-LCE"
+(script-fu-register
+  "script-fu-LCE"
+  "Local Contrast Enhancement"
+  "Runs USM plug-in to remove haze/enhance details.  Since this is used frequently, it's nice to have so that the standard values are always available for use."
+  "Mark Lowry"
+  "Technique discussed on the Luminous Landscape website"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-ADJUSTMENT "Radius?"  '(50 25 75 1 10 0 0)
+  SF-ADJUSTMENT "Amount?"  '(12 0 100 1 10 0 0))
 
-      "<Image>/FX-Foundry/Photo/Enhancement/Local Contrast Enhancement"
-
-      "Runs USM plug-in to remove haze/enhance details.  Since this is used frequently, it's nice to have so that the standard values are always available for use."
-
-      "Mark Lowry"
-
-      "Technique discussed on the Luminous Landscape website"
-
-      "2007"
-
-      "RGB*, GRAY*"
-
-      SF-IMAGE "Image" 0
-
-      SF-DRAWABLE "Current Layer" 0
-
-      SF-ADJUSTMENT "Radius?"  '(50 25 75 1 10 0 0)
-
-      SF-ADJUSTMENT "Amount?"  '(12 0 100 1 10 0 0)
-
- )
-
+(script-fu-menu-register "script-fu-LCE"
+                         "<Image>/FX-Foundry/Photo/Enhancement")

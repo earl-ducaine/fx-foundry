@@ -58,22 +58,25 @@
 )
 
 (script-fu-register
- "script-fu-draw-box"
- _"<Image>/FX-Foundry/Shapes/Parametric/Box"
- "Draw a box by filling in numeric values"
- "Arch. Giuseppe Conte"
- "2003, Giuseppe Conte"
- "13 Agosto 2003 - 72026 San Pancrazio Salentino (BR) - ITALY"
- "RGB* GRAY* INDEXED*"
- SF-IMAGE "The Image" 0
- SF-DRAWABLE "The Layer" 0
- SF-ADJUSTMENT "X origin" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Y origin" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Width" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Height" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Radius Feather" '(0 0 9999 1 10 0 1)
- SF-TOGGLE     "Feather" FALSE
-)
+  "script-fu-draw-box"
+  _"Box"
+  "Draw a box by filling in numeric values"
+  "Arch. Giuseppe Conte"
+  "2003, Giuseppe Conte"
+  "13 Agosto 2003 - 72026 San Pancrazio Salentino (BR) - ITALY"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE "The Image" 0
+  SF-DRAWABLE "The Layer" 0
+  SF-ADJUSTMENT "X origin" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Y origin" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Width" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Height" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Radius Feather" '(0 0 9999 1 10 0 1)
+  SF-TOGGLE     "Feather" FALSE)
+
+(script-fu-menu-register "script-fu-draw-box"
+                         "<Image>/FX-Foundry/Shapes/Parametric")
+
 
 ;Draw arch
 
@@ -130,22 +133,25 @@
 ) ;;def
 
 (script-fu-register
- "script-fu-draw-arch"
- _"<Image>/FX-Foundry/Shapes/Parametric/_Arch"
- "Draw arch and circles, at center point specified, from initial angle to final angle."
- "Arch. Giuseppe Conte"
- "2004, Giuseppe Conte"
- "22 maggio 2004 - Ver. 2.0"
- "RGB* GRAY* INDEXED*"
- SF-IMAGE "The Image" 0
- SF-DRAWABLE "The Layer" 0
- SF-ADJUSTMENT "X center" '(0 -9999 9999 1 10 0 1)
- SF-ADJUSTMENT "Y center" '(0 -9999 9999 1 10 0 1)
- SF-ADJUSTMENT "Radius" '(10 0 9999 1 10 0 1)
- SF-ADJUSTMENT "From angle" '(0 -9999 9999 1 10 0 1)
- SF-ADJUSTMENT "To angle" '(360 -9999 9999 1 10 0 1)
- SF-ADJUSTMENT "Number of Segments" '(36 0 9999 1 10 0 1)
-)
+  "script-fu-draw-arch"
+  _"_Arch"
+  "Draw arch and circles, at center point specified, from initial angle to final angle."
+  "Arch. Giuseppe Conte"
+  "2004, Giuseppe Conte"
+  "22 maggio 2004 - Ver. 2.0"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE "The Image" 0
+  SF-DRAWABLE "The Layer" 0
+  SF-ADJUSTMENT "X center" '(0 -9999 9999 1 10 0 1)
+  SF-ADJUSTMENT "Y center" '(0 -9999 9999 1 10 0 1)
+  SF-ADJUSTMENT "Radius" '(10 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "From angle" '(0 -9999 9999 1 10 0 1)
+  SF-ADJUSTMENT "To angle" '(360 -9999 9999 1 10 0 1)
+  SF-ADJUSTMENT "Number of Segments" '(36 0 9999 1 10 0 1))
+
+(script-fu-menu-register "script-fu-draw-arch"
+                         "<Image>/FX-Foundry/Shapes/Parametric")
+
 
 ;;;
 ;;; draw-ellipse
@@ -217,22 +223,27 @@
 ) ;;def
 
 (script-fu-register
- "script-fu-draw-ellipse"
- _"<Image>/FX-Foundry/Shapes/Parametric/Ellipse"
- "Draw an ellipse."
- "Arch. Giuseppe Conte <http://space.tin.it/edicola/lwcon/>"
- "2002, Giuseppe Conte"
- "21 September 2002 - San Pancrazio Salentino (BR) - Italy"
- "RGB* GRAY* INDEXED*"
- SF-IMAGE "The Image" 0
- SF-DRAWABLE "The Layer" 0
- SF-ADJUSTMENT "X center" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Y center" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Semi-axis a" '(10 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Semi-axis b" '(10 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Number segments" '(36 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Inclination" '(0 -9999 9999 1 10 0 1)
-)
+  "script-fu-draw-ellipse"
+  _"Ellipse"
+  "Draw an ellipse."
+  "Arch. Giuseppe Conte <http://space.tin.it/edicola/lwcon/>"
+  "2002, Giuseppe Conte"
+  "21 September 2002 - San Pancrazio Salentino (BR) - Italy"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE "The Image" 0
+  SF-DRAWABLE "The Layer" 0
+  SF-ADJUSTMENT "X center" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Y center" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Semi-axis a" '(10 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Semi-axis b" '(10 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Number segments" '(36 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Inclination" '(0 -9999 9999 1 10 0 1))
+
+(script-fu-menu-register "script-fu-draw-ellipse"
+                         "<Image>/FX-Foundry/Shapes/Parametric")
+
+
+
 ;;;
 ;;; draw-polygon
 ;;;
@@ -283,18 +294,21 @@
 ) ;;def
 
 (script-fu-register
- "script-fu-draw-polygon"
- _"<Image>/FX-Foundry/Shapes/Parametric/Polygon"
- "Draw all regular polygonos by exact numbers. Input: center, radius, number segment."
- "Arch. Giuseppe Conte <http://space.tin.it/edicola/lwcon/>"
- "2002, Giuseppe Conte"
- "08 Maggio 2002 - Florence - Italy"
- "RGB* GRAY* INDEXED*"
- SF-IMAGE "The Image" 0
- SF-DRAWABLE "The Layer" 0
- SF-ADJUSTMENT "X center" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Y center" '(0 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Radius" '(10 0 9999 1 10 0 1)
- SF-ADJUSTMENT "Segments" '(3 0 9999 1 10 0 1)
-)
+  "script-fu-draw-polygon"
+  _"Polygon"
+  "Draw all regular polygonos by exact numbers. Input: center, radius, number segment."
+  "Arch. Giuseppe Conte <http://space.tin.it/edicola/lwcon/>"
+  "2002, Giuseppe Conte"
+  "08 Maggio 2002 - Florence - Italy"
+  "RGB* GRAY* INDEXED*"
+  SF-IMAGE "The Image" 0
+  SF-DRAWABLE "The Layer" 0
+  SF-ADJUSTMENT "X center" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Y center" '(0 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Radius" '(10 0 9999 1 10 0 1)
+  SF-ADJUSTMENT "Segments" '(3 0 9999 1 10 0 1))
+
+(script-fu-menu-register "script-fu-draw-polygon"
+                         "<Image>/FX-Foundry/Shapes/Parametric")
+
 

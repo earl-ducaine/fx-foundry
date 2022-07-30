@@ -123,7 +123,7 @@
 
 (script-fu-register
   "script-fu-texturizer"
-  "<Image>/FX-Foundry/Selection Effects/Texturizer..."
+  "Texturizer..."
   "Creates textured canvas image, which simulates Photoshop's Texturizer filter"
   "Iccii <iccii@hotmail.com>"
   "Iccii"
@@ -137,5 +137,8 @@
   SF-ADJUSTMENT "Depth"            '(0 -5 5 1 1 0 1)
   SF-OPTION     "Stretch Direction" '("None" "Horizontal" "Vertical")
   SF-TOGGLE     "Invert"           FALSE
-  SF-TOGGLE     "Show Texture"     FALSE
-)
+  SF-TOGGLE     "Show Texture"     FALSE)
+
+(script-fu-menu-register "script-fu-texturizer"
+                         "<Image>/FX-Foundry/Selection Effects")
+

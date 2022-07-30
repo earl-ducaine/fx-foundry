@@ -122,7 +122,7 @@
 
 
 (script-fu-register "script-fu-sv-gloss-orb-dark"
-            _"<Image>/File/New/FX-Foundry/Render/Gloss-Orb-Dark"
+            _"Gloss-Orb-Dark"
             "Creates a Web2.0 style gloss orb"
             "Mike Pippin"
             "copyright 2007-8, Mike Pippin"
@@ -130,8 +130,10 @@
             ""
             SF-ADJUSTMENT _"Orb Radius" '(100 1 2000 1 10 0 1)
 
-            SF-COLOR      "Background Color" '(22 22 125)
-            )
+            SF-COLOR      "Background Color" '(22 22 125))
+
+(script-fu-menu-register "script-fu-sv-gloss-orb-dark"
+			 _"<Image>/File/New/FX-Foundry/Render")
 
 
 ;Author: Mike Pippin
@@ -229,15 +231,14 @@
 
 
 (script-fu-register "script-fu-sv-gloss-orb-light"
-            _"<Image>/File/New/FX-Foundry/Render/Gloss-Orb-Light"
+            _"Gloss-Orb-Light"
             "Creates a Web2.0 style gloss orb"
             "Mike Pippin"
             "copyright 2007-8, Mike Pippin"
             "Dec 2007"
             ""
             SF-ADJUSTMENT _"Orb Radius" '(100 1 2000 1 10 0 1)
+            SF-COLOR      "Background Color" '(22 22 125))
 
-            SF-COLOR      "Background Color" '(22 22 125)
-            )
-
-
+(script-fu-menu-register "script-fu-sv-gloss-orb-light"
+			 _"<Image>/File/New/FX-Foundry/Render")

@@ -157,27 +157,20 @@
 )
 
 
-(script-fu-register "script-fu-EZRedSkinFix"
+(script-fu-register
+  "script-fu-EZRedSkinFix"
+  "EZ Red Skin Fix"
+  "Add screen layer and a value layer.  Adjust layer opacities to suit."
+  "Mark Lowry"
+  "Technique by lylejk of dpreview.com"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-ADJUSTMENT "Strength? (Screen Layer Opacity)"  '(35 0 100 1 10 0 0)
+  SF-TOGGLE "Merge Layers?"  FALSE)
 
-      "<Image>/FX-Foundry/Photo/Enhancement/EZ Red Skin Fix"
+(script-fu-menu-register "script-fu-EZRedSkinFix"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
 
-      "Add screen layer and a value layer.  Adjust layer opacities to suit."
-
-      "Mark Lowry"
-
-      "Technique by lylejk of dpreview.com"
-
-      "2007"
-
-      "RGB*, GRAY*"
-
-      SF-IMAGE "Image" 0
-
-      SF-DRAWABLE "Current Layer" 0
-
-      SF-ADJUSTMENT "Strength? (Screen Layer Opacity)"  '(35 0 100 1 10 0 0)
-
-      SF-TOGGLE "Merge Layers?"  FALSE
-
- )
 

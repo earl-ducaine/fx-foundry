@@ -215,34 +215,19 @@
 )
 
 
-
-(script-fu-register "script-fu-lomo-effect"
-
+(script-fu-register
+  "script-fu-lomo-effect"
   _"_LOMO effect..."
-
   _"Give LOMO look to a photos."
-
   "Alexia Death"
-
   "2007, Alexia Death."
-
   "4rd October 2007"
-
   "RGB* GRAY*"
-
   SF-IMAGE      "The image"               0
-
   SF-DRAWABLE   "The layer"               0
-
   SF-TOGGLE     _"Work on copy"           FALSE
-
-  SF-TOGGLE     _"Flatten image"          FALSE
-
-)
-
-
+  SF-TOGGLE     _"Flatten image"          FALSE)
 
 (script-fu-menu-register "script-fu-lomo-effect"
-
                          "<Image>/FX-Foundry/Photo/Effects")
 

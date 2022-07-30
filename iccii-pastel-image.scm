@@ -104,7 +104,7 @@
 
 (script-fu-register
   "script-fu-pastel-image"
-  "<Image>/FX-Foundry/Artistic/Pastel Sketch..."
+  "Pastel Sketch..."
   "Create the Pastel image"
   "Iccii <iccii@hotmail.com>"
   "Iccii"
@@ -116,5 +116,8 @@
   SF-ADJUSTMENT "Sketch Length" '(10 0 32 1 1 0 1)
   SF-ADJUSTMENT "Sketch Amount" '(1.0 0 5.0 0.1 0.5 1 1)
   SF-ADJUSTMENT "Angle"          '(45 0 180 1 15 0 0)
-  SF-TOGGLE     "Add the canvas texture" FALSE
- )
+  SF-TOGGLE     "Add the canvas texture" FALSE)
+
+(script-fu-menu-register "script-fu-pastel-image"
+                         "<Image>/FX-Foundry/Artistic")
+

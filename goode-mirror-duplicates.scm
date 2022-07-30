@@ -122,17 +122,21 @@
     )
   )
 
-(script-fu-register "script-fu-mirror-dup"
- "<Image>/FX-Foundry/Layer Effects/Apply Mirrors..."
- "Duplicates the image with mirror images"
- "Saul Goode"
- "Saul Goode"
- "4/17/2006"
- ""
- SF-IMAGE    "Image"    0
- SF-DRAWABLE "Drawable" 0
- SF-ADJUSTMENT "Iterations (Image doubles each time)" '( 1 0 10 1 1 0 1 )
- SF-TOGGLE "Horizontal direction" TRUE
- SF-TOGGLE "Vertical direction" FALSE
- SF-TOGGLE "Work on copy" TRUE
- )
+(script-fu-register
+  "script-fu-mirror-dup"
+  "Apply Mirrors..."
+  "Duplicates the image with mirror images"
+  "Saul Goode"
+  "Saul Goode"
+  "4/17/2006"
+  ""
+  SF-IMAGE    "Image"    0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT "Iterations (Image doubles each time)" '( 1 0 10 1 1 0 1 )
+  SF-TOGGLE "Horizontal direction" TRUE
+  SF-TOGGLE "Vertical direction" FALSE
+  SF-TOGGLE "Work on copy" TRUE)
+
+(script-fu-menu-register "script-fu-mirror-dup"
+                         "<Image>/FX-Foundry/Layer Effects")
+

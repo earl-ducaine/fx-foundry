@@ -109,18 +109,22 @@
     )
 )
 
-(script-fu-register "script-fu-pandora-combine"
-                         _"<Image>/FX-Foundry/Multi-Layer Tools/Spread out layers ..."
-                         _"Line up layers as a panorama"
-                         "Akkana Peck"
-                         "Akkana Peck"
-                         "June 2006"
-                         "*"
-                         SF-IMAGE       "Image"              0
-                         SF-DRAWABLE    "Drawable"           0
-                         SF-ADJUSTMENT _"Overlap (percent)"  '(50 0 100 1 10 0 1)
-                         SF-TOGGLE     _"Top Layer on Right" TRUE
-                         SF-TOGGLE     _"Use Layer Masks"    TRUE
-)
+(script-fu-register
+  "script-fu-pandora-combine"
+  _"Spread out layers ..."
+  _"Line up layers as a panorama"
+  "Akkana Peck"
+  "Akkana Peck"
+  "June 2006"
+  "*"
+  SF-IMAGE       "Image"              0
+  SF-DRAWABLE    "Drawable"           0
+  SF-ADJUSTMENT _"Overlap (percent)"  '(50 0 100 1 10 0 1)
+  SF-TOGGLE     _"Top Layer on Right" TRUE
+  SF-TOGGLE     _"Use Layer Masks"    TRUE)
+
+(script-fu-menu-register "script-fu-pandora-combine"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")
+
 
 

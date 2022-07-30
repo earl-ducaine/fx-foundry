@@ -98,16 +98,18 @@
 
 
 (script-fu-register
- "script-fu-gm-solarize"
- _"<Image>/FX-Foundry/Color/Lasm's Solarize"
- "Solarize effect. This works on any RGB image."
- "lasm"
- "Copyright 2005, lasm"
- "November 19, 2005"
- "RGB*"
- SF-IMAGE        "The Image"        0
- SF-DRAWABLE    "The Layer"        0
- SF-ADJUSTMENT    "Intensity"        '(100.0 0 100.0 1.0 0 1 0)
- SF-ADJUSTMENT  _"Threshold"    '(255 0 255 1 10 0 0)
- SF-TOGGLE        _"Flatten"         TRUE
-)
+  "script-fu-gm-solarize"
+  _"Lasm's Solarize"
+  "Solarize effect. This works on any RGB image."
+  "lasm"
+  "Copyright 2005, lasm"
+  "November 19, 2005"
+  "RGB*"
+  SF-IMAGE        "The Image"        0
+  SF-DRAWABLE    "The Layer"        0
+  SF-ADJUSTMENT    "Intensity"        '(100.0 0 100.0 1.0 0 1 0)
+  SF-ADJUSTMENT  _"Threshold"    '(255 0 255 1 10 0 0)
+  SF-TOGGLE        _"Flatten"         TRUE)
+
+(script-fu-menu-register "script-fu-gm-solarize"
+                         "<Image>/FX-Foundry/Color")

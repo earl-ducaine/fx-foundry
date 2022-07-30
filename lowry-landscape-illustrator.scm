@@ -201,18 +201,22 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(script-fu-register "script-fu-Land_illust"
-      "<Image>/FX-Foundry/Artistic/_Landscape Illustrator"
-      "Similar to Landscape Painter, but with a bit of a sketch effect as well.  Over-sharpen, then add Darken Only layer and blur it"
-      "Mark Lowry"
-      "Technique by Mark Lowry"
-      "2006"
-      "RGB*, GRAY*"
-      SF-IMAGE "Image" 0
-      SF-DRAWABLE "Current Layer" 0
-      SF-VALUE "Blur radius?"   "15"
-      SF-TOGGLE "Merge Layers?"  FALSE
-      SF-TOGGLE "Sharpen First?" TRUE
-      SF-ADJUSTMENT "Sharpening strength?"  '(5 0 10 1 10 0 0)
- )
+(script-fu-register
+  "script-fu-Land_illust"
+  "_Landscape Illustrator"
+  "Similar to Landscape Painter, but with a bit of a sketch effect as well.  Over-sharpen, then add Darken Only layer and blur it"
+  "Mark Lowry"
+  "Technique by Mark Lowry"
+  "2006"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-VALUE "Blur radius?"   "15"
+  SF-TOGGLE "Merge Layers?"  FALSE
+  SF-TOGGLE "Sharpen First?" TRUE
+  SF-ADJUSTMENT "Sharpening strength?"  '(5 0 10 1 10 0 0))
+
+(script-fu-menu-register "script-fu-Land_illust"
+                         "<Image>/FX-Foundry/Artistic")
+
 

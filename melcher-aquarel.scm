@@ -103,19 +103,21 @@
     )
 )
 
-; Register script-fu-aquarel
-
+;; Register script-fu-aquarel
 (script-fu-register
-    "script-fu-aquarel"
-    "<Image>/FX-Foundry/Artistic/Aquarel..."
-    "Gives the image an aquareled look."
-    "Alexander Melchers"
-    "2002, Alexander Melchers, xMedia"
-    "29th March 2003"
-    "RGB* GRAY*"
-    SF-IMAGE      "The Image"         0
-    SF-DRAWABLE   "The Layer"         0
-    SF-ADJUSTMENT "Water Edges"       '(7 3 50 1 1 0 0)
-    SF-ADJUSTMENT "Brush Size"        '(7 3 50 1 1 0 0)
-    SF-ADJUSTMENT "Accuracy"          '(0 0 1 1 1 0 0)
-)
+  "script-fu-aquarel"
+  "Aquarel..."
+  "Gives the image an aquareled look."
+  "Alexander Melchers"
+  "2002, Alexander Melchers, xMedia"
+  "29th March 2003"
+  "RGB* GRAY*"
+  SF-IMAGE      "The Image"         0
+  SF-DRAWABLE   "The Layer"         0
+  SF-ADJUSTMENT "Water Edges"       '(7 3 50 1 1 0 0)
+  SF-ADJUSTMENT "Brush Size"        '(7 3 50 1 1 0 0)
+  SF-ADJUSTMENT "Accuracy"          '(0 0 1 1 1 0 0))
+
+(script-fu-menu-register "script-fu-aquarel"
+                         "<Image>/FX-Foundry/Artistic")
+

@@ -113,13 +113,17 @@
 
 )
 
-(script-fu-register "script-fu-midtone-sharp"
-                    _"<Image>/FX-Foundry/Photo/Enhancement/Midtone-Sharp image"
-                    "Sharpen the midtones of an image"
-                    "twjacobs@gmail.com"
-                    "Tim Jacobs"
-                    "March 19, 2005"
-                    ""
-                    SF-IMAGE "Image" 0
-                    SF-DRAWABLE "Drawable" 0
-)
+(script-fu-register
+  "script-fu-midtone-sharp"
+  _"Midtone-Sharp image"
+  "Sharpen the midtones of an image"
+  "twjacobs@gmail.com"
+  "Tim Jacobs"
+  "March 19, 2005"
+  ""
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-midtone-sharp"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+

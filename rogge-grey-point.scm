@@ -92,7 +92,7 @@
 
 (script-fu-register
   "script-mr-grey-point"
-  "<Image>/FX-Foundry/Color/Grey Point"
+  "Grey Point"
   "Linear conversion of RGB colour space.\n\nThe purpose of this script is to transform the foreground colour (as chosen with the colour pick tool) to a chosen target colour. The entire RGB colour space is linearly converted to achieve the desired mapping of the foreground colour. There are three possible choices for the target colour:\n(a) a grey colour of the same density as the foreground colour (desaturation)\n(b) white\n(c) the background colour (as chosen with the colour pick tool)\n\nThe main application area of this script should be the correction of the colour temperature of digital images.\n\nYour feedback is welcome. ;^)"
   "Dr. Martin Rogge <marogge@onlinehome.de>"
   "Dr. Martin Rogge"
@@ -100,6 +100,9 @@
   "RGB*"
   SF-IMAGE    "Image"         0
   SF-DRAWABLE "Drawable"      0
-  SF-OPTION   "Foreground transformation"  '("Desaturation" "White" "Background")
-)
+  SF-OPTION   "Foreground transformation"  '("Desaturation" "White" "Background"))
+
+(script-fu-menu-register "script-mr-grey-point"
+                         "<Image>/FX-Foundry/Color")
+
 

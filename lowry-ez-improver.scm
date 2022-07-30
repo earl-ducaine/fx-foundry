@@ -158,25 +158,19 @@
 )
 
 
-(script-fu-register "script-fu-EZImprover"
+(script-fu-register
+  "script-fu-EZImprover"
+  "EZ Improver"
+  "Add screen layer and a saturation layer.  Works best on photos described as 'dingy' or 'dull'."
+  "Mark Lowry"
+  "Script by Mark Lowry"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-TOGGLE "Merge Layers?"  FALSE)
 
-      "<Image>/FX-Foundry/Photo/Enhancement/EZ Improver"
+(script-fu-menu-register "script-fu-EZImprover"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
 
-      "Add screen layer and a saturation layer.  Works best on photos described as 'dingy' or 'dull'."
-
-      "Mark Lowry"
-
-      "Script by Mark Lowry"
-
-      "2007"
-
-      "RGB*, GRAY*"
-
-      SF-IMAGE "Image" 0
-
-      SF-DRAWABLE "Current Layer" 0
-
-      SF-TOGGLE "Merge Layers?"  FALSE
-
- )
 

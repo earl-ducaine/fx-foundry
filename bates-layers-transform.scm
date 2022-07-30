@@ -133,28 +133,32 @@
 ))
 ))
 
-; Register script
-(script-fu-register     "script-fu-layers-transform"
-            "<Image>/FX-Foundry/Multi-Layer Tools/Transform Layers..."
-            "Transforms layers from the specified layer range"
-            "Daniel Bates"
-            "Daniel Bates"
-            "Dec 2007"
-            "*"
-            SF-IMAGE "SF-IMAGE" 0
-            SF-DRAWABLE "SF-DRAWABLE" 0
-            SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
-            SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
-            SF-TOGGLE _"Rotate Layers?" TRUE
-            SF-OPTION _"Spiral Rotate? (Rotate Angle will be ignored if yes)" '(_"No" _"Yes")
-            SF-ADJUSTMENT _"Rotate Angle" '(0 -360 360 1 10 0 1)
-            SF-TOGGLE _"Flip Layers?" TRUE
-            SF-OPTION _"Flip Direction" '(_"Horizontally" _"Vertically" _"Both")
-            SF-TOGGLE _"Offset Layer Contents?" TRUE
-            SF-ADJUSTMENT _"Offset X" '(0 -2000 2000 1 10 0 1)
-            SF-ADJUSTMENT _"Offset Y" '(0 -2000 2000 1 10 0 1)
-            SF-OPTION _"Offset Edge Behaviour" '(_"Wrap" _"Transparent")
-            SF-TOGGLE _"Move Layers?" TRUE
-            SF-ADJUSTMENT _"Layer X Position" '(0 -2000 2000 1 10 0 1)
-            SF-ADJUSTMENT _"Layer Y Position" '(0 -2000 2000 1 10 0 1)
-)
+;; Register script
+(script-fu-register
+  "script-fu-layers-transform"
+  "Transform Layers..."
+  "Transforms layers from the specified layer range"
+  "Daniel Bates"
+  "Daniel Bates"
+  "Dec 2007"
+  "*"
+  SF-IMAGE "SF-IMAGE" 0
+  SF-DRAWABLE "SF-DRAWABLE" 0
+  SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
+  SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
+  SF-TOGGLE _"Rotate Layers?" TRUE
+  SF-OPTION _"Spiral Rotate? (Rotate Angle will be ignored if yes)" '(_"No" _"Yes")
+  SF-ADJUSTMENT _"Rotate Angle" '(0 -360 360 1 10 0 1)
+  SF-TOGGLE _"Flip Layers?" TRUE
+  SF-OPTION _"Flip Direction" '(_"Horizontally" _"Vertically" _"Both")
+  SF-TOGGLE _"Offset Layer Contents?" TRUE
+  SF-ADJUSTMENT _"Offset X" '(0 -2000 2000 1 10 0 1)
+  SF-ADJUSTMENT _"Offset Y" '(0 -2000 2000 1 10 0 1)
+  SF-OPTION _"Offset Edge Behaviour" '(_"Wrap" _"Transparent")
+  SF-TOGGLE _"Move Layers?" TRUE
+  SF-ADJUSTMENT _"Layer X Position" '(0 -2000 2000 1 10 0 1)
+  SF-ADJUSTMENT _"Layer Y Position" '(0 -2000 2000 1 10 0 1))
+
+
+(script-fu-menu-register "script-fu-layers-transform"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")

@@ -143,22 +143,23 @@
   )
 )
 
-(script-fu-register "script-fu-analogize"
-            "Analogize..."
-            "A simple analog camera faking effect"
-            "Ismael Valladolid Torres <ivalladt@punkass.com>"
-            "Ismael Valladolid Torres"
-            "2005"
-            "RGB*"
-            SF-IMAGE "The image" 0
-            SF-DRAWABLE "The layer" 0
-            SF-ADJUSTMENT "Contrast" '(20 0 60 1 5 0 0)
-            SF-ADJUSTMENT "Saturation" '(20 0 60 1 5 0 0)
-            SF-ADJUSTMENT "Bright layer opacity" '(80 0 100 1 10 0 0)
-            SF-ADJUSTMENT "Shadow layer opacity" '(100 0 100 1 10 0 0)
-            SF-TOGGLE "Duplicate the shadow layer" TRUE
-            SF-TOGGLE "Flatten image after processing" TRUE
-            SF-TOGGLE "Work on copy" TRUE)
+(script-fu-register
+  "script-fu-analogize"
+  "Analogize..."
+  "A simple analog camera faking effect"
+  "Ismael Valladolid Torres <ivalladt@punkass.com>"
+  "Ismael Valladolid Torres"
+  "2005"
+  "RGB*"
+  SF-IMAGE "The image" 0
+  SF-DRAWABLE "The layer" 0
+  SF-ADJUSTMENT "Contrast" '(20 0 60 1 5 0 0)
+  SF-ADJUSTMENT "Saturation" '(20 0 60 1 5 0 0)
+  SF-ADJUSTMENT "Bright layer opacity" '(80 0 100 1 10 0 0)
+  SF-ADJUSTMENT "Shadow layer opacity" '(100 0 100 1 10 0 0)
+  SF-TOGGLE "Duplicate the shadow layer" TRUE
+  SF-TOGGLE "Flatten image after processing" TRUE
+  SF-TOGGLE "Work on copy" TRUE)
 
 (script-fu-menu-register "script-fu-analogize"
              "<Image>/FX-Foundry/Artistic")

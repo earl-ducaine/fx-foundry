@@ -165,17 +165,21 @@
 )
 
 
-(script-fu-register "script-fu-split-tone"
-            _"<Image>/FX-Foundry/Color/Split Tone..."
-            "Turns a B&W image into a split tone image"
-            "Harry Phillips"
-            "Harry Phillips"
-            "Feb. 03 2006"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE     "Drawable"  0
-            SF-COLOR "Highlight colour" '(255 144 0)
-            SF-ADJUSTMENT   _"Highlight opacity:"     '(100 0 100 5 10 1 0)
-            SF-COLOR "Shadows colour" '(0 204 255)
-        SF-ADJUSTMENT   _"Shadow opacity:"      '(100 0 100 5 10 1 0)
-)
+(script-fu-register
+  "script-fu-split-tone"
+  _"Split Tone..."
+  "Turns a B&W image into a split tone image"
+  "Harry Phillips"
+  "Harry Phillips"
+  "Feb. 03 2006"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE     "Drawable"  0
+  SF-COLOR "Highlight colour" '(255 144 0)
+  SF-ADJUSTMENT   _"Highlight opacity:"     '(100 0 100 5 10 1 0)
+  SF-COLOR "Shadows colour" '(0 204 255)
+  SF-ADJUSTMENT   _"Shadow opacity:"      '(100 0 100 5 10 1 0))
+
+(script-fu-menu-register "script-fu-split-tone"
+                         "<Image>/FX-Foundry/Color")
+

@@ -123,16 +123,20 @@
 )
 
 
-(script-fu-register "script-fu-orton-effect"
-            _"<Image>/FX-Foundry/Layer Effects/Orton effect..."
-            "Gives the Orton effect on a photo"
-            "Harry Phillips"
-            "Harry Phillips"
-            "Feb. 07 2006"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE        "Drawable"  0
-        SF-ADJUSTMENT    _"Blur"         '(100 5 10000 1 10 0 1)
-        SF-TOGGLE        _"Use 20% of the shortest side for Blur"       FALSE
-        SF-ADJUSTMENT    _"Opacity"      '(90 0 100 1 10 1 0)
-)
+(script-fu-register
+  "script-fu-orton-effect"
+  _"Orton effect..."
+  "Gives the Orton effect on a photo"
+  "Harry Phillips"
+  "Harry Phillips"
+  "Feb. 07 2006"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE        "Drawable"  0
+  SF-ADJUSTMENT    _"Blur"         '(100 5 10000 1 10 0 1)
+  SF-TOGGLE        _"Use 20% of the shortest side for Blur"       FALSE
+  SF-ADJUSTMENT    _"Opacity"      '(90 0 100 1 10 1 0))
+
+(script-fu-menu-register "script-fu-orton-effect"
+                         "<Image>/FX-Foundry/Layer Effects")
+

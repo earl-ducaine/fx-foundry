@@ -73,13 +73,17 @@
   
 
 
-(script-fu-register "script-fu-copy-mask-to-layers"
- "<Image>/FX-Foundry/Multi-Layer Tools/_Copy mask to all layers"
- "Copy the mask from the current layer to all visible layers"
- "Saul Goode"
- "Saul Goode"
- "6/14/2006"
- ""
- SF-IMAGE    "Image"    0
- SF-DRAWABLE "Drawable" 0
- )
+(script-fu-register
+  "script-fu-copy-mask-to-layers"
+  "_Copy mask to all layers"
+  "Copy the mask from the current layer to all visible layers"
+  "Saul Goode"
+  "Saul Goode"
+  "6/14/2006"
+  ""
+  SF-IMAGE    "Image"    0
+  SF-DRAWABLE "Drawable" 0)
+
+(script-fu-menu-register "script-fu-copy-mask-to-layers"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")
+

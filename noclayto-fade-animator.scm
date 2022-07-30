@@ -88,17 +88,21 @@
     (gimp-context-pop)
     (gimp-displays-flush)))
 
-(script-fu-register "script-fu-fade-animator"
-            _"<Image>/FX-Foundry/Animation/Fade..."
-            ""
-            "noclayto"
-            "noclayto"
-            "July 2005"
-            "RGB"
-                    SF-IMAGE       "Image"    0
-            SF-DRAWABLE    "Drawable" 0
-            SF-ADJUSTMENT _"Color Step"  '(51 1 127 1 10 0 1)
-            )
+(script-fu-register
+  "script-fu-fade-animator"
+  _"Fade..."
+  ""
+  "noclayto"
+  "noclayto"
+  "July 2005"
+  "RGB"
+  SF-IMAGE       "Image"    0
+  SF-DRAWABLE    "Drawable" 0
+  SF-ADJUSTMENT _"Color Step"  '(51 1 127 1 10 0 1))
+
+(script-fu-menu-register "script-fu-fade-animator"
+                         "<Image>/FX-Foundry/Animation")
+
 
 
 

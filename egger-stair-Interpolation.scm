@@ -81,15 +81,17 @@
 ; Register the function with the GIMP
 ;
 (script-fu-register
-    "script-fu-Eg-StairInterpolation"
-    "<Image>/FX-Foundry/Toolbox/Eg Stair Scaleup"
-    "Scale up images with minimal cost in quality but larger cost in time. Enlarges the image step by step"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "31.05.2005"
-    "RGB* GRAY*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-ADJUSTMENT    "Factor"    '(1.0 1.0 3.0 0.1 0 2 0)
-)
-;
+  "script-fu-Eg-StairInterpolation"
+  "Eg Stair Scaleup"
+  "Scale up images with minimal cost in quality but larger cost in time. Enlarges the image step by step"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "31.05.2005"
+  "RGB* GRAY*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-ADJUSTMENT    "Factor"    '(1.0 1.0 3.0 0.1 0 2 0))
+
+(script-fu-menu-register "script-fu-Eg-StairInterpolation"
+                         "<Image>/FX-Foundry/Toolbox")
+

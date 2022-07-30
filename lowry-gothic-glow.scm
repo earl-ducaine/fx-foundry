@@ -145,17 +145,21 @@
 )
 
 
-(script-fu-register "script-fu-gothic-glow"
-      "<Image>/FX-Foundry/Light and Shadow/Gothic Glow"
-      "Add blurred multiply layer and a blurred screen layer with optional masks.  Good for adding a surreal effect to images, especially landscapes."
-      "Mark Lowry"
-      "Mark Lowry"
-      "2007"
-      "RGB*, GRAY*"
-      SF-IMAGE "Image" 0
-      SF-DRAWABLE "Current Layer" 0
-      SF-VALUE "Multiply Layer Blur Radius"  "8"
-      SF-VALUE "Screen Layer Blur Radius"  "0"
-      SF-TOGGLE "Add Layer Masks?"  TRUE
- )
+(script-fu-register
+  "script-fu-gothic-glow"
+  "Gothic Glow"
+  "Add blurred multiply layer and a blurred screen layer with optional masks.  Good for adding a surreal effect to images, especially landscapes."
+  "Mark Lowry"
+  "Mark Lowry"
+  "2007"
+  "RGB*, GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Current Layer" 0
+  SF-VALUE "Multiply Layer Blur Radius"  "8"
+  SF-VALUE "Screen Layer Blur Radius"  "0"
+  SF-TOGGLE "Add Layer Masks?"  TRUE)
+
+(script-fu-menu-register "script-fu-gothic-glow"
+                         "<Image>/FX-Foundry/Light and Shadow")
+
 

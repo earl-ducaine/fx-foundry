@@ -181,37 +181,38 @@
     (gimp-displays-flush)
 ;
 )
-;
-; Register the function with the GIMP
-;
+
+;; Register the function with the GIMP
 (script-fu-register
-    "script-fu-Eg-Copyright"
-    "<Image>/FX-Foundry/Toolbox/Eg Copyright placer"
-    "Generate a copyright mark on an image. Best value if you adjust the defaults in the script file to your own needs."
-    "Martin Egger (martin.egger@gmx.net)"
-    "2006, Martin Egger, Bern, Switzerland"
-    "12.04.2006"
-    "RGB*,GRAY*"
-    SF-IMAGE    "The Image"    0
-    SF-DRAWABLE    "The Layer"    0
-    SF-STRING     "Copyright" "\302\251 M. Egger, 2006"
-    SF-FONT     "Font" "Arial Bold"
-    SF-ADJUSTMENT     "Text Height (Percent of image height)" '(10 1.0 100 1.0 0 2 0)
-    SF-ADJUSTMENT    "Distance from border (Percent of image height)" '(3 0.0 10 1.0 0 2 0)
-    SF-ADJUSTMENT    "Layer Opacity" '(50.0 1.0 100.0 1.0 0 2 0)
-    SF-OPTION    "Copyright color (preset)" '("White"
-                "Gray"
-                "Black"
-                "Color from selection")
-    SF-COLOR     "Copyright color (selection)" '(220 220 220)
-    SF-OPTION     "Copyright position" '("Bottom right"
-                "Bottom left"
-                "Bottom center"
-                "Top right"
-                "Top left"
-                "Top center"
-                "Image center")
-    SF-TOGGLE     "Blur copyright" FALSE
-    SF-TOGGLE    "Flatten Image"    FALSE
-)
-;
+  "script-fu-Eg-Copyright"
+  "Eg Copyright placer"
+  "Generate a copyright mark on an image. Best value if you adjust the defaults in the script file to your own needs."
+  "Martin Egger (martin.egger@gmx.net)"
+  "2006, Martin Egger, Bern, Switzerland"
+  "12.04.2006"
+  "RGB*,GRAY*"
+  SF-IMAGE    "The Image"    0
+  SF-DRAWABLE    "The Layer"    0
+  SF-STRING     "Copyright" "\302\251 M. Egger, 2006"
+  SF-FONT     "Font" "Arial Bold"
+  SF-ADJUSTMENT     "Text Height (Percent of image height)" '(10 1.0 100 1.0 0 2 0)
+  SF-ADJUSTMENT    "Distance from border (Percent of image height)" '(3 0.0 10 1.0 0 2 0)
+  SF-ADJUSTMENT    "Layer Opacity" '(50.0 1.0 100.0 1.0 0 2 0)
+  SF-OPTION    "Copyright color (preset)" '("White"
+					    "Gray"
+					    "Black"
+					    "Color from selection")
+  SF-COLOR     "Copyright color (selection)" '(220 220 220)
+  SF-OPTION     "Copyright position" '("Bottom right"
+				       "Bottom left"
+				       "Bottom center"
+				       "Top right"
+				       "Top left"
+				       "Top center"
+				       "Image center")
+  SF-TOGGLE     "Blur copyright" FALSE
+  SF-TOGGLE    "Flatten Image"    FALSE)
+
+(script-fu-menu-register "script-fu-Eg-Copyright"
+                         "<Image>/FX-Foundry/Toolbox")
+

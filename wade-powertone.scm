@@ -101,25 +101,24 @@
 
 ; Return GIMP defaults
 
-(gimp-context-pop)
-
-)
-)
+(gimp-context-pop)))
 
 
+(script-fu-register
+  "power-toning"
+  "Power Toning..."
+  "Adds a neutral gray and color of choice to an existing image. Almost an IR effect."
+  "Art Wade"
+  "Art Wade"
+  "2007"
+  "RGB*"
+  SF-IMAGE         "Image"                 0
+  SF-DRAWABLE     "Drawable"                 0
+  SF-COLOR         "Background Color"         '(0 0 0)
+  SF-TOGGLE         "Merge Layers?"             FALSE)
 
-(script-fu-register "power-toning"
-            "<Image>/FX-Foundry/Artistic/Power Toning..."
-            "Adds a neutral gray and color of choice to an existing image. Almost an IR effect."
-            "Art Wade"
-            "Art Wade"
-            "2007"
-            "RGB*"
-            SF-IMAGE         "Image"                 0
-            SF-DRAWABLE     "Drawable"                 0
-            SF-COLOR         "Background Color"         '(0 0 0)
-        SF-TOGGLE         "Merge Layers?"             FALSE
+(script-fu-menu-register "power-toning"
+                         "<Image>/FX-Foundry/Artistic")
 
-)
 
 

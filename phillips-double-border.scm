@@ -168,24 +168,27 @@
 ))))
 
 
-(script-fu-register "script-fu-double-border"
-            _"<Image>/FX-Foundry/Image Effects/Double Border..."
-            "Gives two borders with a drop shadow"
-            "Harry Phillips"
-            "Harry Phillips"
-            "30 July 2007"
-            "*"
-            SF-IMAGE        "Image"     0
-            SF-DRAWABLE        "Drawable"  0
-            SF-COLOR        "Inner colour" '(255 255 255)
-            SF-ADJUSTMENT    _"Inner size"     '(25 0 1024 1 10 1 0)
-            SF-COLOR         "Outer colour" '(217 217 217)
-        SF-ADJUSTMENT    _"Outer size"      '(50 0 1024 1 10 1 0)
-            SF-COLOR         "Shadow colour" '(0 0 0)
-        SF-ADJUSTMENT    _"Shadow size"         '(10 5 1024 1 10 0 1)
-        SF-ADJUSTMENT    _"Shadow blur"    '(10 0 1024 1 10 0 1)
-        SF-ADJUSTMENT    _"Shadow opacity"        '(80 0 100 1 10 0 0)
-        SF-TOGGLE         _"Outer border is full width past shadow"       FALSE
+(script-fu-register
+  "script-fu-double-border"
+  _"Double Border..."
+  "Gives two borders with a drop shadow"
+  "Harry Phillips"
+  "Harry Phillips"
+  "30 July 2007"
+  "*"
+  SF-IMAGE        "Image"     0
+  SF-DRAWABLE        "Drawable"  0
+  SF-COLOR        "Inner colour" '(255 255 255)
+  SF-ADJUSTMENT    _"Inner size"     '(25 0 1024 1 10 1 0)
+  SF-COLOR         "Outer colour" '(217 217 217)
+  SF-ADJUSTMENT    _"Outer size"      '(50 0 1024 1 10 1 0)
+  SF-COLOR         "Shadow colour" '(0 0 0)
+  SF-ADJUSTMENT    _"Shadow size"         '(10 5 1024 1 10 0 1)
+  SF-ADJUSTMENT    _"Shadow blur"    '(10 0 1024 1 10 0 1)
+  SF-ADJUSTMENT    _"Shadow opacity"        '(80 0 100 1 10 0 0)
+  SF-TOGGLE         _"Outer border is full width past shadow"       FALSE)
 
-)
+(script-fu-menu-register "script-fu-double-border"
+                         "<Image>/FX-Foundry/Image Effects")
+
 

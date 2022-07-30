@@ -77,17 +77,21 @@
     )
 )
 
-(script-fu-register "script-fu-dynamic-range-extender"
-            "<Image>/FX-Foundry/Photo/Enhancement/_Dynamic Range Extender"
-            "Blend two differently exposed images together thus increasing dynamic range. Image must contain 2 layers - lighter (eg. exposed for shadows) MUST be the lower layer and darker (eg. exposed for sky) MUST be the upper layer. Please note that the upper layer must be anchored, floating selection is not sufficent. \n\nBlur strength controls the amount of gaussian blue applied to the mask. Different values are suitable for images with variable amount of details. Opacity is the opacity of the darker layer with the mask, usually 100 is just fine."
-            "Olli Salonen <olli@cabbala.net>"
-            "Olli Salonen"
-            "Jan 06, 2004"
-            "RGB* GRAY*"
-            SF-IMAGE              "Image"                0
-            SF-DRAWABLE           "Drawable"             0
-            SF-ADJUSTMENT         "Blur strength"        '(15 0 50 1 1 0 0)
-            SF-ADJUSTMENT         "Opacity"              '(100 0 100 1 1 0 0)
-            SF-TOGGLE             "Merge layers (Dark on top, Light on bottom)"         TRUE)
+(script-fu-register
+  "script-fu-dynamic-range-extender"
+  "_Dynamic Range Extender"
+  "Blend two differently exposed images together thus increasing dynamic range. Image must contain 2 layers - lighter (eg. exposed for shadows) MUST be the lower layer and darker (eg. exposed for sky) MUST be the upper layer. Please note that the upper layer must be anchored, floating selection is not sufficent. \n\nBlur strength controls the amount of gaussian blue applied to the mask. Different values are suitable for images with variable amount of details. Opacity is the opacity of the darker layer with the mask, usually 100 is just fine."
+  "Olli Salonen <olli@cabbala.net>"
+  "Olli Salonen"
+  "Jan 06, 2004"
+  "RGB* GRAY*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT "Blur strength" '(15 0 50 1 1 0 0)
+  SF-ADJUSTMENT "Opacity" '(100 0 100 1 1 0 0)
+  SF-TOGGLE "Merge layers (Dark on top, Light on bottom)" TRUE)
+
+(script-fu-menu-register "script-fu-dynamic-range-extender"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
 
 

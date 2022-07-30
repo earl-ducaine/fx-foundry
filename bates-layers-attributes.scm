@@ -124,27 +124,31 @@
 ))
 
 ; Register script
-(script-fu-register     "script-fu-modify-layers-attributes"
-            "<Image>/FX-Foundry/Multi-Layer Tools/Edit Attributes of Layers..."
-            "Edits layer attributes of the specified layer range"
-            "Daniel Bates"
-            "Daniel Bates"
-            "Dec 2007"
-            "*"
-            SF-IMAGE "SF-IMAGE" 0
-            SF-DRAWABLE "SF-DRAWABLE" 0
-            SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
-            SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
-            SF-TOGGLE _"Edit Layer Name?" FALSE
-            SF-STRING "New Layer Name" "Layer"
-            SF-TOGGLE _"Edit layer modes?" TRUE
-            SF-OPTION _"New Layer Mode" '(_"Normal" _"Dissolve" _"Multiply" _"Screen" _"Overlay" _"Difference" _"Addition" _"Subtract" _"Darken Only" _"Lighten Only" _"Hue" _"Saturation" _"Color" _"Value" _"Divide" _"Dodge" _"Burn" _"Hard Light" _"Soft Light" _"Grain Extract" _"Grain Merge")
-            SF-TOGGLE _"Edit opacity?" TRUE
-            SF-ADJUSTMENT _"New Opacity" '(100 0 100 1 10 0 1)
-            SF-TOGGLE _"Edit visible property?" TRUE
-            SF-OPTION _"New Visible Property" '(_"Show Layers" _"Hide Layers")
-            SF-TOGGLE _"Edit linked property?" TRUE
-            SF-OPTION _"New Linked Property" '(_"Unlink Layers" _"Link Layers")
-            SF-TOGGLE _"Edit maintain transparency property?" TRUE
-            SF-OPTION _"Maintain Transparency?" '(_"No" _"Yes")
-)
+(script-fu-register
+  "script-fu-modify-layers-attributes"
+  "Edit Attributes of Layers..."
+  "Edits layer attributes of the specified layer range"
+  "Daniel Bates"
+  "Daniel Bates"
+  "Dec 2007"
+  "*"
+  SF-IMAGE "SF-IMAGE" 0
+  SF-DRAWABLE "SF-DRAWABLE" 0
+  SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
+  SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
+  SF-TOGGLE _"Edit Layer Name?" FALSE
+  SF-STRING "New Layer Name" "Layer"
+  SF-TOGGLE _"Edit layer modes?" TRUE
+  SF-OPTION _"New Layer Mode" '(_"Normal" _"Dissolve" _"Multiply" _"Screen" _"Overlay" _"Difference" _"Addition" _"Subtract" _"Darken Only" _"Lighten Only" _"Hue" _"Saturation" _"Color" _"Value" _"Divide" _"Dodge" _"Burn" _"Hard Light" _"Soft Light" _"Grain Extract" _"Grain Merge")
+  SF-TOGGLE _"Edit opacity?" TRUE
+  SF-ADJUSTMENT _"New Opacity" '(100 0 100 1 10 0 1)
+  SF-TOGGLE _"Edit visible property?" TRUE
+  SF-OPTION _"New Visible Property" '(_"Show Layers" _"Hide Layers")
+  SF-TOGGLE _"Edit linked property?" TRUE
+  SF-OPTION _"New Linked Property" '(_"Unlink Layers" _"Link Layers")
+  SF-TOGGLE _"Edit maintain transparency property?" TRUE
+  SF-OPTION _"Maintain Transparency?" '(_"No" _"Yes"))
+
+(script-fu-menu-register "script-fu-modify-layers-attributes"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")
+

@@ -90,20 +90,22 @@
     (gimp-displays-flush)
 ;
 )
-;
+
 (script-fu-register
-    "script-fu-Eg-SeparateSharpen"
-    "<Image>/FX-Foundry/Photo/Sharpen/Eg Separate Lights&Shadows Sharpen"
-    "Separate Sharpening (Lights&Shadows)"
-    "Martin Egger (martin.egger@gmx.net)"
-    "2005, Martin Egger, Bern, Switzerland"
-    "14.06.2005"
-    "RGB* GRAY*"
-    SF-IMAGE    "The Image"        0
-    SF-DRAWABLE    "The Layer"        0
-    SF-ADJUSTMENT    "Radius of USM"        '(3.0 0.0 50.0 1 0 2 0)
-    SF-ADJUSTMENT    "Amount of USM"        '(1.0 0.0 5.0 0.5 0 2 0)
-    SF-ADJUSTMENT    "Threshold"        '(0.0 0.0 50.0 1.0 0 2 0)
-    SF-TOGGLE    "Flatten Image"        FALSE
-)
-;
+  "script-fu-Eg-SeparateSharpen"
+  "Eg Separate Lights&Shadows Sharpen"
+  "Separate Sharpening (Lights&Shadows)"
+  "Martin Egger (martin.egger@gmx.net)"
+  "2005, Martin Egger, Bern, Switzerland"
+  "14.06.2005"
+  "RGB* GRAY*"
+  SF-IMAGE    "The Image"        0
+  SF-DRAWABLE    "The Layer"        0
+  SF-ADJUSTMENT    "Radius of USM"        '(3.0 0.0 50.0 1 0 2 0)
+  SF-ADJUSTMENT    "Amount of USM"        '(1.0 0.0 5.0 0.5 0 2 0)
+  SF-ADJUSTMENT    "Threshold"        '(0.0 0.0 50.0 1.0 0 2 0)
+  SF-TOGGLE    "Flatten Image"        FALSE)
+
+(script-fu-menu-register "script-fu-Eg-SeparateSharpen"
+                         "<Image>/FX-Foundry/Photo/Sharpen")
+

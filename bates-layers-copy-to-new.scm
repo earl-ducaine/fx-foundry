@@ -135,15 +135,19 @@
 ))
 
 ; Register script
-(script-fu-register     "script-fu-layers-copy-to-new"
-            "<Image>/FX-Foundry/Multi-Layer Tools/Copy Layers to New Image..."
-            "Copies a range of layers and opens them as a new image"
-            "Daniel Bates"
-            "Daniel Bates"
-            "Dec 2007"
-            "*"
-            SF-IMAGE "SF-IMAGE" 0
-            SF-DRAWABLE "SF-DRAWABLE" 0
-            SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
-            SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1)
-)
+(script-fu-register
+  "script-fu-layers-copy-to-new"
+  "Copy Layers to New Image..."
+  "Copies a range of layers and opens them as a new image"
+  "Daniel Bates"
+  "Daniel Bates"
+  "Dec 2007"
+  "*"
+  SF-IMAGE "SF-IMAGE" 0
+  SF-DRAWABLE "SF-DRAWABLE" 0
+  SF-ADJUSTMENT _"Start at which layer?" '(1 1 2000 1 5 0 1)
+  SF-ADJUSTMENT _"End at which layer?" '(2 1 2000 1 5 0 1))
+
+(script-fu-menu-register "script-fu-layers-copy-to-new"
+                         "<Image>/FX-Foundry/Multi-Layer Tools")
+

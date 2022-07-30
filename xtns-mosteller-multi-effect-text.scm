@@ -49,41 +49,39 @@
 ;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;
-;
-; User Options Popup
-;
-(script-fu-register "script-fu-multi-effect-text"
-            _"_MultiEffect Text..."
-            "Creates a Multi-Effect Text with a drop shadow"
-            "Scott Mosteller"
-            "Scott Mosteller"
-            "2007"
-            ""
-            SF-STRING     _"Text"               "Gimp"
-            SF-ADJUSTMENT _"Font size (pixels)" '(180 2 1000 1 10 0 1)
-            SF-FONT       _"Font"               "Arial Bold"
-            SF-COLOR      _"Text color"         '(195 8 8)
-            SF-COLOR      _"Stroke color color" '(0 0 0)
-                    SF-ADJUSTMENT _"Stroke width"       '(2 1 50 1 1 0 1)
-            SF-COLOR      _"Shadow color"       '(0 0 0)
-            SF-COLOR      _"Background color"   '(255 255 255)
-                    SF-ADJUSTMENT _"Shadow Offset X"    '(4 -99 99 1 1 0 1)
-                    SF-ADJUSTMENT _"Shadow Offset Y"    '(4 -99 99 1 1 0 1)
-                    SF-ADJUSTMENT _"Shadow Opacity"     '(60 1 100 1 1 0 1)
-                    SF-OPTION     _"Effect Type"       '("Cubism" "Oilify" "Plasma" "Diffraction" "No Effect")
-                    SF-ADJUSTMENT _"Effect Tweak"       '(4.5 1 20 .1 .1 1 0)
-                    SF-ADJUSTMENT _"Scatter Amount"     '(150 1 180 1 1 0 0)
-                    SF-TOGGLE     _"Animate?"           TRUE
-                    SF-TOGGLE     _"Raw Layers Only?"   FALSE)
-;
-; Register on Menu
-;
+
+;; User Options Popup
+(script-fu-register
+  "script-fu-multi-effect-text"
+  _"_MultiEffect Text..."
+  "Creates a Multi-Effect Text with a drop shadow"
+  "Scott Mosteller"
+  "Scott Mosteller"
+  "2007"
+  ""
+  SF-STRING     _"Text"               "Gimp"
+  SF-ADJUSTMENT _"Font size (pixels)" '(180 2 1000 1 10 0 1)
+  SF-FONT       _"Font"               "Arial Bold"
+  SF-COLOR      _"Text color"         '(195 8 8)
+  SF-COLOR      _"Stroke color color" '(0 0 0)
+  SF-ADJUSTMENT _"Stroke width"       '(2 1 50 1 1 0 1)
+  SF-COLOR      _"Shadow color"       '(0 0 0)
+  SF-COLOR      _"Background color"   '(255 255 255)
+  SF-ADJUSTMENT _"Shadow Offset X"    '(4 -99 99 1 1 0 1)
+  SF-ADJUSTMENT _"Shadow Offset Y"    '(4 -99 99 1 1 0 1)
+  SF-ADJUSTMENT _"Shadow Opacity"     '(60 1 100 1 1 0 1)
+  SF-OPTION     _"Effect Type"       '("Cubism" "Oilify" "Plasma" "Diffraction" "No Effect")
+  SF-ADJUSTMENT _"Effect Tweak"       '(4.5 1 20 .1 .1 1 0)
+  SF-ADJUSTMENT _"Scatter Amount"     '(150 1 180 1 1 0 0)
+  SF-TOGGLE     _"Animate?"           TRUE
+  SF-TOGGLE     _"Raw Layers Only?"   FALSE)
+
+;; Register on Menu
 (script-fu-menu-register "script-fu-multi-effect-text"
              _"<Image>/File/New/FX-Foundry/Logos")
-;
-; Define Main Multi-effect Text Function
-;
+
+					
+;; Define Main Multi-effect Text Function
 (define (script-fu-multi-effect-text text
                    size
                    font

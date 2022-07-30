@@ -143,31 +143,40 @@
   )
   )
 
-(script-fu-register "script-fu-red-eye"
-            _"<Image>/FX-Foundry/Photo/Enhancement/Red Eye..."
-            "Removes red eye; given selection is seed.\nNeeds the channel-mixer plug-in."
-            "Martin Guldahl <mguldahl@xmission.com>"
-            "Martin Guldahl"
-            "2002/10/05"
-            "*"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-            SF-ADJUSTMENT _"Radius" '(8 0 100 .2 1 1 1)
-            SF-ADJUSTMENT _"Threshold" '(40 0 255 1 1 1 1)
-            SF-ADJUSTMENT _"Red" '(10 0 100 1 1 1 1)
-            SF-ADJUSTMENT _"Green" '(60 0 100 1 1 1 1)
-            SF-ADJUSTMENT _"Blue" '(30 0 100 1 1 1 1)
-            )
 
-(script-fu-register "script-fu-red-eye-no-cm"
-            _"<Image>/FX-Foundry/Photo/Enhancement/Red Eye Desaturate..."
-            "Removes red eye; given selection is seed."
-            "Martin Guldahl <mguldahl@xmission.com>"
-            "Martin Guldahl"
-            "2002/10/05"
-            "*"
-            SF-IMAGE "Image" 0
-            SF-DRAWABLE "Drawable" 0
-            SF-ADJUSTMENT _"Radius" '(8 0 100 .2 1 1 1)
-            SF-ADJUSTMENT _"Threshold" '(40 0 255 1 1 1 1)
-            )
+(script-fu-register
+  "script-fu-red-eye"
+  _"Red Eye..."
+  "Removes red eye; given selection is seed.\nNeeds the channel-mixer plug-in."
+  "Martin Guldahl <mguldahl@xmission.com>"
+  "Martin Guldahl"
+  "2002/10/05"
+  "*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT _"Radius" '(8 0 100 .2 1 1 1)
+  SF-ADJUSTMENT _"Threshold" '(40 0 255 1 1 1 1)
+  SF-ADJUSTMENT _"Red" '(10 0 100 1 1 1 1)
+  SF-ADJUSTMENT _"Green" '(60 0 100 1 1 1 1)
+  SF-ADJUSTMENT _"Blue" '(30 0 100 1 1 1 1))
+
+(script-fu-menu-register "script-fu-red-eye"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+
+
+(script-fu-register
+  "script-fu-red-eye-no-cm"
+  _"Red Eye Desaturate..."
+  "Removes red eye; given selection is seed."
+  "Martin Guldahl <mguldahl@xmission.com>"
+  "Martin Guldahl"
+  "2002/10/05"
+  "*"
+  SF-IMAGE "Image" 0
+  SF-DRAWABLE "Drawable" 0
+  SF-ADJUSTMENT _"Radius" '(8 0 100 .2 1 1 1)
+  SF-ADJUSTMENT _"Threshold" '(40 0 255 1 1 1 1))
+
+(script-fu-menu-register "script-fu-red-eye-no-cm"
+                         "<Image>/FX-Foundry/Photo/Enhancement")
+

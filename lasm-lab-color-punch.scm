@@ -565,23 +565,26 @@
 
 
 (script-fu-register
- "script-fu-lab-color-punch"
- _"<Image>/FX-Foundry/Color/Lasm's LAB Color Punch"
- "Lasm's famous special effect for photographs. This works on any RGB image. LAB Color Punch gives you the power and freedom to change the color you want ! Caution: it runs slowly on large images."
- "lasm"
- "Copyright 2005, lasm"
- "Nov 1, 2005"
- "RGB*"
- SF-IMAGE              "The Image"           0
- SF-DRAWABLE           "The Layer"           0
- SF-OPTION            _"Highlight/Shadow"        SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE3
- SF-ADJUSTMENT        _"Sensitivity"           '(64 0 127 1 10 0 0)
- SF-OPTION            _"Green/Red"            SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE1
- SF-ADJUSTMENT        _"Strength"             '(64 0 127 1 10 1 0)
- SF-TOGGLE            _"Lock Blue/Yellow"        TRUE
- SF-OPTION            _"Blue/Yellow"            SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE1
- SF-ADJUSTMENT        _"Strength"             '(64 0 127 1 10 1 0)
- SF-OPTION            _"Luminosity"            SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE2
- SF-ADJUSTMENT        _"Strength"             '(64 0 127 1 10 1 0)
- SF-TOGGLE            _"New Layer"             TRUE
-)
+  "script-fu-lab-color-punch"
+  _"Lasm's LAB Color Punch"
+  "Lasm's famous special effect for photographs. This works on any RGB image. LAB Color Punch gives you the power and freedom to change the color you want ! Caution: it runs slowly on large images."
+  "lasm"
+  "Copyright 2005, lasm"
+  "Nov 1, 2005"
+  "RGB*"
+  SF-IMAGE              "The Image"           0
+  SF-DRAWABLE           "The Layer"           0
+  SF-OPTION            _"Highlight/Shadow"        SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE3
+  SF-ADJUSTMENT        _"Sensitivity"           '(64 0 127 1 10 0 0)
+  SF-OPTION            _"Green/Red"            SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE1
+  SF-ADJUSTMENT        _"Strength"             '(64 0 127 1 10 1 0)
+  SF-TOGGLE            _"Lock Blue/Yellow"        TRUE
+  SF-OPTION            _"Blue/Yellow"            SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE1
+  SF-ADJUSTMENT        _"Strength"             '(64 0 127 1 10 1 0)
+  SF-OPTION            _"Luminosity"            SCRIPT-FU-LAB-COLOR-PUNCH-CHOICE2
+  SF-ADJUSTMENT        _"Strength"             '(64 0 127 1 10 1 0)
+  SF-TOGGLE            _"New Layer"             TRUE)
+
+(script-fu-menu-register "script-fu-lab-color-punch"
+                         "<Image>/FX-Foundry/Color")
+
